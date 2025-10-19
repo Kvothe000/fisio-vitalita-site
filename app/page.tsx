@@ -92,6 +92,54 @@ export default function Home() {
         </div>
       </section>
       {/* === Fim da Seção de Serviços === */}
+{/* ... (Todo o código do Hero e da Seção de Serviços fica aqui em cima) ... */}
+
+      {/* ======================================= */}
+      {/* === NOVA SEÇÃO: Sobre Nós (Confiança) === */}
+      {/* ======================================= */}
+      <section className="bg-white py-20"> {/* Alternando a cor de fundo (cinza -> branco) */}
+        <div className="container mx-auto px-6">
+
+          {/* Usamos grid para colocar a imagem de um lado e o texto do outro em telas grandes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+            {/* Coluna da Imagem */}
+            <div>
+              {/* --- IMAGEM PLACEHOLDER --- */}
+              {/* Vamos usar um placeholder por enquanto. Depois trocamos por uma foto real da clínica ou da Daiane */}
+              <div className="bg-gray-200 rounded-lg w-full h-80 flex items-center justify-center">
+                <span className="text-gray-500">Imagem da clínica (placeholder)</span>
+              </div>
+              {/* --- FIM DO PLACEHOLDER --- */}
+            </div>
+
+            {/* Coluna do Texto */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-secondary mb-4">
+                Bem-vindo à FisioVitalitá
+              </h2>
+
+              <p className="text-gray-600 mb-4 text-lg">
+                Somos mais do que uma clínica de fisioterapia; somos um espaço dedicado ao seu bem-estar completo. Nossa missão é tratar a causa da dor, não apenas os sintomas, promovendo um equilíbrio duradouro entre corpo e mente.
+              </p>
+
+              <p className="text-gray-600 mb-6 text-lg">
+                Com uma equipe de profissionais qualificados e um ambiente acolhedor, estamos prontos para guiar você em sua jornada de recuperação e saúde.
+              </p>
+
+              <Link 
+                href="/sobre" 
+                // Nosso "desvio" da cor roxa:
+                className="bg-[#5B21B6] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition-colors"
+              >
+                Conheça Nossa História
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      {/* === Fim da Seção Sobre Nós === */}
 
     </main>
   );
