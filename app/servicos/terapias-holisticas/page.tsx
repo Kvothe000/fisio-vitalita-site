@@ -1,4 +1,4 @@
-// Arquivo: app/servicos/terapias-holisticas/page.tsx (Corrigido)
+// Arquivo: app/servicos/terapias-holisticas/page.tsx (CORRIGIDO DE NOVO)
 
 export default function TerapiasHolisticasPage() {
   return (
@@ -14,7 +14,7 @@ export default function TerapiasHolisticasPage() {
       </h1>
       <p className="text-xl text-gray-600 mb-8">
         Cuidado integral que une corpo, mente e espírito para uma saúde plena.
-      </p>
+      </p> {/* <-- ERRO 2 CORRIGIDO: Era </S> */}
       
       {/* Conteúdo do Serviço */}
       <div className="space-y-6 text-gray-700 text-lg">
@@ -34,8 +34,10 @@ export default function TerapiasHolisticasPage() {
         <ul className="list-disc list-inside space-y-2">
           <li><strong>Reiki:</strong> Técnica japonesa de canalização de energia vital universal para reequilibrar os chakras e promover o relaxamento.</li>
           <li><strong>Aromaterapia:</strong> Uso de óleos essenciais para estimular diferentes partes do cérebro, aliviando o estresse e melhorando o humor.</li>
-          {/* --- A CORREÇÃO ESTÁ AQUI --- */}
-          <li><strong>Ventosaterapia:</strong> Aplicação de 'copos' que criam sucção para melhorar a circulação sanguínea e aliviar dores musculares.</li>
+          
+          {/* --- ERRO 1 CORRIGIDO: Usando &apos; --- */}
+          <li><strong>Ventosaterapia:</strong> Aplicação de &apos;copos&apos; que criam sucção para melhorar a circulação sanguínea e aliviar dores musculares.</li>
+          
           <li><strong>Barras de Access:</strong> Terapia quântica que, através de toques suaves na cabeça, libera padrões de pensamento e crenças limitantes.</li>
         </ul>
         
