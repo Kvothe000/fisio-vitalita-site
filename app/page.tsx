@@ -2,8 +2,10 @@
 import Link from 'next/link';
 
 // 1. IMPORTE OS ÍCONES NOVOS E O CARD
-import { ChevronRight, HeartPulse, Activity, Dna } from 'lucide-react'; 
+// No topo do app/page.tsx
+import { ChevronRight, HeartPulse, Activity, Dna, Phone, Mail, MapPin } from 'lucide-react';
 import ServiceCard from '@/components/ServiceCard';
+
 
 export default function Home() {
   return (
@@ -141,6 +143,151 @@ export default function Home() {
       </section>
       {/* === Fim da Seção Sobre Nós === */}
 
+{/* ... (Seção Hero, Serviços, e Sobre ficam aqui em cima) ... */}
+
+      {/* ======================================= */}
+      {/* === NOVA SEÇÃO: Contato Rápido === */}
+      {/* ======================================= */}
+      <section className="bg-gray-50 py-20"> {/* Voltando para o fundo cinza */}
+        <div className="container mx-auto px-6">
+
+          {/* Título da Seção */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-secondary">
+              Entre em Contato
+            </h2>
+            <p className="text-lg text-gray-600 mt-2">
+              Tire suas dúvidas ou agende sua avaliação. Estamos prontos para atender você.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+            {/* Coluna da Esquerda: Informações de Contato */}
+            <div className="space-y-6">
+              {/* Telefone (com link) */}
+              <div className="flex items-start space-x-4">
+                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
+                  <Phone className="w-6 h-6 text-[#5B21B6]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-brand-secondary">Telefone / WhatsApp</h3>
+                  <p className="text-gray-600 text-lg">
+                    (51) 9990 31186
+                  </p>
+                  <a 
+                    href="https://wa.me/5551999031186" // Link direto para o WhatsApp
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#5B21B6] font-medium hover:underline"
+                  >
+                    Iniciar conversa
+                  </a>
+                </div>
+              </div>
+
+              {/* Endereço */}
+              <div className="flex items-start space-x-4">
+                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
+                  <MapPin className="w-6 h-6 text-[#5B21B6]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-brand-secondary">Endereço</h3>
+                  <p className="text-gray-600 text-lg">
+                    [Endereço Completo da Clínica Aqui]
+                    <br />
+                    [Bairro, Cidade - RS]
+                  </p>
+                  <a 
+                    href="https://maps.google.com/?q=[Endereço para o Google Maps]" // Link para o Google Maps
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#5B21B6] font-medium hover:underline"
+                  >
+                    Ver no mapa
+                  </a>
+                </div>
+              </div>
+
+              {/* (Opcional) E-mail */}
+              <div className="flex items-start space-x-4">
+                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
+                  <Mail className="w-6 h-6 text-[#5B21B6]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-brand-secondary">E-mail</h3>
+                  <p className="text-gray-600 text-lg">
+                    [daiane.borges@email.com]
+                  </p>
+                  <a 
+                    href="mailto:[daiane.borges@email.com]"
+                    className="text-[#5B21B6] font-medium hover:underline"
+                  >
+                    Enviar e-mail
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Coluna da Direita: Formulário */}
+            {/* Por enquanto, este formulário não envia. É só o visual. */}
+            {/* Faremos ele funcionar em um próximo passo (Fase 11) */}
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <form action="#" method="POST" className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nome Completo</label>
+                  <input 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    required 
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
+                    placeholder="Seu nome"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Telefone / WhatsApp</label>
+                  <input 
+                    type="tel" 
+                    name="phone" 
+                    id="phone" 
+                    required 
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
+                    placeholder="(XX) XXXXX-XXXX"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensagem</label>
+                  <textarea 
+                    name="message" 
+                    id="message" 
+                    rows={4} 
+                    required 
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
+                    placeholder="Gostaria de saber mais sobre..."
+                  ></textarea>
+                </div>
+
+                <div>
+                  <button 
+                    type="submit"
+                    // Nosso "desvio" da cor roxa:
+                    className="w-full bg-[#5B21B6] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition-colors"
+                  >
+                    Enviar Mensagem
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      {/* === Fim da Seção de Contato === */}
+
     </main>
   );
+
 }
