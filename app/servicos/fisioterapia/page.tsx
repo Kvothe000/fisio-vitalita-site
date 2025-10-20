@@ -1,14 +1,32 @@
 // Arquivo: app/servicos/fisioterapia/page.tsx
+import Image from 'next/image'; // Adicione no topo do arquivo
 
 export default function FisioterapiaPage() {
   return (
     // A tag 'article' é semanticamente correta para este conteúdo
     <article>
 
-      {/* Imagem de Destaque (Placeholder) */}
-      <div className="bg-gray-200 rounded-lg w-full h-64 flex items-center justify-center mb-6">
-        <span className="text-gray-500">Imagem de Fisioterapia (placeholder)</span>
-      </div>
+     {/* Este 'div' é a "caixa" ou "janela" da imagem. 
+    Ele é 'relative' para o Next.js saber onde a imagem deve preencher.
+    Ele tem uma altura fixa ('h-80' = 320px)
+    Ele tem 'overflow-hidden' para "cortar" o que sobrar da imagem.
+*/}
+<div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
+  <Image 
+    // Use o 'src' correto para cada página
+    src="/gallery/fisioterapia-pilates.jpg" 
+    alt="Sala de Fisioterapia e Pilates da FisioVitalitá" 
+    
+    fill // "fill" faz a imagem preencher o 'div' pai
+    
+    // "cover" é a mágica: ele cobre a área, mantém o aspect ratio,
+    // e NUNCA estica a imagem. Ele "corta" as sobras.
+    style={{ objectFit: 'cover' }} 
+    
+    priority // Carrega esta imagem principal mais rápido
+    sizes="(max-width: 768px) 100vw, 75vw"
+  />
+</div>
 
       <h1 className="text-4xl font-bold text-brand-secondary mb-4">
         Fisioterapia

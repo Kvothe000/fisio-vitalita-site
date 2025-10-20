@@ -1,13 +1,26 @@
 // Arquivo: app/servicos/massoterapia/page.tsx
+import Image from 'next/image';
 
 export default function MassoterapiaPage() {
   return (
     <article>
       
-      {/* Imagem de Destaque (Placeholder) */}
-      <div className="bg-gray-200 rounded-lg w-full h-64 flex items-center justify-center mb-6">
-        <span className="text-gray-500">Imagem de Massoterapia (placeholder)</span>
-      </div>
+<div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
+  <Image 
+    src="/gallery/massagem-holisticas.jpg" 
+    alt="Sala de Massoterapia da FisioVitalitá" 
+    fill
+    
+    // === A MUDANÇA ESTÁ AQUI ===
+    // Removemos 'style={{ objectFit: 'cover' }}' e usamos classes
+    // 'object-cover' = (Não esticar)
+    // 'object-center' = (Focar o corte no centro da imagem)
+    className="object-cover object-center" 
+    
+    priority
+    sizes="(max-width: 768px) 100vw, 75vw"
+  />
+</div>
       
       <h1 className="text-4xl font-bold text-brand-secondary mb-4">
         Massoterapia
