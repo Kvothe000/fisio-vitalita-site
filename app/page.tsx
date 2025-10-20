@@ -6,6 +6,30 @@ import Link from 'next/link';
 import { ChevronRight, Phone, Mail, MapPin, HeartPulse, Activity, Dna } from 'lucide-react'; 
 import ServiceCard from '@/components/ServiceCard';
 import Image from 'next/image'; // Adicione esta linha se ainda não existir
+import TestimonialCard from '@/components/TestimonialCard';
+
+// --- DADOS DOS DEPOIMENTOS (PLACEHOLDERS) ---
+const testimonials = [
+  {
+    quote: "O atendimento na FisioVitalitá foi um divisor de águas na minha recuperação. A Dra. Daiane é extremamente atenciosa e competente.",
+    name: "Maria S.",
+    role: "Paciente de Fisioterapia",
+    imageUrl: "", // Usará placeholder por enquanto
+  },
+  {
+    quote: "As aulas de Pilates me deram muito mais disposição e acabaram com minhas dores nas costas. Ambiente ótimo e profissionais excelentes!",
+    name: "João P.",
+    role: "Aluno de Pilates",
+    imageUrl: "", 
+  },
+  {
+    quote: "Encontrei na acupuntura um alívio incrível para minha ansiedade. Recomendo muito a clínica e a abordagem humanizada.",
+    name: "Ana L.",
+    role: "Paciente de Acupuntura",
+    imageUrl: "", 
+  },
+];
+// ---------------------------------------------
 
 export default function Home() {
   return (
@@ -197,6 +221,42 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* ... (Hero, Serviços, Sobre, Contato ficam aqui em cima) ... */}
+
+      {/* ======================================= */}
+      {/* === NOVA SEÇÃO: Testemunhos === */}
+      {/* ======================================= */}
+      <section className="bg-white py-20"> {/* Fundo branco para contrastar */}
+        <div className="container mx-auto px-6">
+
+          {/* Título da Seção */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
+              O que nossos pacientes dizem
+            </h2>
+            <p className="text-lg text-gray-600 mt-2">
+              Histórias reais de recuperação e bem-estar.
+            </p>
+          </div>
+
+          {/* Grid de Cards de Depoimento */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            {/* Usamos .map() para criar um card para cada depoimento */}
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard 
+                key={index} // Usando index como key por enquanto
+                quote={testimonial.quote}
+                name={testimonial.name}
+                role={testimonial.role}
+                imageUrl={testimonial.imageUrl}
+              />
+            ))}
+
+          </div>
+        </div>
+      </section>
+      {/* === Fim da Seção de Testemunhos === */}
 
     </main>
   );
