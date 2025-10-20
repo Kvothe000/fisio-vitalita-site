@@ -10,6 +10,7 @@ import Image from 'next/image'; // Adicione esta linha se ainda não existir
 import TestimonialCard from '@/components/TestimonialCard';
 
 
+
 // --- DADOS DOS DIFERENCIAIS ---
 const differentials = [
   {
@@ -154,9 +155,20 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="bg-gray-200 rounded-lg w-full h-80 flex items-center justify-center">
-                <span className="text-gray-500">Imagem da clínica (placeholder)</span>
-              </div>
+              {/* Coluna da Imagem (Atualizada) */}
+<div>
+  {/* Usando o componente Image com a foto da sala de terapia */}
+  <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg"> {/* Aumentei um pouco a altura no desktop */}
+    <Image 
+      src="/gallery/massagem-holisticas.jpg" 
+      alt="Ambiente acolhedor da clínica FisioVitalitá" 
+      fill 
+      className="object-cover object-center" 
+      // Não precisa de 'priority' aqui, pois não é a primeira imagem da página
+      sizes="(max-width: 768px) 100vw, 50vw" 
+    />
+  </div>
+</div>
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] mb-4">

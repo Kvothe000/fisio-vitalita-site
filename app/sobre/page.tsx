@@ -1,5 +1,6 @@
 // Arquivo: app/sobre/page.tsx
 import { Eye, Rocket, Gem } from 'lucide-react'; // Ícones para Visão, Missão, Valores
+import Image from 'next/image';
 
 export default function SobrePage() {
   return (
@@ -41,11 +42,18 @@ export default function SobrePage() {
 
           {/* Coluna da Imagem */}
           <div>
-            {/* --- IMAGEM PLACEHOLDER --- */}
-            <div className="bg-gray-200 rounded-lg w-full h-96 flex items-center justify-center">
-              <span className="text-gray-500">Foto da Dra. Daiane (placeholder)</span>
-            </div>
-            {/* --- FIM DO PLACEHOLDER --- */}
+           {/* Coluna da Imagem (Atualizada) */}
+<div>
+  <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg">
+    <Image 
+      src="/gallery/fisioterapia-pilates.jpg" 
+      alt="Sala de equipamentos da FisioVitalitá" 
+      fill 
+      className="object-cover object-center" 
+      sizes="(max-width: 768px) 100vw, 50vw"
+    />
+  </div>
+</div>
           </div>
 
         </div>
