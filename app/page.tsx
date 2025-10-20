@@ -5,37 +5,62 @@ import Link from 'next/link';
 // 1. IMPORTAMOS OS ÍCONES NECESSÁRIOS (Hero, Contato e Ícones Específicos de Serviço)
 import { ChevronRight, Phone, Mail, MapPin, HeartPulse, Activity, Dna } from 'lucide-react'; 
 import ServiceCard from '@/components/ServiceCard';
+import Image from 'next/image'; // Adicione esta linha se ainda não existir
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
       
-      {/* === Seção Hero === */}
-      <section className="bg-white py-20 md:py-32"> 
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#1F2937] mb-4">
-            Sua Saúde em Equilíbrio
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Conheça a FisioVitalitá, seu novo espaço de fisioterapia, pilates e terapias holísticas. Cuidado completo para seu corpo e mente.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Link 
-              href="/agendamento" 
-              className="bg-[#5B21B6] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition-colors flex items-center"
-            >
-              Agende sua Avaliação
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </Link>
-            <Link 
-              href="/servicos" 
-              className="bg-gray-200 text-[#1F2937] px-6 py-3 rounded-md text-lg font-medium hover:bg-gray-300 transition-colors"
-            >
-              Nossos Serviços
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* === Seção Hero v2 (Com Imagem) === */}
+<section className="bg-white"> {/* Removemos o padding vertical daqui */}
+  <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-20 md:py-32"> {/* Adicionamos o grid e padding aqui */}
+
+    {/* Coluna da Esquerda: Texto e Botões */}
+    {/* Em telas pequenas, 'order-last' joga o texto para baixo da imagem */}
+    <div className="text-center md:text-left order-last md:order-first"> 
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2937] mb-6"> {/* Ajustei o tamanho da fonte */}
+        Sua Saúde em Equilíbrio
+      </h1>
+
+      <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-xl mx-auto md:mx-0"> {/* Ajustei a margem e max-width */}
+        Conheça a FisioVitalitá, seu novo espaço de fisioterapia, pilates e terapias holísticas. Cuidado completo para seu corpo e mente.
+      </p>
+
+      {/* Mantemos os mesmos botões, mas ajustamos o alinhamento */}
+      <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+        <Link 
+          href="/agendamento" 
+          className="bg-[#5B21B6] text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition-colors flex items-center justify-center sm:w-auto" // Aumentei padding
+        >
+          Agende sua Avaliação
+          <ChevronRight className="w-5 h-5 ml-2" />
+        </Link>
+
+        <Link 
+          href="/servicos" 
+          className="bg-gray-200 text-[#1F2937] px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-300 transition-colors flex items-center justify-center sm:w-auto" // Aumentei padding
+        >
+          Nossos Serviços
+        </Link>
+      </div>
+    </div>
+
+    {/* Coluna da Direita: Imagem */}
+    {/* Em telas pequenas, 'order-first' joga a imagem para cima */}
+    <div className="relative w-full h-80 md:h-[500px] rounded-lg overflow-hidden shadow-xl order-first md:order-last"> {/* Altura maior no desktop */}
+      <Image 
+        src="/gallery/fachada.jpg" 
+        alt="Fachada da Clínica FisioVitalitá" 
+        fill 
+        className="object-cover object-center" // Mantemos object-cover
+        priority // Imagem principal, carregar rápido
+        sizes="(max-width: 768px) 100vw, 50vw" // Define tamanhos para otimização
+      />
+    </div>
+
+  </div>
+</section>
+{/* === Fim da Seção Hero v2 === */}
 
       {/* === Seção Destaque de Serviços === */}
       <section className="py-20">
