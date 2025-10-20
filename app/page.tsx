@@ -3,10 +3,37 @@
 import Link from 'next/link';
 
 // 1. IMPORTAMOS OS ÍCONES NECESSÁRIOS (Hero, Contato e Ícones Específicos de Serviço)
-import { ChevronRight, Phone, Mail, MapPin, HeartPulse, Activity, Dna } from 'lucide-react'; 
+// No topo do app/page.tsx
+import { ChevronRight, Phone, Mail, MapPin, HeartPulse, Activity, Dna, Users, Award, Sparkles, Target } from 'lucide-react'; 
 import ServiceCard from '@/components/ServiceCard';
 import Image from 'next/image'; // Adicione esta linha se ainda não existir
 import TestimonialCard from '@/components/TestimonialCard';
+
+
+// --- DADOS DOS DIFERENCIAIS ---
+const differentials = [
+  {
+    Icon: Users,
+    title: "Atendimento Humanizado",
+    description: "Cada paciente é único. Oferecemos um cuidado individualizado e atencioso.",
+  },
+  {
+    Icon: Award,
+    title: "Profissionais Qualificados",
+    description: "Nossa equipe é formada por especialistas dedicados à sua recuperação.",
+  },
+  {
+    Icon: Sparkles, // Usando Sparkles para 'Ambiente' ou 'Bem-estar'
+    title: "Ambiente Acolhedor",
+    description: "Um espaço moderno e tranquilo, pensado para seu conforto e bem-estar.",
+  },
+  {
+    Icon: Target, // Usando Target para 'Foco na Causa'
+    title: "Foco na Causa Raiz",
+    description: "Tratamos a origem do problema, não apenas os sintomas, para resultados duradouros.",
+  },
+];
+// -----------------------------
 
 // --- DADOS DOS DEPOIMENTOS (PLACEHOLDERS) ---
 const testimonials = [
@@ -258,6 +285,49 @@ export default function Home() {
       </section>
       {/* === Fim da Seção de Testemunhos === */}
 
-    </main>
-  );
+{/* ... (Hero, Serviços, Sobre, Testemunhos, Contato ficam aqui em cima) ... */}
+
+          {/* ======================================= */}
+          {/* === NOVA SEÇÃO: Diferenciais === */}
+          {/* ======================================= */}
+          <section className="bg-gray-50 py-20"> {/* Voltando para fundo cinza */}
+            <div className="container mx-auto px-6">
+              
+              {/* Título da Seção */}
+              <div className="text-center mb-16"> {/* Aumentei a margem inferior */}
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
+                  Por que escolher a FisioVitalitá?
+                </h2>
+                <p className="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">
+                  Nosso compromisso vai além do tratamento. Cuidamos de você de forma integral.
+                </p>
+              </div>
+              
+              {/* Grid de Diferenciais */}
+              {/* 4 colunas no desktop, 2 no tablet, 1 no mobile */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"> 
+                
+                {differentials.map((item) => (
+                  <div key={item.title} className="text-center px-4">
+                    {/* Ícone */}
+                    <div className="flex justify-center items-center mb-4">
+                      {/* Usando o nosso novo estilo de ícone */}
+                      <div className="bg-[#5B21B6] p-4 rounded-full"> 
+                        <item.Icon className="w-8 h-8 text-white" /> 
+                      </div>
+                    </div>
+                    {/* Título */}
+                    <h3 className="text-xl font-bold text-[#1F2937] mb-2">{item.title}</h3>
+                    {/* Descrição */}
+                    <p className="text-gray-600">{item.description}</p>
+                  </div>
+                ))}
+
+              </div>
+            </div>
+          </section>
+          {/* === Fim da Seção de Diferenciais === */}
+
+        </main>
+      );
 }
