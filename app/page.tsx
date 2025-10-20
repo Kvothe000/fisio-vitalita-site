@@ -8,7 +8,7 @@ import { ChevronRight, Phone, Mail, MapPin, HeartPulse, Activity, Dna, Users, Aw
 import ServiceCard from '@/components/ServiceCard';
 import Image from 'next/image'; // Adicione esta linha se ainda não existir
 import TestimonialCard from '@/components/TestimonialCard';
-
+import AnimatedSection from '@/components/AnimatedSection';
 
 
 // --- DADOS DOS DIFERENCIAIS ---
@@ -115,7 +115,7 @@ export default function Home() {
 {/* === Fim da Seção Hero v2 === */}
 
       {/* === Seção Destaque de Serviços === */}
-      <section className="py-20">
+      <AnimatedSection className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
@@ -148,10 +148,10 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* === Seção Sobre Nós (Confiança) === */}
-      <section className="bg-white py-20"> 
+      <AnimatedSection className="bg-white py-20"> 
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -189,10 +189,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* === Seção Contato Rápido === */}
-      <section className="bg-gray-50 py-20">
+      <AnimatedSection className="bg-gray-50 py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
@@ -259,13 +259,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 {/* ... (Hero, Serviços, Sobre, Contato ficam aqui em cima) ... */}
 
       {/* ======================================= */}
       {/* === NOVA SEÇÃO: Testemunhos === */}
       {/* ======================================= */}
-      <section className="bg-white py-20"> {/* Fundo branco para contrastar */}
+      <AnimatedSection className="bg-white py-20"> {/* Fundo branco para contrastar */}
         <div className="container mx-auto px-6">
 
           {/* Título da Seção */}
@@ -294,7 +294,7 @@ export default function Home() {
 
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       {/* === Fim da Seção de Testemunhos === */}
 
 {/* ... (Hero, Serviços, Sobre, Testemunhos, Contato ficam aqui em cima) ... */}
@@ -302,7 +302,7 @@ export default function Home() {
           {/* ======================================= */}
           {/* === NOVA SEÇÃO: Diferenciais === */}
           {/* ======================================= */}
-          <section className="bg-gray-50 py-20"> {/* Voltando para fundo cinza */}
+          <AnimatedSection className="bg-gray-50 py-20"> {/* Voltando para fundo cinza */}
             <div className="container mx-auto px-6">
               
               {/* Título da Seção */}
@@ -337,7 +337,7 @@ export default function Home() {
 
               </div>
             </div>
-          </section>
+          </AnimatedSection>
           {/* === Fim da Seção de Diferenciais === */}
 
         </main>
