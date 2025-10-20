@@ -28,9 +28,9 @@ export default function ContatoPage() {
             <div className="space-y-6">
               {/* Telefone (com link) */}
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <Phone className="w-6 h-6 text-[#5B21B6]" />
-                </div>
+  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+    <Phone className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+  </div>
                 <div>
                   <h3 className="text-xl font-semibold text-brand-secondary">Telefone / WhatsApp</h3>
                   <p className="text-gray-600 text-lg">
@@ -49,9 +49,9 @@ export default function ContatoPage() {
 
               {/* Endereço */}
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <MapPin className="w-6 h-6 text-[#5B21B6]" />
-                </div>
+  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+    <MapPin className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+  </div>
                 <div>
                   <h3 className="text-xl font-semibold text-brand-secondary">Endereço</h3>
                   <p className="text-gray-600 text-lg">
@@ -72,9 +72,9 @@ export default function ContatoPage() {
 
               {/* E-mail */}
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <Mail className="w-6 h-6 text-[#5B21B6]" />
-                </div>
+  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+    <Mail className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+  </div>
                 <div>
                   <h3 className="text-xl font-semibold text-brand-secondary">E-mail</h3>
                   <p className="text-gray-600 text-lg">

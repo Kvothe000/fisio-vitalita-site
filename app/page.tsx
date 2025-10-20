@@ -1,10 +1,9 @@
-// Arquivo: app/page.tsx (Código Completo Atualizado com BrandLogoIcon)
+// Arquivo: app/page.tsx (Atualizado para usar ícones Lucide específicos)
 
 import Link from 'next/link';
 
-// 1. IMPORTE OS ÍCONES NECESSÁRIOS (Hero, Sidebar) E O NOVO ÍCONE DA MARCA
-import { ChevronRight, Phone, Mail, MapPin } from 'lucide-react'; 
-import BrandLogoIcon from '@/components/BrandLogoIcon'; // <-- NOSSO NOVO ÍCONE
+// 1. IMPORTAMOS OS ÍCONES NECESSÁRIOS (Hero, Contato e Ícones Específicos de Serviço)
+import { ChevronRight, Phone, Mail, MapPin, HeartPulse, Activity, Dna } from 'lucide-react'; 
 import ServiceCard from '@/components/ServiceCard';
 
 export default function Home() {
@@ -51,21 +50,21 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            {/* 2. SUBSTITUÍMOS OS ÍCONES ANTIGOS PELO BrandLogoIcon */}
+            {/* 2. VOLTAMOS A USAR OS ÍCONES ESPECÍFICOS DO LUCIDE */}
             <ServiceCard 
-              Icon={BrandLogoIcon} 
+              Icon={HeartPulse} 
               title="Fisioterapia"
               description="Recuperação de lesões, alívio de dor crônica e reabilitação funcional."
               href="/servicos/fisioterapia" 
             />
             <ServiceCard 
-              Icon={BrandLogoIcon} 
+              Icon={Activity} 
               title="Pilates"
               description="Fortalecimento do core, melhora da postura e aumento da flexibilidade."
               href="/servicos/pilates"
             />
             <ServiceCard 
-              Icon={BrandLogoIcon} 
+              Icon={Dna} 
               title="Acupuntura"
               description="Técnica milenar para alívio da dor, redução de estresse e equilíbrio energético."
               href="/servicos/acupuntura"
@@ -118,31 +117,31 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <Phone className="w-6 h-6 text-[#5B21B6]" />
-                </div>
+  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+    <Phone className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+  </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">Telefone / WhatsApp</h3>
                   <p className="text-gray-600 text-lg">(51) 9990 31186</p>
                   <a href="https://wa.me/5551999031186" target="_blank" rel="noopener noreferrer" className="text-[#5B21B6] font-medium hover:underline">Iniciar conversa</a>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <MapPin className="w-6 h-6 text-[#5B21B6]" />
-                </div>
+             <div className="flex items-start space-x-4">
+  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+    <MapPin className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+  </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">Endereço</h3>
                   <p className="text-gray-600 text-lg">
                     Av. Juca Batista, 662 - Ipanema,<br/> Porto Alegre - RS, 91770-000
                   </p>
-                  <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.848805364883!2d-51.2294156848846!3d-30.041170981884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197906a454179b%3A0x80c53e8e7330d4b1!2sAv.%20Get%C3%BAlio%20Vargas%2C%201151%20-%20Menino%20Deus%2C%20Porto%20Alegre%20-%20RS%2C%2090150-003!5e0!3m2!1spt-BR!2sbr!4v16788860000001" target="_blank" rel="noopener noreferrer" className="text-[#5B21B6] font-medium hover:underline">Ver no mapa</a>
+                  <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.848805364883!2d-51.2294156848846!3d-30.041170981884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197906a454179b%3A0x80c53e8e7330d4b1!2sAv.%20Get%C3%BAlio%20Vargas%2C%201151%20-%20Menino%20Deus%2C%20Porto%20Alegre%20-%20RS%2C%2090150-003!5e0!3m2!1spt-BR!2sbr!4v16788860000002" target="_blank" rel="noopener noreferrer" className="text-[#5B21B6] font-medium hover:underline">Ver no mapa</a>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <Mail className="w-6 h-6 text-[#5B21B6]" />
-                </div>
+             <div className="flex items-start space-x-4">
+  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+    <Mail className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+  </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">E-mail</h3>
                   <p className="text-gray-600 text-lg">[daiane.borges@email.com]</p>

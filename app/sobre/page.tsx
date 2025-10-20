@@ -59,9 +59,9 @@ export default function SobrePage() {
             {/* Missão */}
             <div className="p-6">
               <div className="flex justify-center items-center mb-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <Rocket className="w-8 h-8 text-[#5B21B6]" />
-                </div>
+    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+      <Rocket className="w-8 h-8 text-white" /> {/* <-- Mudança */}
+    </div>
               </div>
               <h3 className="text-2xl font-bold text-brand-secondary mb-2">Missão</h3>
               <p className="text-gray-600">
@@ -72,9 +72,9 @@ export default function SobrePage() {
             {/* Visão */}
             <div className="p-6">
               <div className="flex justify-center items-center mb-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <Eye className="w-8 h-8 text-[#5B21B6]" />
-                </div>
+    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+      <Eye className="w-8 h-8 text-white" /> {/* <-- Mudança */}
+    </div>
               </div>
               <h3 className="text-2xl font-bold text-brand-secondary mb-2">Visão</h3>
               <p className="text-gray-600">
@@ -85,9 +85,9 @@ export default function SobrePage() {
             {/* Valores */}
             <div className="p-6">
               <div className="flex justify-center items-center mb-4">
-                <div className="bg-[#5B21B6] bg-opacity-10 p-3 rounded-full">
-                  <Gem className="w-8 h-8 text-[#5B21B6]" />
-                </div>
+    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
+      <Gem className="w-8 h-8 text-white" /> {/* <-- Mudança */}
+    </div>
               </div>
               <h3 className="text-2xl font-bold text-brand-secondary mb-2">Valores</h3>
               <p className="text-gray-600">
