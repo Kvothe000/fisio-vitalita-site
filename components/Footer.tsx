@@ -1,7 +1,6 @@
 // Arquivo: components/Footer.tsx (Versão v2 - Multi-Coluna)
 
 import Link from 'next/link';
-import BrandLogoIcon from '@/components/BrandLogoIcon'; 
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
