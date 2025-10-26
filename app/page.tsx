@@ -119,7 +119,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
-              Nossos Principais Serviços
+              Principais Serviços
             </h2>
             <p className="text-lg text-gray-600 mt-2">
               Cuidado especializado para sua necessidade.
@@ -174,10 +174,10 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] mb-4">
                 Bem-vindo à FisioVitalitá
               </h2>
-              <p className="text-gray-600 mb-4 text-lg">
+              <p className="text-gray-600 mb-4 text-lg text-justify">
                 Somos mais do que uma clínica de fisioterapia; somos um espaço dedicado ao seu bem-estar completo. Nossa missão é tratar a causa da dor, não apenas os sintomas, promovendo um equilíbrio duradouro entre corpo e mente.
               </p>
-              <p className="text-gray-600 mb-6 text-lg">
+              <p className="text-gray-600 mb-6 text-lg text-justify">
                 Com uma equipe de profissionais qualificados e um ambiente acolhedor, estamos prontos para guiar você em sua jornada de recuperação e saúde.
               </p>
               <Link 
