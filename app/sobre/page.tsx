@@ -1,114 +1,46 @@
-// Arquivo: app/sobre/page.tsx
-import { Eye, Rocket, Gem } from 'lucide-react'; // Ícones para Visão, Missão, Valores
-import Image from 'next/image';
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import { siteConfig } from '@/config/site-info'
 
-export default function SobrePage() {
+export default function About() {
   return (
-    <main className="min-h-screen bg-white">
-
-      {/* === Seção Hero da Página "Sobre" === */}
-      <section className="bg-gray-50 py-20 text-center">
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-secondary">
-            Nossa História
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-grow py-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-center mb-8">
+            {siteConfig.about.title}
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-            Mais que uma clínica, um compromisso com o seu equilíbrio e bem-estar.
-          </p>
-        </div>
-      </section>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <p className="text-lg text-gray-700 mb-6">
+                {siteConfig.about.description}
+              </p>
+              
+              <h2 className="text-2xl font-semibold mb-4">Nossa Missão</h2>
+              <p className="text-gray-700 mb-6">
+                Proporcionar atendimento de excelência em fisioterapia, promovendo 
+                saúde, qualidade de vida e bem-estar através de tratamentos 
+                personalizados e humanizados.
+              </p>
 
-      {/* === Seção de Detalhes (Texto + Imagem) === */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-          {/* Coluna do Texto */}
-          <div>
-            <h2 className="text-3xl font-bold text-brand-secondary mb-4">
-              Conheça a FisioVitalitá
-            </h2>
-            <div className="space-y-4 text-gray-700 text-lg">
-              <p>
-                Fundada pela Dra. Daiane Borges, a FisioVitalitá nasceu do desejo de criar um espaço de saúde integrado, onde cada paciente é visto de forma única e completa.
-              </p>
-              <p>
-                Nossa jornada começou com a fisioterapia tradicional, mas rapidamente expandimos nossa visão para incluir práticas complementares como Pilates e Acupuntura. Acreditamos que a verdadeira saúde vem do equilíbrio entre um corpo forte, uma mente calma e energia fluida.
-              </p>
-              <p>
-                Aqui, você encontrará profissionais dedicados e um ambiente pensado para sua total recuperação e conforto.
-              </p>
+              <h2 className="text-2xl font-semibold mb-4">Diferenciais</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {siteConfig.about.features.map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <span className="text-green-500 text-xl">✓</span>
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-
-          {/* Coluna da Imagem */}
-          <div>
-           {/* Coluna da Imagem (Atualizada) */}
-<div>
-  <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg">
-    <Image 
-      src="/gallery/fisioterapia-pilates.jpg" 
-      alt="Sala de equipamentos da FisioVitalitá" 
-      fill 
-      className="object-cover object-center" 
-      sizes="(max-width: 768px) 100vw, 50vw"
-    />
-  </div>
-</div>
-          </div>
-
         </div>
-      </section>
+      </main>
 
-      {/* === Seção Missão, Visão, Valores === */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-
-            {/* Missão */}
-            <div className="p-6">
-              <div className="flex justify-center items-center mb-4">
-    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-      <Rocket className="w-8 h-8 text-white" /> {/* <-- Mudança */}
+      <Footer />
     </div>
-              </div>
-              <h3 className="text-2xl font-bold text-brand-secondary mb-2">Missão</h3>
-              <p className="text-gray-600">
-                Proporcionar reabilitação e bem-estar através de um atendimento humanizado e integrado, tratando a causa raiz da dor.
-              </p>
-            </div>
-
-            {/* Visão */}
-            <div className="p-6">
-              <div className="flex justify-center items-center mb-4">
-    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-      <Eye className="w-8 h-8 text-white" /> {/* <-- Mudança */}
-    </div>
-              </div>
-              <h3 className="text-2xl font-bold text-brand-secondary mb-2">Visão</h3>
-              <p className="text-gray-600">
-                Ser referência em saúde e equilíbrio na região, reconhecida pela excelência no atendimento e resultados duradouros.
-              </p>
-            </div>
-
-            {/* Valores */}
-            <div className="p-6">
-              <div className="flex justify-center items-center mb-4">
-    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-      <Gem className="w-8 h-8 text-white" /> {/* <-- Mudança */}
-    </div>
-              </div>
-              <h3 className="text-2xl font-bold text-brand-secondary mb-2">Valores</h3>
-              <p className="text-gray-600">
-                Ética, Empatia, Comprometimento, Inovação e Respeito à individualidade de cada paciente.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* (Poderíamos adicionar uma seção de "Equipe" aqui, mas é melhor ela ter a própria página /equipe) */}
-
-    </main>
-  );
+  )
 }

@@ -1,152 +1,175 @@
-// Arquivo: app/contato/page.tsx
-import { Phone, Mail, MapPin } from 'lucide-react'; // Importe os ícones
+'use client'
 
-export default function ContatoPage() {
+import { useState } from 'react'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import { siteConfig } from '@/config/site-info'
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Aqui você pode integrar com um serviço de email ou CRM
+    const whatsappMessage = `Olá! Me chamo ${formData.name}. ${formData.message} Email: ${formData.email} Telefone: ${formData.phone}`
+    const encodedMessage = encodeURIComponent(whatsappMessage)
+    window.open(`https://wa.me/55${siteConfig.phone.replace(/\D/g, '')}?text=${encodedMessage}`, '_blank')
+  }
+
   return (
-    <main className="min-h-screen bg-white">
-
-      {/* === Seção Hero da Página "Contato" === */}
-      <section className="bg-gray-50 py-20 text-center">
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-secondary">
-            Fale Conosco
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-grow py-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-center mb-8">
+            {siteConfig.contact.title}
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-            Estamos aqui para ajudar você em sua jornada para a saúde e o equilíbrio.
+          <p className="text-xl text-center text-gray-600 mb-12">
+            {siteConfig.contact.subtitle}
           </p>
-        </div>
-      </section>
 
-      {/* === Seção de Informações e Formulário === */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-
-          {/* Copiamos esta estrutura da Home Page */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-
-            {/* Coluna da Esquerda: Informações de Contato */}
-            <div className="space-y-6">
-              {/* Telefone (com link) */}
-              <div className="flex items-start space-x-4">
-  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-    <Phone className="w-6 h-6 text-white" /> {/* <-- Mudança */}
-  </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-brand-secondary">Telefone / WhatsApp</h3>
-                  <p className="text-gray-600 text-lg">
-                    (51) 9990 31186
-                  </p>
-                  <a 
-                    href="https://wa.me/5551999031186" // Link direto para o WhatsApp
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-[#5B21B6] font-medium hover:underline"
-                  >
-                    Iniciar conversa
-                  </a>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Informações de Contato */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-6">Informações</h2>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center space-x-3">
+                  <span className="text-blue-600">📍</span>
+                  <div>
+                    <p className="font-semibold">Endereço</p>
+                    <p className="text-gray-600">{siteConfig.address}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-3">
+                  <span className="text-blue-600">📞</span>
+                  <div>
+                    <p className="font-semibold">Telefone</p>
+                    <p className="text-gray-600">{siteConfig.phone}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-3">
+                  <span className="text-blue-600">✉️</span>
+                  <div>
+                    <p className="font-semibold">Email</p>
+                    <p className="text-gray-600">{siteConfig.email}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-3">
+                  <span className="text-blue-600">🕒</span>
+                  <div>
+                    <p className="font-semibold">Horário de Funcionamento</p>
+                    <p className="text-gray-600">{siteConfig.contact.openingHours}</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Endereço */}
-              <div className="flex items-start space-x-4">
-  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-    <MapPin className="w-6 h-6 text-white" /> {/* <-- Mudança */}
-  </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-brand-secondary">Endereço</h3>
-                  <p className="text-gray-600 text-lg">
-                    [Endereço Completo da Clínica Aqui]
-                    <br />
-                    [Bairro, Cidade - RS]
-                  </p>
-                  <a 
-                    href="https://maps.google.com/?q=[Endereço para o Google Maps]" // Link para o Google Maps
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-[#5B21B6] font-medium hover:underline"
-                  >
-                    Ver no mapa
-                  </a>
-                </div>
-              </div>
-
-              {/* E-mail */}
-              <div className="flex items-start space-x-4">
-  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-    <Mail className="w-6 h-6 text-white" /> {/* <-- Mudança */}
-  </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-brand-secondary">E-mail</h3>
-                  <p className="text-gray-600 text-lg">
-                    [daiane.borges@email.com]
-                  </p>
-                  <a 
-                    href="mailto:[daiane.borges@email.com]"
-                    className="text-[#5B21B6] font-medium hover:underline"
-                  >
-                    Enviar e-mail
-                  </a>
-                </div>
-              </div>
+              {/* Botão WhatsApp */}
+              <a
+                href={`https://wa.me/55${siteConfig.phone.replace(/\D/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition inline-flex items-center space-x-2"
+              >
+                <span>💬</span>
+                <span>Falar no WhatsApp</span>
+              </a>
             </div>
 
-            {/* Coluna da Direita: Formulário */}
-            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-brand-secondary mb-6">Envie uma mensagem</h3>
-              <form action="#" method="POST" className="space-y-6">
+            {/* Formulário de Contato */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-6">Envie uma Mensagem</h2>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nome Completo</label>
-                  <input type="text" name="name" id="name" required 
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
-                    placeholder="Seu nome"
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Nome Completo
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Telefone / WhatsApp</label>
-                  <input type="tel" name="phone" id="phone" required 
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
-                    placeholder="(XX) XXXXX-XXXX"
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensagem</label>
-                  <textarea name="message" id="message" rows={4} required 
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
-                    placeholder="Gostaria de saber mais sobre..."
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Telefone
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Mensagem
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   ></textarea>
                 </div>
 
-                <div>
-                  <button type="submit"
-                    className="w-full bg-[#5B21B6] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition-colors"
-                  >
-                    Enviar Mensagem
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition"
+                >
+                  Enviar Mensagem
+                </button>
               </form>
             </div>
-
           </div>
         </div>
-      </section>
+      </main>
 
-      {/* === Seção do Mapa === */}
-      <section>
-        {/* Este 'iframe' é o que o Google Maps fornece */}
-        {/* Substitua o 'src' pelo link correto */}
-<iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.4097221755833!2d-51.220059899999995!3d-30.1396999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95198375ea8c07e9%3A0xc88bc26c38bedd46!2sfisi%20Vitalit%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1760912250767!5m2!1spt-BR!2sbr"
-  width="100%" 
-  height="450" 
-  style={{ border: 0 }} 
-  allowFullScreen={true} 
-  loading="lazy" 
-  referrerPolicy="no-referrer-when-downgrade"
->
-</iframe>
-      </section>
-    </main>
-  );
+      <Footer />
+    </div>
+  )
 }
