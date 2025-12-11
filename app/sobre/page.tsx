@@ -60,7 +60,7 @@ export default function SobrePage() {
       </AnimatedSection>
 
       {/* === Seção: Nossa Equipe === */}
-      <AnimatedSection className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1F2937] mb-4">Nossa Equipe de Especialistas</h2>
@@ -79,7 +79,7 @@ export default function SobrePage() {
             ))}
           </div>
         </div>
-      </AnimatedSection>
+      </section>
 
       {/* === Seção Missão, Visão, Valores === */}
       <AnimatedSection className="bg-white py-20">
