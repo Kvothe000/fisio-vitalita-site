@@ -1,70 +1,19 @@
-// Arquivo: app/page.tsx (Atualizado para usar ícones Lucide específicos)
-
+// Arquivo: app/page.tsx
 import Link from 'next/link';
 
 // 1. IMPORTAMOS OS ÍCONES NECESSÁRIOS (Hero, Contato e Ícones Específicos de Serviço)
-// No topo do app/page.tsx
-import { ChevronRight, Phone, Mail, MapPin, HeartPulse, Activity, Dna, Users, Award, Sparkles, Target } from 'lucide-react';
+import { ChevronRight, Phone, Mail, MapPin, HeartPulse, Activity, Dna } from 'lucide-react';
 import ServiceCard from '@/components/ServiceCard';
-import Image from 'next/image'; // Adicione esta linha se ainda não existir
-import TestimonialCard from '@/components/TestimonialCard';
+import Image from 'next/image';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import AnimatedSection from '@/components/AnimatedSection';
-
-
-// --- DADOS DOS DIFERENCIAIS ---
-const differentials = [
-  {
-    Icon: Users,
-    title: "Atendimento Humanizado",
-    description: "Cada paciente é único. Oferecemos um cuidado individualizado e atencioso.",
-  },
-  {
-    Icon: Award,
-    title: "Profissionais Qualificados",
-    description: "Nossa equipe é formada por especialistas dedicados à sua recuperação.",
-  },
-  {
-    Icon: Sparkles, // Usando Sparkles para 'Ambiente' ou 'Bem-estar'
-    title: "Ambiente Acolhedor",
-    description: "Um espaço moderno e tranquilo, pensado para seu conforto e bem-estar.",
-  },
-  {
-    Icon: Target, // Usando Target para 'Foco na Causa'
-    title: "Foco na Causa Raiz",
-    description: "Tratamos a origem do problema, não apenas os sintomas, para resultados duradouros.",
-  },
-];
-// -----------------------------
-
-// --- DADOS DOS DEPOIMENTOS (PLACEHOLDERS) ---
-const testimonials = [
-  {
-    quote: "O atendimento na FisioVitalitá foi um divisor de águas na minha recuperação. A Dra. Daiane é extremamente atenciosa e competente.",
-    name: "Maria S.",
-    role: "Paciente de Fisioterapia",
-    imageUrl: "", // Usará placeholder por enquanto
-  },
-  {
-    quote: "As aulas de Pilates me deram muito mais disposição e acabaram com minhas dores nas costas. Ambiente ótimo e profissionais excelentes!",
-    name: "João P.",
-    role: "Aluno de Pilates",
-    imageUrl: "",
-  },
-  {
-    quote: "Encontrei na acupuntura um alívio incrível para minha ansiedade. Recomendo muito a clínica e a abordagem humanizada.",
-    name: "Ana L.",
-    role: "Paciente de Acupuntura",
-    imageUrl: "",
-  },
-];
-// ---------------------------------------------
+import PatientJourney from '@/components/PatientJourney';
+import DifferentialsSection from '@/components/DifferentialsSection';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
 
-      {/* === Seção Hero v2 (Com Imagem) === */}
       {/* === Seção Hero v3 (Premium Full Width) === */}
       <section className="relative w-full h-[600px] flex items-center justify-center">
 
@@ -112,7 +61,6 @@ export default function Home() {
         </div>
       </section>
       {/* === Fim da Seção Hero v3 === */}
-      {/* === Fim da Seção Hero v2 === */}
 
       {/* === Seção Destaque de Serviços === */}
       <AnimatedSection className="py-20 bg-brand-cream">
@@ -127,7 +75,6 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            {/* 2. VOLTAMOS A USAR OS ÍCONES ESPECÍFICOS DO LUCIDE */}
             <ServiceCard
               Icon={HeartPulse}
               title="Fisioterapia"
@@ -153,82 +100,22 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* === Seção: Jornada do Paciente (O que esperar?) === */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-secondary mb-4">
-              Como funciona o tratamento?
-            </h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Entenda nosso processo de cuidado, do primeiro contato até a sua plena recuperação.
-            </p>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-center items-start gap-8 relative">
-            {/* Linha conectora (Desktop) */}
-            <div className="hidden md:block absolute top-12 left-20 right-20 h-0.5 bg-gray-200 -z-10 mx-auto" style={{ width: '80%' }}></div>
-
-            {/* Passo 1 */}
-            <div className="flex-1 w-full flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-[#5B21B6] text-white rounded-full flex items-center justify-center text-3xl font-bold shadow-lg mb-6 border-4 border-white">
-                1
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Avaliação Detalhada</h3>
-              <p className="text-gray-600">
-                Agendamos uma consulta inicial para ouvir sua história, avaliar seus sintomas e entender suas necessidades.
-              </p>
-            </div>
-
-            {/* Passo 2 */}
-            <div className="flex-1 w-full flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-[#5B21B6] text-white rounded-full flex items-center justify-center text-3xl font-bold shadow-lg mb-6 border-4 border-white">
-                2
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Plano Personalizado</h3>
-              <p className="text-gray-600">
-                Criamos um plano de tratamento único, combinando técnicas (ex: Pilates + Acupuntura) para acelerar seus resultados.
-              </p>
-            </div>
-
-            {/* Passo 3 */}
-            <div className="flex-1 w-full flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-[#5B21B6] text-white rounded-full flex items-center justify-center text-3xl font-bold shadow-lg mb-6 border-4 border-white">
-                3
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Tratamento & Alta</h3>
-              <p className="text-gray-600">
-                Iniciamos as sessões focadas na sua evolução constante até você retomar sua qualidade de vida total.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/agendamento"
-              className="inline-block bg-[#5B21B6] text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors shadow-lg"
-            >
-              Começar Minha Jornada
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* === Seção: Jornada do Paciente === */}
+      <PatientJourney />
 
       {/* === Seção Sobre Nós (Confiança) === */}
       <AnimatedSection className="bg-white py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Coluna da Imagem (Atualizada) */}
+              {/* Coluna da Imagem */}
               <div>
-                {/* Usando o componente Image com a foto da sala de terapia */}
-                <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg"> {/* Aumentei um pouco a altura no desktop */}
+                <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src="/gallery/massagem-holisticas.jpg"
                     alt="Ambiente acolhedor da clínica FisioVitalitá"
                     fill
                     className="object-cover object-center"
-                    // Não precisa de 'priority' aqui, pois não é a primeira imagem da página
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
@@ -269,8 +156,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-                  <Phone className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+                <div className="bg-[#5B21B6] p-4 rounded-full">
+                  <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">Telefone / WhatsApp</h3>
@@ -279,8 +166,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-                  <MapPin className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+                <div className="bg-[#5B21B6] p-4 rounded-full">
+                  <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">Endereço</h3>
@@ -291,8 +178,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-                  <Mail className="w-6 h-6 text-white" /> {/* <-- Mudança */}
+                <div className="bg-[#5B21B6] p-4 rounded-full">
+                  <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">E-mail</h3>
@@ -324,15 +211,10 @@ export default function Home() {
           </div>
         </div>
       </AnimatedSection>
-      {/* ... (Hero, Serviços, Sobre, Contato ficam aqui em cima) ... */}
 
-      {/* ======================================= */}
-      {/* === NOVA SEÇÃO: Testemunhos === */}
-      {/* ======================================= */}
-      <AnimatedSection className="bg-white py-20"> {/* Fundo branco para contrastar */}
+      {/* === Seção: Testemunhos === */}
+      <AnimatedSection className="bg-white py-20">
         <div className="container mx-auto px-6">
-
-          {/* Título da Seção */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
               O que nossos pacientes dizem
@@ -341,57 +223,13 @@ export default function Home() {
               Histórias reais de recuperação e bem-estar.
             </p>
           </div>
-
-          {/* Carrossel de Depoimentos */}
           <TestimonialCarousel />
-
-          {/* (Removido Grid Estático Anterior) */}
         </div>
       </AnimatedSection>
       {/* === Fim da Seção de Testemunhos === */}
 
-      {/* ... (Hero, Serviços, Sobre, Testemunhos, Contato ficam aqui em cima) ... */}
-
-      {/* ======================================= */}
-      {/* === NOVA SEÇÃO: Diferenciais === */}
-      {/* ======================================= */}
-      <AnimatedSection className="bg-gray-50 py-20"> {/* Voltando para fundo cinza */}
-        <div className="container mx-auto px-6">
-
-          {/* Título da Seção */}
-          <div className="text-center mb-16"> {/* Aumentei a margem inferior */}
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
-              Por que escolher a FisioVitalitá?
-            </h2>
-            <p className="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">
-              Nosso compromisso vai além do tratamento. Cuidamos de você de forma integral.
-            </p>
-          </div>
-
-          {/* Grid de Diferenciais */}
-          {/* 4 colunas no desktop, 2 no tablet, 1 no mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-            {differentials.map((item) => (
-              <div key={item.title} className="text-center px-4">
-                {/* Ícone */}
-                <div className="flex justify-center items-center mb-4">
-                  {/* Usando o nosso novo estilo de ícone */}
-                  <div className="bg-[#5B21B6] p-4 rounded-full">
-                    <item.Icon className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                {/* Título */}
-                <h3 className="text-xl font-bold text-[#1F2937] mb-2">{item.title}</h3>
-                {/* Descrição */}
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </AnimatedSection>
-      {/* === Fim da Seção de Diferenciais === */}
+      {/* === Seção: Diferenciais === */}
+      <DifferentialsSection />
 
     </main>
   );

@@ -1,4 +1,4 @@
-// Arquivo: app/servicos/terapias-holisticas/page.tsx (CORRIGIDO DE NOVO)
+// Arquivo: app/servicos/terapias-holisticas/page.tsx
 import Image from 'next/image';
 import ServiceCTA from '@/components/ServiceCTA';
 import FAQ from '@/components/FAQ';
@@ -13,20 +13,30 @@ const holisticasFAQ = [
 export default function TerapiasHolisticasPage() {
   return (
     <article>
-
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
           src="/gallery/massagem-holisticas.jpg"
-          alt="Sala de Massoterapia da FisioVitalitá"
+          alt="Sala de Terapias Holísticas da FisioVitalitá"
           fill
-
-          // === A MUDANÇA ESTÁ AQUI ===
-          // Removemos 'style={{ objectFit: 'cover' }}' e usamos classes
-          // 'object-cover' = (Não esticar)
-          // 'object-center' = (Focar o corte no centro da imagem)
           className="object-cover object-center"
-
           priority
+        />
+      </div>
+
+      <h1 className="text-4xl font-bold text-brand-secondary mb-4">
+        Terapias Holísticas
+      </h1>
+      <p className="text-xl text-gray-600 mb-8">
+        Equilíbrio energético e emocional para uma vida mais plena e leve.
+      </p>
+
+      <div className="space-y-6 text-gray-700 text-lg">
+        <h2 className="text-2xl font-bold text-brand-secondary">O que são Terapias Holísticas?</h2>
+        <p>
+          São abordagens que tratam o ser humano como um todo: corpo, mente e energia.
+          Na FisioVitalitá, oferecemos Reiki, Barras de Access e Terapia Floral para
+          ajudar você a reencontrar seu eixo e viver com mais harmonia.
+        </p>
 
         <h2 className="text-2xl font-bold text-brand-secondary">Para Quem é Indicado?</h2>
         <p>
@@ -37,7 +47,9 @@ export default function TerapiasHolisticasPage() {
         </p>
       </div>
 
+      <FAQ items={holisticasFAQ} title="Dúvidas sobre Terapias Holísticas" />
+
       <ServiceCTA />
-    </article >
+    </article>
   );
 }
