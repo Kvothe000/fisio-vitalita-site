@@ -1,5 +1,6 @@
 // Arquivo: app/servicos/pilates/page.tsx
 import Image from 'next/image'; // Adicione no topo do arquivo
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function PilatesPage() {
   return (
@@ -60,6 +61,9 @@ export default function PilatesPage() {
           atendimento personalizado e a correta execução dos movimentos.
         </p>
       </div>
-    </article>
+      </div>
+      
+      <ServiceCTA />
+    </article >
   );
 }

@@ -1,4 +1,5 @@
 // Arquivo: app/servicos/acupuntura/page.tsx
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function AcupunturaPage() {
   return (
@@ -49,6 +50,9 @@ export default function AcupunturaPage() {
           relaxante e restaurador.
         </p>
       </div>
-    </article>
+      </div>
+
+      <ServiceCTA />
+    </article >
   );
 }

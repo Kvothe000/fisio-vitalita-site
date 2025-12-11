@@ -1,5 +1,6 @@
 // Arquivo: app/contato/page.tsx
-import { Phone, Mail, MapPin } from 'lucide-react'; // Importe os ícones
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { siteInfo } from '@/config/site-info';
 
 export default function ContatoPage() {
   return (
@@ -21,26 +22,23 @@ export default function ContatoPage() {
       <section className="py-20">
         <div className="container mx-auto px-6">
 
-          {/* Copiamos esta estrutura da Home Page */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
 
             {/* Coluna da Esquerda: Informações de Contato */}
-            <div className="space-y-6">
-              {/* Telefone (com link) */}
-              <div className="flex items-start space-x-4">
-  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-    <Phone className="w-6 h-6 text-white" /> {/* <-- Mudança */}
-  </div>
+            <div className="space-y-8">
+              {/* Telefone */}
+              <div className="flex items-start space-x-4 p-6 bg-purple-50 rounded-2xl border border-purple-100 transition-all hover:shadow-md">
+                <div className="bg-[#5B21B6] p-3 rounded-full shrink-0">
+                  <Phone className="w-6 h-6 text-white" />
+                </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-brand-secondary">Telefone / WhatsApp</h3>
-                  <p className="text-gray-600 text-lg">
-                    (51) 9990 31186
-                  </p>
-                  <a 
-                    href="https://wa.me/5551999031186" // Link direto para o WhatsApp
-                    target="_blank" 
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Telefone / WhatsApp</h3>
+                  <p className="text-gray-600 mb-2">{siteInfo.contact.phone}</p>
+                  <a
+                    href={`https://wa.me/${siteInfo.contact.waPhone}`}
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#5B21B6] font-medium hover:underline"
+                    className="text-[#5B21B6] font-semibold hover:text-[#4c1d95] hover:underline inline-flex items-center"
                   >
                     Iniciar conversa
                   </a>
@@ -48,22 +46,24 @@ export default function ContatoPage() {
               </div>
 
               {/* Endereço */}
-              <div className="flex items-start space-x-4">
-  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-    <MapPin className="w-6 h-6 text-white" /> {/* <-- Mudança */}
-  </div>
+              <div className="flex items-start space-x-4 p-6 bg-purple-50 rounded-2xl border border-purple-100 transition-all hover:shadow-md">
+                <div className="bg-[#5B21B6] p-3 rounded-full shrink-0">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-brand-secondary">Endereço</h3>
-                  <p className="text-gray-600 text-lg">
-                    [Endereço Completo da Clínica Aqui]
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Endereço</h3>
+                  <p className="text-gray-600 mb-2">
+                    {siteInfo.address.street}, {siteInfo.address.number}
                     <br />
-                    [Bairro, Cidade - RS]
+                    {siteInfo.address.city} - {siteInfo.address.state}
+                    <br />
+                    CEP: {siteInfo.address.zip}
                   </p>
-                  <a 
-                    href="https://maps.google.com/?q=[Endereço para o Google Maps]" // Link para o Google Maps
-                    target="_blank" 
+                  <a
+                    href="https://maps.app.goo.gl/uXj9Xxxxxxx" // Placeholder ideal, mas o iframe abaixo resolve
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#5B21B6] font-medium hover:underline"
+                    className="text-[#5B21B6] font-semibold hover:text-[#4c1d95] hover:underline"
                   >
                     Ver no mapa
                   </a>
@@ -71,18 +71,18 @@ export default function ContatoPage() {
               </div>
 
               {/* E-mail */}
-              <div className="flex items-start space-x-4">
-  <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-    <Mail className="w-6 h-6 text-white" /> {/* <-- Mudança */}
-  </div>
+              <div className="flex items-start space-x-4 p-6 bg-purple-50 rounded-2xl border border-purple-100 transition-all hover:shadow-md">
+                <div className="bg-[#5B21B6] p-3 rounded-full shrink-0">
+                  <Mail className="w-6 h-6 text-white" />
+                </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-brand-secondary">E-mail</h3>
-                  <p className="text-gray-600 text-lg">
-                    [daiane.borges@email.com]
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">E-mail</h3>
+                  <p className="text-gray-600 mb-2">
+                    {siteInfo.contact.email}
                   </p>
-                  <a 
-                    href="mailto:[daiane.borges@email.com]"
-                    className="text-[#5B21B6] font-medium hover:underline"
+                  <a
+                    href={`mailto:${siteInfo.contact.email}`}
+                    className="text-[#5B21B6] font-semibold hover:text-[#4c1d95] hover:underline"
                   >
                     Enviar e-mail
                   </a>
@@ -91,40 +91,40 @@ export default function ContatoPage() {
             </div>
 
             {/* Coluna da Direita: Formulário */}
-            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-brand-secondary mb-6">Envie uma mensagem</h3>
+            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Envie uma mensagem</h3>
+              <p className="text-gray-500 mb-8">Preencha o formulário abaixo e entraremos em contato em breve.</p>
+
               <form action="#" method="POST" className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nome Completo</label>
-                  <input type="text" name="name" id="name" required 
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Nome Completo</label>
+                  <input type="text" name="name" id="name" required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400"
                     placeholder="Seu nome"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Telefone / WhatsApp</label>
-                  <input type="tel" name="phone" id="phone" required 
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">Telefone / WhatsApp</label>
+                  <input type="tel" name="phone" id="phone" required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400"
                     placeholder="(XX) XXXXX-XXXX"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensagem</label>
-                  <textarea name="message" id="message" rows={4} required 
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]"
-                    placeholder="Gostaria de saber mais sobre..."
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Mensagem</label>
+                  <textarea name="message" id="message" rows={4} required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400 resize-none"
+                    placeholder="Gostaria de agendar uma avaliação..."
                   ></textarea>
                 </div>
 
-                <div>
-                  <button type="submit"
-                    className="w-full bg-[#5B21B6] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition-colors"
-                  >
-                    Enviar Mensagem
-                  </button>
-                </div>
+                <button type="submit"
+                  className="w-full bg-[#5B21B6] text-white font-bold py-4 rounded-xl hover:bg-[#4c1d95] transform hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl"
+                >
+                  Enviar Mensagem
+                </button>
               </form>
             </div>
 
@@ -133,19 +133,19 @@ export default function ContatoPage() {
       </section>
 
       {/* === Seção do Mapa === */}
-      <section>
-        {/* Este 'iframe' é o que o Google Maps fornece */}
-        {/* Substitua o 'src' pelo link correto */}
-<iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.4097221755833!2d-51.220059899999995!3d-30.1396999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95198375ea8c07e9%3A0xc88bc26c38bedd46!2sfisi%20Vitalit%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1760912250767!5m2!1spt-BR!2sbr"
-  width="100%" 
-  height="450" 
-  style={{ border: 0 }} 
-  allowFullScreen={true} 
-  loading="lazy" 
-  referrerPolicy="no-referrer-when-downgrade"
->
-</iframe>
+      <section className="h-96 w-full relative bg-gray-200">
+        <iframe
+          title="Localização FisioVitalitá"
+          src="https://maps.google.com/maps?q=Av.+Juca+Batista+662,+Porto+Alegre+-+RS&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="grayscale hover:grayscale-0 transition-all duration-700"
+        >
+        </iframe>
       </section>
     </main>
   );

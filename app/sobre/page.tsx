@@ -1,6 +1,9 @@
 // Arquivo: app/sobre/page.tsx
-import { Eye, Rocket, Gem } from 'lucide-react'; // Ícones para Visão, Missão, Valores
+import { Eye, Rocket, Gem } from 'lucide-react';
 import Image from 'next/image';
+import TeamMember from '@/components/TeamMember';
+import { teamData } from '@/config/team';
+import AnimatedSection from '@/components/AnimatedSection';
 
 export default function SobrePage() {
   return (
@@ -19,7 +22,7 @@ export default function SobrePage() {
       </section>
 
       {/* === Seção de Detalhes (Texto + Imagem) === */}
-      <section className="py-20">
+      <AnimatedSection className="py-20">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
           {/* Coluna do Texto */}
@@ -42,34 +45,53 @@ export default function SobrePage() {
 
           {/* Coluna da Imagem */}
           <div>
-           {/* Coluna da Imagem (Atualizada) */}
-<div>
-  <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg">
-    <Image 
-      src="/gallery/fisioterapia-pilates.jpg" 
-      alt="Sala de equipamentos da FisioVitalitá" 
-      fill 
-      className="object-cover object-center" 
-      sizes="(max-width: 768px) 100vw, 50vw"
-    />
-  </div>
-</div>
+            <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/gallery/fisioterapia-pilates.jpg"
+                alt="Sala de equipamentos da FisioVitalitá"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
 
         </div>
-      </section>
+      </AnimatedSection>
+
+      {/* === Seção: Nossa Equipe === */}
+      <AnimatedSection className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#1F2937] mb-4">Nossa Equipe de Especialistas</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Conheça os profissionais apaixonados que fazem da FisioVitalitá um lugar de cura e bem-estar.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-12">
+            {teamData.map((member, index) => (
+              <TeamMember
+                key={member.name}
+                member={member}
+                isReversed={index % 2 !== 0} // Alterna o layout (Foto na esquerda / direita)
+              />
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
 
       {/* === Seção Missão, Visão, Valores === */}
-      <section className="bg-gray-50 py-20">
+      <AnimatedSection className="bg-white py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
 
             {/* Missão */}
             <div className="p-6">
               <div className="flex justify-center items-center mb-4">
-    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-      <Rocket className="w-8 h-8 text-white" /> {/* <-- Mudança */}
-    </div>
+                <div className="bg-[#5B21B6] p-4 rounded-full">
+                  <Rocket className="w-8 h-8 text-white" />
+                </div>
               </div>
               <h3 className="text-2xl font-bold text-brand-secondary mb-2">Missão</h3>
               <p className="text-gray-600">
@@ -80,9 +102,9 @@ export default function SobrePage() {
             {/* Visão */}
             <div className="p-6">
               <div className="flex justify-center items-center mb-4">
-    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-      <Eye className="w-8 h-8 text-white" /> {/* <-- Mudança */}
-    </div>
+                <div className="bg-[#5B21B6] p-4 rounded-full">
+                  <Eye className="w-8 h-8 text-white" />
+                </div>
               </div>
               <h3 className="text-2xl font-bold text-brand-secondary mb-2">Visão</h3>
               <p className="text-gray-600">
@@ -93,9 +115,9 @@ export default function SobrePage() {
             {/* Valores */}
             <div className="p-6">
               <div className="flex justify-center items-center mb-4">
-    <div className="bg-[#5B21B6] p-4 rounded-full"> {/* <-- Mudança */}
-      <Gem className="w-8 h-8 text-white" /> {/* <-- Mudança */}
-    </div>
+                <div className="bg-[#5B21B6] p-4 rounded-full">
+                  <Gem className="w-8 h-8 text-white" />
+                </div>
               </div>
               <h3 className="text-2xl font-bold text-brand-secondary mb-2">Valores</h3>
               <p className="text-gray-600">
@@ -105,9 +127,7 @@ export default function SobrePage() {
 
           </div>
         </div>
-      </section>
-
-      {/* (Poderíamos adicionar uma seção de "Equipe" aqui, mas é melhor ela ter a própria página /equipe) */}
+      </AnimatedSection>
 
     </main>
   );

@@ -1,5 +1,6 @@
 // Arquivo: app/servicos/terapias-holisticas/page.tsx (CORRIGIDO DE NOVO)
 import Image from 'next/image';
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function TerapiasHolisticasPage() {
   return (
@@ -62,6 +63,9 @@ export default function TerapiasHolisticasPage() {
           equilibrada e consciente.
         </p>
       </div>
-    </article>
+      </div>
+      
+      <ServiceCTA />
+    </article >
   );
 }

@@ -1,24 +1,23 @@
-// Arquivo: app/estrutura/page.tsx
-import Image from 'next/image';
+"use client"; // Necessário para o Lightbox (useState)
 
-// --- TAREFA: ATUALIZE ESTE ARRAY ---
-// Coloque os nomes exatos dos arquivos de imagem que você colocou na pasta /public/gallery/
-// Adicione uma descrição para cada imagem (bom para acessibilidade e SEO)
-// SUBSTITUA O ARRAY 'galleryImages' ANTIGO POR ESTE:
+import Image from 'next/image';
+import { useState } from 'react';
+import { X } from 'lucide-react';
+
 const galleryImages = [
-  { src: "/gallery/fachada.jpg", alt: "Fachada da clínica FisioVitalitá" },
-  { src: "/gallery/fisioterapia-pilates.jpg", alt: "Equipamentos de Pilates e Fisioterapia" },
-  { src: "/gallery/massagem-holisticas.jpg", alt: "Sala de massoterapia e terapias holísticas" },
-  // Adicione mais fotos aqui quando ela te mandar
+  { src: "/gallery/fachada.jpg", alt: "Fachada da FisioVitalitá", span: "col-span-1 md:col-span-2 row-span-2" },
+  { src: "/gallery/fisioterapia-pilates.jpg", alt: "Espaço de Pilates e Fisioterapia", span: "col-span-1" },
+  { src: "/gallery/foto-pilates.jpg", alt: "Equipamentos de Pilates", span: "col-span-1" },
+  { src: "/gallery/massagem-holisticas.jpg", alt: "Sala de Massoterapia", span: "col-span-1 md:col-span-2" },
 ];
-// ------------------------------------
-// ------------------------------------
 
 export default function EstruturaPage() {
+  const [selectedImage, setSelectedImage] = useState<null | typeof galleryImages[0]>(null);
+
   return (
     <main className="min-h-screen bg-gray-50">
 
-      {/* === Seção Hero da Página "Estrutura" === */}
+      {/* === Seção Hero === */}
       <section className="bg-white py-20 text-center">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-brand-secondary">
@@ -30,46 +29,67 @@ export default function EstruturaPage() {
         </div>
       </section>
 
-          
-          {/* === Seção da Galeria === */}
-          <section className="py-20">
-            <div className="container mx-auto px-6">
-              
-              {/* A MUDANÇA ESTÁ AQUI:
-                Troquei 'columns-...' por 'grid'.
-                Isso força todas as "caixas" de imagem a terem o mesmo tamanho.
-              */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                
-                {galleryImages.map((image) => (
-                  // Este 'div' é a "caixa" que define o tamanho
-                  <div 
-                    key={image.src} 
-                    className="relative w-full h-72 rounded-lg overflow-hidden shadow-lg
-                               transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-                  >
-                    <Image 
-                      src={image.src} 
-                      alt={image.alt}
-                      fill // "fill" para preencher o <div>
-                      style={{ objectFit: 'cover' }} // "cover" para cortar e não esticar
-                      
-                      // O 'sizes' ajuda o Next.js a carregar a imagem do tamanho certo
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    />
-                  </div>
-                ))}
+      {/* === Seção da Galeria === */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-6">
 
-                {/* --- Caso não tenha imagens ainda, use este placeholder --- */}
-                {galleryImages.length === 0 && (
-                  <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                    <span className="text-gray-500">Galeria de fotos em breve...</span>
-                  </div>
-                )}
-                
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
+
+            {galleryImages.map((image, index) => (
+              <div
+                key={image.src}
+                className={`relative group rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 ${image.span}`}
+                onClick={() => setSelectedImage(image)}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 font-semibold tracking-wider transition-opacity duration-300 bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
+                    Ver Foto
+                  </span>
+                </div>
               </div>
-            </div>
-          </section>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* === Lightbox Modal === */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-50 bg-black/50 p-2 rounded-full"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          <div
+            className="relative w-full max-w-5xl aspect-video rounded-lg overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()} // Impede que o clique na imagem feche o modal
+          >
+            <Image
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              fill
+              className="object-contain"
+              quality={100}
+            />
+          </div>
+          <p className="absolute bottom-8 text-white text-lg font-medium bg-black/50 px-6 py-2 rounded-full">
+            {selectedImage.alt}
+          </p>
+        </div>
+      )}
     </main>
   );
 }

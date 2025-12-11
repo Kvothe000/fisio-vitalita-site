@@ -1,5 +1,6 @@
 // Arquivo: app/servicos/massoterapia/page.tsx
 import Image from 'next/image';
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function MassoterapiaPage() {
   return (
@@ -54,6 +55,9 @@ export default function MassoterapiaPage() {
           melhora a qualidade do sono e aumenta a sensação geral de bem-estar.
         </p>
       </div>
-    </article>
+      </div>
+      
+      <ServiceCTA />
+    </article >
   );
 }

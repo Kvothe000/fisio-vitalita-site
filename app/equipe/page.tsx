@@ -1,36 +1,5 @@
-// Arquivo: app/equipe/page.tsx
-import TeamMemberCard from '@/components/TeamMemberCard';
-
-// Vamos usar este array como placeholder.
-// Assim que você tiver as fotos e infos, só precisamos atualizar aqui.
-const teamMembers = [
-  {
-    name: "Dra. Daiane Borges",
-    title: "Fisioterapeuta",
-    crefito: "CREFITO 84.007",
-    imageUrl: "", // Deixe em branco para usar o placeholder
-  },
-  // ...
-  {
-    name: "Matheus (Dev de Teste)",
-    title: "Desenvolvedor Web",
-    crefito: "GitHub: Kvothe000",
-    imageUrl: "/team/minha-foto-teste.jpg", // <--- O CAMINHO CORRETO
-  },
-// ...
-  {
-    name: "Profissional 3",
-    title: "Especialidade (ex: Acupuntura)",
-    crefito: "Registro Profissional",
-    imageUrl: "",
-  },
-  {
-    name: "Profissional 4",
-    title: "Especialidade (ex: Massoterapia)",
-    crefito: "Registro Profissional",
-    imageUrl: "",
-  },
-];
+import TeamMember from '@/components/TeamMember';
+import { teamData } from '@/config/team';
 
 export default function EquipePage() {
   return (
@@ -43,29 +12,22 @@ export default function EquipePage() {
             Nossa Equipe
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-            Profissionais dedicados e qualificados, prontos para cuidar de você.
+            Conheça os profissionais dedicados e altamente qualificados que cuidarão da sua saúde e bem-estar.
           </p>
         </div>
       </section>
 
-      {/* === Seção dos Cards da Equipe === */}
-      <section className="py-20">
+      {/* === Lista Detalhada da Equipe === */}
+      <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-6">
-
-          {/* Grid de Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-
-            {/* Usamos .map() para criar um card para cada item do nosso array */}
-            {teamMembers.map((member) => (
-              <TeamMemberCard 
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 space-y-12">
+            {teamData.map((member, index) => (
+              <TeamMember
                 key={member.name}
-                name={member.name}
-                title={member.title}
-                crefito={member.crefito}
-                imageUrl={member.imageUrl}
+                member={member}
+                isReversed={index % 2 !== 0}
               />
             ))}
-
           </div>
         </div>
       </section>
