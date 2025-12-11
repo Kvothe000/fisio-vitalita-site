@@ -1,6 +1,14 @@
 // Arquivo: app/servicos/massoterapia/page.tsx
 import Image from 'next/image';
 import ServiceCTA from '@/components/ServiceCTA';
+import FAQ from '@/components/FAQ';
+
+const massoterapiaFAQ = [
+  { question: "Qual a diferença entre Massagem Relaxante e Terapêutica?", answer: "A Relaxante foca no alívio do estresse e bem-estar geral com movimentos suaves. A Terapêutica é mais profunda e localizada, focando em soltar nódulos de tensão (trigger points) e tratar dores musculares específicas." },
+  { question: "A drenagem linfática emagrece?", answer: "A drenagem elimina a retenção de líquidos e toxinas, desinchando o corpo e melhorando o contorno corporal. Ela não remove gordura, mas ajuda muito na redução de medidas pelo desinchaço." },
+  { question: "Massagem dói?", answer: "A massagem relaxante não deve doer. A terapêutica ou desportiva pode gerar um leve desconforto nos pontos de maior tensão, que é seguido de uma sensação de alívio imediato." },
+  { question: "Quanto tempo dura a sessão?", answer: "Nossas sessões de massoterapia geralmente duram 60 minutos, proporcionando um relaxamento completo." },
+];
 
 export default function MassoterapiaPage() {
   return (
@@ -55,6 +63,8 @@ export default function MassoterapiaPage() {
           melhora a qualidade do sono e aumenta a sensação geral de bem-estar.
         </p>
       </div>
+
+      <FAQ items={massoterapiaFAQ} title="Dúvidas sobre Massoterapia" />
 
       <ServiceCTA />
     </article >

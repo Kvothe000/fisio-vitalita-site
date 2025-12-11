@@ -1,6 +1,26 @@
 // Arquivo: app/servicos/fisioterapia/page.tsx
 import Image from 'next/image'; // Adicione no topo do arquivo
 import ServiceCTA from '@/components/ServiceCTA';
+import FAQ from '@/components/FAQ';
+
+const fisioterapiaFAQ = [
+  {
+    question: "Preciso de encaminhamento médico para fazer fisioterapia?",
+    answer: "Não é obrigatório, mas se você tiver exames ou encaminhamento, traga no primeiro dia. Nossa equipe fará uma avaliação completa para traçar o melhor tratamento."
+  },
+  {
+    question: "Quanto tempo dura cada sessão?",
+    answer: "As sessões duram em média 50 a 60 minutos, garantindo tempo suficiente para terapia manual, exercícios e orientações."
+  },
+  {
+    question: "A fisioterapia dói?",
+    answer: "O objetivo é aliviar a dor, não causá-la. Algumas técnicas podem gerar um leve desconforto inicial, mas sempre respeitaremos seu limite de dor."
+  },
+  {
+    question: "Quantas sessões são necessárias?",
+    answer: "Varia conforme o diagnóstico e a evolução de cada paciente. Na avaliação inicial, o fisioterapeuta poderá dar uma estimativa mais precisa."
+  },
+];
 
 export default function FisioterapiaPage() {
   return (
@@ -61,6 +81,8 @@ export default function FisioterapiaPage() {
           do seu problema, não apenas os sintomas.
         </p>
       </div>
+
+      <FAQ items={fisioterapiaFAQ} title="Dúvidas sobre Fisioterapia" />
 
       <ServiceCTA />
     </article>

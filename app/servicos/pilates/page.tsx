@@ -1,29 +1,25 @@
 // Arquivo: app/servicos/pilates/page.tsx
-import Image from 'next/image'; // Adicione no topo do arquivo
+import Image from 'next/image';
 import ServiceCTA from '@/components/ServiceCTA';
+import FAQ from '@/components/FAQ';
+
+const pilatesFAQ = [
+  { question: "O Pilates serve para quem tem dor nas costas?", answer: "Sim! O Pilates é excelente para o tratamento de dores na coluna, pois fortalece a musculatura profunda (core) que sustenta as vértebras, além de melhorar a postura e a flexibilidade." },
+  { question: "Quantas vezes por semana devo praticar?", answer: "Para resultados consistentes e reabilitação, recomendamos de 2 a 3 vezes por semana. No entanto, mesmo com 1 vez por semana já é possível sentir benefícios na consciência corporal." },
+  { question: "É Pilates Solo ou com Aparelhos?", answer: "Na FisioVitalitá trabalhamos com o Studio completo (Cadillac, Reformer, Chair) e também exercícios de solo e acessórios, adaptando a aula para sua necessidade específica." },
+  { question: "Preciso de avaliação médica antes?", answer: "Embora não seja obrigatório, é recomendado trazer seus exames caso tenha alguma lesão específica. Nossa equipe fará uma avaliação funcional completa no seu primeiro dia." },
+];
 
 export default function PilatesPage() {
   return (
     <article>
-
-      {/* Este 'div' é a "caixa" ou "janela" da imagem. 
-    Ele é 'relative' para o Next.js saber onde a imagem deve preencher.
-    Ele tem uma altura fixa ('h-80' = 320px)
-    Ele tem 'overflow-hidden' para "cortar" o que sobrar da imagem.
-*/}
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
-          // Use o 'src' correto para cada página
           src="/gallery/fisioterapia-pilates.jpg"
           alt="Sala de Fisioterapia e Pilates da FisioVitalitá"
-
-          fill // "fill" faz a imagem preencher o 'div' pai
-
-          // "cover" é a mágica: ele cobre a área, mantém o aspect ratio,
-          // e NUNCA estica a imagem. Ele "corta" as sobras.
+          fill
           style={{ objectFit: 'cover' }}
-
-          priority // Carrega esta imagem principal mais rápido
+          priority
           sizes="(max-width: 768px) 100vw, 75vw"
         />
       </div>
@@ -35,7 +31,6 @@ export default function PilatesPage() {
         Fortalecimento do core, melhora da postura e aumento da flexibilidade.
       </p>
 
-      {/* Conteúdo do Serviço */}
       <div className="space-y-6 text-gray-700 text-lg">
         <h2 className="text-2xl font-bold text-brand-secondary">O que é Pilates?</h2>
         <p>
@@ -61,6 +56,8 @@ export default function PilatesPage() {
           atendimento personalizado e a correta execução dos movimentos.
         </p>
       </div>
+
+      <FAQ items={pilatesFAQ} title="Dúvidas sobre Pilates" />
 
       <ServiceCTA />
     </article >

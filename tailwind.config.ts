@@ -14,6 +14,10 @@ const config = {
         'brand-primary': '#5B21B6',
         'brand-secondary': '#1F2937',
         'brand-accent': '#D2B48C',
+        'brand-cream': '#F9F7F5', // Novo tom quente off-white
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
       },
     },
   },

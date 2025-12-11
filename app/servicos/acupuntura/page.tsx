@@ -1,5 +1,13 @@
 // Arquivo: app/servicos/acupuntura/page.tsx
 import ServiceCTA from '@/components/ServiceCTA';
+import FAQ from '@/components/FAQ';
+
+const acupunturaFAQ = [
+  { question: "As agulhas doem?", answer: "Geralmente não. As agulhas são extremamente finas (como fios de cabelo). Você pode sentir um leve 'choquinho' ou peso no local, que indica a ativação do ponto, mas é muito suportável." },
+  { question: "Para que serve a Acupuntura?", answer: "Ela é eficaz para dores físicas (coluna, cabeça, articulações), problemas emocionais (ansiedade, estresse, insônia) e distúrbios sistêmicos (digestão, TPM, rinite)." },
+  { question: "Quantas sessões são necessárias?", answer: "Depende da cronicidade do problema. Em geral, indicamos um ciclo inicial de 5 a 10 sessões, sendo reavaliado constantemente. Casos agudos podem melhorar já na primeira sessão." },
+  { question: "Tem contraindicação?", answer: "Existem pouquíssimas contraindicações. Gestantes podem fazer (com pontos específicos evitados). É importante informar se você usa marcapasso ou tem distúrbios de coagulação." },
+];
 
 export default function AcupunturaPage() {
   return (

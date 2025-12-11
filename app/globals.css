@@ -1,2 +1,29 @@
-/* Arquivo: app/globals.css */
 @import "tailwindcss";
+
+@layer utilities {
+  /* Estilos de Alto Contraste */
+  body.high-contrast {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+  }
+
+  body.high-contrast * {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+    border-color: #FFFF00 !important;
+    box-shadow: none !important;
+  }
+  
+  body.high-contrast img {
+    filter: grayscale(100%) contrast(120%);
+  }
+
+  body.high-contrast a {
+    text-decoration: underline !important;
+    font-weight: bold !important;
+  }
+  
+  body.high-contrast button {
+    border: 2px solid #FFFF00 !important;
+  }
+}

@@ -7,6 +7,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import AccessibilityToolbar from '@/components/AccessibilityToolbar';
 import JsonLd from '@/components/JsonLd';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -53,6 +54,7 @@ export default function RootLayout({
         <main>{children}</main>
 
         <WhatsAppButton />
+        <AccessibilityToolbar />
 
         {/* 3. ADICIONE O FOOTER AQUI */}
         <Footer />
