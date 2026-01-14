@@ -7,6 +7,7 @@ const outfit = Outfit({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
   description: 'Clínica especializada em Fisioterapia, Pilates, Acupuntura, Massoterapia e Terapias Holísticas em Porto Alegre. Recupere seu bem-estar com a Dra. Daiane Borges.',
+  metadataBase: new URL('https://fisio-vitalita.vercel.app'), // URL base para resolver imagens sociais
   keywords: ['Fisioterapia', 'Pilates', 'Acupuntura', 'Massoterapia', 'Porto Alegre', 'Zona Sul', 'Dra. Daiane Borges', 'FisioVitalitá'],
   openGraph: {
     title: 'FisioVitalitá - Sua Saúde em Equilíbrio',

@@ -29,10 +29,10 @@ export default function AcupunturaPage() {
       <div className="space-y-6 text-gray-700 text-lg">
         <h2 className="text-2xl font-bold text-brand-secondary">O que é Acupuntura?</h2>
         <p>
-          A Acupuntura é uma terapia milenar originária da Medicina Tradicional
-          Chinesa, que consiste na aplicação de agulhas muito finas em pontos
-          específicos do corpo. O objetivo é estimular as terminações nervosas,
-          promovendo o reequilíbrio energético e a homeostase do organismo.
+          A Acupuntura é uma terapia milenar originária da Medicina Tradicional Chinesa, que consiste na aplicação de agulhas muito finas em pontos específicos do corpo ou aplicação de calor (moxabustão), para promover saúde e tratar doenças.
+        </p>
+        <p>
+          O objetivo principal é estimular e equilibrar o fluxo de energia vital, conhecida como <strong>Qi</strong>, que percorre canais específicos chamados meridianos. A acupuntura é reconhecida pela Organização Mundial da Saúde (OMS) desde 1991 como um tratamento complementar eficaz.
         </p>
 
         <h2 className="text-2xl font-bold text-brand-secondary">Como funciona e o que trata?</h2>
@@ -51,14 +51,13 @@ export default function AcupunturaPage() {
 
         <h2 className="text-2xl font-bold text-brand-secondary">Nossa Abordagem</h2>
         <p>
-          Na FisioVitalitá, a Acupuntura é realizada por profissionais
-          fisioterapeutas com especialização na área. Utilizamos materiais
-          totalmente descartáveis e seguimos um rigoroso protocolo de
-          segurança e higiene. A sessão é projetada para ser um momento
-          relaxante e restaurador.
+          Na FisioVitalitá, a Acupuntura é realizada por profissional habilitado, fisioterapeuta com especialização na área.
+          Utilizamos <strong>materiais totalmente descartáveis</strong> e seguimos um rigoroso protocolo de segurança e higiene.
+          A CONSULTA é individual, com uma avaliação prévia para traçar o plano de tratamento. É um momento relaxante e restaurador.
         </p>
       </div>
 
+      <FAQ items={acupunturaFAQ} title="Dúvidas Frequentes" />
       <ServiceCTA />
     </article >
   );

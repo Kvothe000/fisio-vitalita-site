@@ -5,19 +5,15 @@ import FAQ from '@/components/FAQ';
 
 const fisioterapiaFAQ = [
   {
-    question: "Preciso de encaminhamento médico para fazer fisioterapia?",
-    answer: "Não é obrigatório, mas se você tiver exames ou encaminhamento, traga no primeiro dia. Nossa equipe fará uma avaliação completa para traçar o melhor tratamento."
+    question: "Quanto tempo dura cada consulta?",
+    answer: "As consultas têm duração média de 50 minutos, garantindo tempo suficiente para terapia manual, exercícios, recursos de eletrofototermoterapia e orientações."
   },
   {
-    question: "Quanto tempo dura cada sessão?",
-    answer: "As sessões duram em média 50 a 60 minutos, garantindo tempo suficiente para terapia manual, exercícios e orientações."
+    question: "Preciso de encaminhamento médico?",
+    answer: "Não é obrigatório, mas se tiver exames ou encaminhamento, traga no primeiro dia. Nossa avaliação é completa para traçar o melhor plano de tratamento."
   },
   {
-    question: "A fisioterapia dói?",
-    answer: "O objetivo é aliviar a dor, não causá-la. Algumas técnicas podem gerar um leve desconforto inicial, mas sempre respeitaremos seu limite de dor."
-  },
-  {
-    question: "Quantas sessões são necessárias?",
+    question: "Quantas consultas são necessárias?",
     answer: "Varia conforme o diagnóstico e a evolução de cada paciente. Na avaliação inicial, o fisioterapeuta poderá dar uma estimativa mais precisa."
   },
 ];
@@ -59,26 +55,28 @@ export default function FisioterapiaPage() {
       {/* Conteúdo do Serviço */}
       <div className="space-y-6 text-gray-700 text-lg">
         <h2 className="text-2xl font-bold text-brand-secondary">O que é Fisioterapia?</h2>
-        <p>
-          A fisioterapia é uma ciência da saúde que estuda, previne e trata os
-          distúrbios do movimento humano. Nosso objetivo é restaurar sua capacidade
-          funcional e qualidade de vida.
+        <p className="leading-relaxed">
+          A Fisioterapia é uma área da ciência da saúde dedicada ao estudo, diagnóstico, prevenção e tratamento de disfunções do movimento humano.
+          Ela abrange a reabilitação de diversas partes do corpo, órgãos e sistemas, com foco na recuperação da função e do movimento, usando uma variedade de recursos e abordagens físicas, mecânicas e tecnológicas para promover a saúde e o bem-estar dos pacientes.
+        </p>
+        <p className="leading-relaxed">
+          Atuamos também na reabilitação pulmonar, cardíaca, dermato-funcional e linfática.
         </p>
 
         <h2 className="text-2xl font-bold text-brand-secondary">Para quem é indicado?</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Pacientes com dores crônicas (costas, pescoço, ombros).</li>
-          <li>Reabilitação pós-cirúrgica.</li>
-          <li>Lesões esportivas (entorses, distensões).</li>
-          <li>Condições neurológicas.</li>
-          <li>Problemas de postura e equilíbrio.</li>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>Pessoas com dores agudas ou crônicas (coluna, ombros, joelhos, etc).</li>
+          <li>Reabilitação pós-cirúrgica (pré e pós-operatório).</li>
+          <li>Lesões esportivas (entorses, distensões, contusões).</li>
+          <li>Condições neurológicas (sequelas de AVC, compressão medular, hérnias de disco).</li>
+          <li>Distúrbios posturais e de equilíbrio.</li>
+          <li>Perda de independência e funcionalidade em idosos.</li>
         </ul>
 
         <h2 className="text-2xl font-bold text-brand-secondary">Nossa Abordagem</h2>
         <p>
-          Na FisioVitalitá, cada tratamento é 100% individualizado.
-          Começamos com uma avaliação detalhada para entender a causa raiz
-          do seu problema, não apenas os sintomas.
+          Na FisioVitalitá, cada tratamento e atendimento é <strong>100% individualizado</strong>.
+          Entendemos que cada paciente é único, e por isso nossa avaliação busca a causa raiz do problema para um tratamento eficaz e duradouro.
         </p>
       </div>
 

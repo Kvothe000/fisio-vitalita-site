@@ -34,10 +34,11 @@ export default function PilatesPage() {
       <div className="space-y-6 text-gray-700 text-lg">
         <h2 className="text-2xl font-bold text-brand-secondary">O que é Pilates?</h2>
         <p>
-          O Pilates é um método de exercício físico e alongamento que utiliza o
-          peso do próprio corpo na sua execução. É uma técnica de reeducação
-          do movimento que visa trabalhar o corpo todo, trazendo equilíbrio
-          muscular e mental.
+          Pilates é um método de condicionamento físico que visa à integração completa entre corpo e mente.
+          Ele se concentra no fortalecimento da musculatura profunda do corpo, especialmente o "powerhouse ou core" (músculos abdominais, lombares e pélvicos).
+        </p>
+        <p>
+          Para sua execução, pode-se utilizar apenas o peso do próprio corpo, como também usufruir de equipamentos com molas para produzir resistência durante o exercício ou dar suporte ao movimento.
         </p>
 
         <h2 className="text-2xl font-bold text-brand-secondary">Principais Benefícios</h2>
@@ -51,9 +52,7 @@ export default function PilatesPage() {
 
         <h2 className="text-2xl font-bold text-brand-secondary">Nossa Abordagem</h2>
         <p>
-          Na FisioVitalitá, oferecemos aulas de Pilates com equipamentos e de solo,
-          ministradas por fisioterapeutas. As turmas são reduzidas para garantir
-          atendimento personalizado e a correta execução dos movimentos.
+          Na FisioVitalitá, o atendimento de Pilates é <strong>individual</strong>, não havendo turmas. Isso garante foco total do fisioterapeuta em suas necessidades específicas, seja para reabilitação ou condicionamento.
         </p>
       </div>
 

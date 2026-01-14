@@ -10,6 +10,26 @@ import AnimatedSection from '@/components/AnimatedSection';
 import PatientJourney from '@/components/PatientJourney';
 import DifferentialsSection from '@/components/DifferentialsSection';
 import BentoGridServices from '@/components/BentoGridServices';
+import FAQ from '@/components/FAQ';
+
+const homeFAQ = [
+  {
+    question: "Quanto tempo dura uma consulta?",
+    answer: "Nossos atendimentos são personalizados e duram em média 50 minutos. Isso garante o tempo necessário para aplicar as terapias manuais, realizar os exercícios com calma e tirar todas as suas dúvidas."
+  },
+  {
+    question: "Aceitam convênios?",
+    answer: "Trabalhamos na modalidade particular para garantir a qualidade e a individualidade do atendimento, sem a pressa dos convênios. Fornecemos recibo para que você possa solicitar o reembolso junto ao seu plano de saúde."
+  },
+  {
+    question: "Preciso de encaminhamento médico?",
+    answer: "Não é obrigatório. Fisioterapeutas são profissionais de primeiro contato. Porém, se você já tiver exames ou um encaminhamento, pedimos que traga na primeira avaliação para complementarmos o diagnóstico funcional."
+  },
+  {
+    question: "A clínica possui estacionamento?",
+    answer: "Sim, estamos localizados na Av. Juca Batista, 662, com facilidade de acesso e estacionamento para seu conforto."
+  },
+];
 
 export default function Home() {
   return (
@@ -42,7 +62,7 @@ export default function Home() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-100 mb-10 drop-shadow-md border-l-4 border-purple-500 pl-6 max-w-2xl font-light">
-                Fisioterapia, Pilates e Terapias Holísticas em um ambiente pensado para sua recuperação total.
+                Cuidado especializado para sua saúde. Fisioterapia, Pilates e Terapias Holísticas em um ambiente pensado para sua recuperação total.
                 <span className="block mt-2 font-medium text-purple-200">Recupere seu bem-estar com a Dra. Daiane Borges.</span>
               </p>
 
@@ -205,9 +225,12 @@ export default function Home() {
       </AnimatedSection>
       {/* === Fim da Seção de Testemunhos === */}
 
+      {/* === Seção FAQ (Perguntas Frequentes) === */}
+      <FAQ items={homeFAQ} title="Dúvidas Frequentes" />
+
       {/* === Seção: Diferenciais === */}
       <DifferentialsSection />
 
-    </main>
+    </main >
   );
 }
