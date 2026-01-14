@@ -6,8 +6,7 @@ import { X } from 'lucide-react';
 
 const galleryImages = [
   { src: "/gallery/fachada.jpg", alt: "Fachada da FisioVitalitá", span: "col-span-1 md:col-span-2 row-span-2" },
-  { src: "/gallery/fisioterapia-pilates.jpg", alt: "Espaço de Pilates e Fisioterapia", span: "col-span-1" },
-  { src: "/gallery/foto-pilates.jpg", alt: "Equipamentos de Pilates", span: "col-span-1" },
+  { src: "/gallery/fisioterapia-pilates.jpg", alt: "Espaço de Pilates e Fisioterapia", span: "col-span-1 md:col-span-2" },
   { src: "/gallery/massagem-holisticas.jpg", alt: "Sala de Massoterapia", span: "col-span-1 md:col-span-2" },
 ];
 
