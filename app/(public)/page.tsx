@@ -9,96 +9,73 @@ import TestimonialCarousel from '@/components/TestimonialCarousel';
 import AnimatedSection from '@/components/AnimatedSection';
 import PatientJourney from '@/components/PatientJourney';
 import DifferentialsSection from '@/components/DifferentialsSection';
+import BentoGridServices from '@/components/BentoGridServices';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
 
-      {/* === Seção Hero v3 (Premium Full Width) === */}
-      <section className="relative w-full h-[600px] flex items-center justify-center">
+      {/* === Seção Hero v4 (Premium + Animations) === */}
+      <section className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
 
-        {/* Imagem de Fundo */}
-        <div className="absolute inset-0 z-0">
+        {/* Parallax Background (Simulated with scale) */}
+        <div className="absolute inset-0 z-0 select-none">
           <Image
             src="/gallery/fachada.jpg"
             alt="Fachada da Clínica FisioVitalitá"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center animate-slow-zoom"
             priority
           />
-          {/* Overlay Escuro para Legibilidade */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         </div>
 
-        {/* Conteúdo Centralizado */}
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-              Sua Saúde em <span className="text-purple-300">Equilíbrio</span>
-            </h1>
+        {/* Content with Framer Motion via AnimatedSection (Reusing component for consistency) */}
+        <div className="container mx-auto px-6 relative z-10 text-white">
+          <AnimatedSection>
+            <div className="max-w-3xl">
+              <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg tracking-tight">
+                Sua Saúde em <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-100">
+                  Equilíbrio
+                </span>
+              </h1>
 
-            <p className="text-lg md:text-xl text-gray-100 mb-10 drop-shadow-md border-l-4 border-purple-500 pl-4">
-              Conheça a FisioVitalitá, seu novo espaço de fisioterapia, pilates e terapias holísticas. Cuidado completo para seu corpo e mente.
-            </p>
+              <p className="text-lg md:text-xl text-gray-100 mb-10 drop-shadow-md border-l-4 border-purple-500 pl-6 max-w-2xl font-light">
+                Fisioterapia, Pilates e Terapias Holísticas em um ambiente pensado para sua recuperação total.
+                <span className="block mt-2 font-medium text-purple-200">Recupere seu bem-estar com a Dra. Daiane Borges.</span>
+              </p>
 
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link
-                href="/agendamento"
-                className="bg-[#5B21B6] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#4c1d95] transition-all transform hover:scale-105 flex items-center justify-center shadow-lg"
-              >
-                Agende sua Avaliação
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Link>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a
+                  href="https://wa.me/5551999031186?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20FisioVitalit%C3%A1%21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative bg-[#5B21B6] text-white px-10 py-5 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(91,33,182,0.5)] hover:shadow-[0_0_30px_rgba(91,33,182,0.8)] flex items-center justify-center overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center">
+                    Agendar por WhatsApp
+                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </a>
 
-              <Link
-                href="/servicos"
-                className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full text-lg font-medium hover:bg-white/20 transition-all flex items-center justify-center"
-              >
-                Nossos Serviços
-              </Link>
+                <Link
+                  href="/servicos"
+                  className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-5 rounded-full text-lg font-medium hover:bg-white/20 transition-all flex items-center justify-center hover:border-white/50"
+                >
+                  Nossos Serviços
+                </Link>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
-      {/* === Fim da Seção Hero v3 === */}
+      {/* === Fim da Seção Hero v4 === */}
 
-      {/* === Seção Destaque de Serviços === */}
-      <AnimatedSection className="py-20 bg-brand-cream">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
-              Principais Serviços
-            </h2>
-            <p className="text-lg text-gray-600 mt-2">
-              Cuidado especializado para sua necessidade.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <ServiceCard
-              Icon={HeartPulse}
-              title="Fisioterapia"
-              description="Recuperação de lesões, alívio de dor crônica e reabilitação funcional."
-              href="/servicos/fisioterapia"
-              className="bg-white"
-            />
-            <ServiceCard
-              Icon={Activity}
-              title="Pilates"
-              description="Fortalecimento do core, melhora da postura e aumento da flexibilidade."
-              href="/servicos/pilates"
-              className="bg-white"
-            />
-            <ServiceCard
-              Icon={Dna}
-              title="Acupuntura"
-              description="Técnica milenar para alívio da dor, redução de estresse e equilíbrio energético."
-              href="/servicos/acupuntura"
-              className="bg-white"
-            />
-          </div>
-        </div>
-      </AnimatedSection>
+      {/* === Seção Destaque de Serviços (Bento Grid) === */}
+      <BentoGridServices />
 
       {/* === Seção: Jornada do Paciente === */}
       <PatientJourney />

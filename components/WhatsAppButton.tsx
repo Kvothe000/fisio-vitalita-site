@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
             href={`https://wa.me/${siteInfo.contact.waPhone}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#20bd5a] transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+            className="hidden md:flex fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#20bd5a] transition-all duration-300 hover:scale-110 items-center justify-center group"
             aria-label="Fale conosco no WhatsApp"
             title="Fale conosco no WhatsApp"
         >

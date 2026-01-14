@@ -1,16 +1,8 @@
-// Arquivo: /src/app/layout.tsx
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Outfit } from 'next/font/google';
 import './globals.css';
 
-// 1. IMPORTE SEUS COMPONENTES
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
-import AccessibilityToolbar from '@/components/AccessibilityToolbar';
-import JsonLd from '@/components/JsonLd';
-
-const inter = Inter({ subsets: ['latin'] });
+const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
@@ -19,11 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
     description: 'Buscando Fisioterapia ou Pilates em Porto Alegre? Conheça a FisioVitalitá. Atendimento personalizado e humanizado.',
-    url: 'https://fisioVitalitá.com.br', // Substituir pela URL real quando tiver
+    url: 'https://fisioVitalitá.com.br',
     siteName: 'FisioVitalitá',
     images: [
       {
-        url: '/gallery/fachada.jpg', // Usando a foto da fachada como preview
+        url: '/gallery/fachada.jpg',
         width: 1200,
         height: 630,
         alt: 'Fachada FisioVitalitá',
@@ -45,20 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={inter.className}>
-        <JsonLd />
-        {/* 2. ADICIONE O HEADER AQUI */}
-        <Header />
-
-        {/* O {children} é onde o conteúdo da sua página (ex: page.tsx) será renderizado */}
-        <main>{children}</main>
-
-        <WhatsAppButton />
-        <AccessibilityToolbar />
-
-        {/* 3. ADICIONE O FOOTER AQUI */}
-        <Footer />
-      </body>
+      <body className={outfit.className}>{children}</body>
     </html>
   );
 }

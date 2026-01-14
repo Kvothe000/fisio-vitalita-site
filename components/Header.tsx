@@ -111,12 +111,15 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link
-              href="/agendamento"
-              className="bg-[#5B21B6] text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors"
+            <a
+              href="https://wa.me/5551999031186?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20FisioVitalit%C3%A1%21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#5B21B6] text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors flex items-center gap-2"
             >
-              Agendar
-            </Link>
+              <Phone className="w-4 h-4" />
+              <span>Agendar</span>
+            </a>
           </li>
         </ul>
 
@@ -213,13 +216,16 @@ export default function Header() {
             </Link>
           </li>
           <li className="pt-4">
-            <Link
-              href="/agendamento"
+            {/* === Link Modificado para WhatsApp === */}
+            <a
+              href="https://wa.me/5551999031186?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20FisioVitalit%C3%A1%21"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-[#5B21B6] text-white px-4 py-3 rounded-md hover:bg-opacity-90 transition-colors block text-center font-medium"
             >
-              Agendar Consulta
-            </Link>
+              Agendar no WhatsApp
+            </a>
           </li>
         </ul>
       </div>
