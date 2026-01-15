@@ -56,14 +56,14 @@ export default function Home() {
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg tracking-tight">
                 Sua Saúde em <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-100">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-white drop-shadow-md">
                   Equilíbrio
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-100 mb-10 drop-shadow-md border-l-4 border-purple-500 pl-6 max-w-2xl font-light">
-                Cuidado especializado para sua saúde. Fisioterapia, Pilates e Terapias Holísticas em um ambiente pensado para sua recuperação total.
-                <span className="block mt-2 font-medium text-purple-200">Recupere seu bem-estar com a Dra. Daiane Borges.</span>
+                Cuidado especializado para sua saúde. Fisioterapia, Pilates, Acupuntura e Terapias Holísticas em um ambiente pensado para sua recuperação total.
+                <span className="block mt-2 font-medium text-purple-200">Recupere seu bem-estar com a equipe de profissionais da saúde da FisioVitalitá.</span>
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
