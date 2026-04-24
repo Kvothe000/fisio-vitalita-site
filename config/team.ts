@@ -81,7 +81,7 @@ export const teamData: TeamMember[] = [
     {
         name: "Sandra",
         role: "Fisioterapeuta",
-        image: "",
+        image: "/gallery/sandra.png",
         education: [
             "Informações em atualização..."
         ],
