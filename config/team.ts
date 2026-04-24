@@ -15,7 +15,7 @@ export const teamData: TeamMember[] = [
         name: "Daiane da Silva Borges",
         role: "Proprietária | Fisioterapeuta",
         crefito: "123456-F",
-        image: "/gallery/daiane.png",
+        image: "/team/foto-daiane.jpeg",
         bio: "Profissional dedicada com mais de 15 anos de experiência em fisioterapia e reabilitação.",
         education: [
             "Fisioterapia - PUCRS (2006)"
@@ -41,7 +41,7 @@ export const teamData: TeamMember[] = [
         name: "Sinara Corrêa Becker",
         role: "Fisioterapeuta",
         crefito: "5-38055-F",
-        image: "/gallery/sinara.png",
+        image: "/team/foto-sinara.jpeg",
         education: [
             "Fisioterapia - ULBRA/Canoas (08/2001)"
         ],
@@ -61,7 +61,7 @@ export const teamData: TeamMember[] = [
     {
         name: "Bruna Viegas Araujo",
         role: "Massoterapeuta e Terapeuta Holística",
-        image: "/gallery/bruna.png",
+        image: "/team/bruna.png",
         education: [
             "Técnico em Estética - Escola Factum (2014 - 2016)",
             "Curso de Massoterapia - Escola Bel'art (2014)"
@@ -81,9 +81,21 @@ export const teamData: TeamMember[] = [
     {
         name: "Sandra",
         role: "Fisioterapeuta",
-        image: "/gallery/sandra.png",
+        image: "/team/sandra.png",
         education: [
             "Informações em atualização..."
+        ],
+        experience: [
+            "Equipe FisioVitalitá"
+        ],
+        courses: []
+    },
+    {
+        name: "Carol",
+        role: "Nutricionista",
+        image: "/team/foto-carol.jpeg",
+        education: [
+            "Currículo em atualização..."
         ],
         experience: [
             "Equipe FisioVitalitá"

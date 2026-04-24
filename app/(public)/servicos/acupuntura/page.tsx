@@ -1,5 +1,6 @@
 // Arquivo: app/servicos/acupuntura/page.tsx
 import ServiceCTA from '@/components/ServiceCTA';
+import Image from 'next/image'; // Adicione no topo do arquivo
 import FAQ from '@/components/FAQ';
 
 const acupunturaFAQ = [
@@ -13,9 +14,15 @@ export default function AcupunturaPage() {
   return (
     <article>
 
-      {/* Imagem de Destaque (Placeholder) */}
-      <div className="bg-gray-200 rounded-lg w-full h-64 flex items-center justify-center mb-6">
-        <span className="text-gray-500">Imagem de Acupuntura (placeholder)</span>
+      <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
+        <Image
+          src="/gallery/foto-acumpultura.jpeg"
+          alt="Sessão de Acupuntura na FisioVitalitá"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+          sizes="(max-width: 768px) 100vw, 75vw"
+        />
       </div>
 
       <h1 className="text-4xl font-bold text-brand-secondary mb-4">

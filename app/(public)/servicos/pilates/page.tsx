@@ -15,8 +15,8 @@ export default function PilatesPage() {
     <article>
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
-          src="/gallery/fisioterapia-pilates.jpg"
-          alt="Sala de Fisioterapia e Pilates da FisioVitalitá"
+          src="/gallery/foto-pilates2.jpeg"
+          alt="Aula de Pilates na FisioVitalitá"
           fill
           style={{ objectFit: 'cover' }}
           priority

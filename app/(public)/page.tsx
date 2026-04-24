@@ -41,8 +41,8 @@ export default function Home() {
         {/* Parallax Background (Simulated with scale) */}
         <div className="absolute inset-0 z-0 select-none">
           <Image
-            src="/gallery/fachada.jpg"
-            alt="Fachada da Clínica FisioVitalitá"
+            src="/gallery/foto-equipe-frente-do-estabelecimento.jpeg"
+            alt="Equipe FisioVitalitá"
             fill
             className="object-cover object-center animate-slow-zoom"
             priority
