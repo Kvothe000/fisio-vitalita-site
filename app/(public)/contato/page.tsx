@@ -91,9 +91,6 @@ export default function ContatoPage() {
 
             {/* Coluna da Direita: Formulário */}
             <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Envie uma mensagem</h3>
-              <p className="text-gray-500 mb-8">Preencha o formulário abaixo e entraremos em contato em breve.</p>
-
               <ContactForm />
             </div>
 
