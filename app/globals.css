@@ -12,26 +12,51 @@
     background-color: #0f172a;
     color: #f1f5f9;
   }
-
-  .dark .text-brand-secondary,
-  .dark .text-\[\#1F2937\] {
-    color: #ffffff;
-  }
-
-  .dark .text-gray-600,
-  .dark .text-gray-700 {
-    color: #cbd5e1;
-  }
-
-  .dark .text-gray-500 {
-    color: #94a3b8;
-  }
-
-  .dark .text-gray-800,
-  .dark .text-gray-900 {
-    color: #f8fafc;
-  }
 }
+
+/* Regras globais garantidas para Modo Escuro */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark .text-brand-secondary,
+.dark .text-\[\#1F2937\] {
+  color: #f8fafc !important;
+}
+
+.dark p,
+.dark li,
+.dark span.text-gray-600,
+.dark span.text-gray-700,
+.dark .text-gray-600,
+.dark .text-gray-700 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .text-gray-800,
+.dark .text-gray-900 {
+  color: #f1f5f9 !important;
+}
+
+/* Fundo padrão para cards brancos no modo escuro */
+.dark .bg-white {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #0f172a !important;
+}
+
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: #334155 !important;
+}
+
 
 
 @layer utilities {

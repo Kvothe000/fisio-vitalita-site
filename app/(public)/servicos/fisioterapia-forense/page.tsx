@@ -36,12 +36,11 @@ const servicos = [
 
 export default function FisioterapiaForensePage() {
     return (
-        <main className="bg-gray-50 min-h-screen">
+        <main className="bg-gray-50 dark:bg-slate-900 min-h-screen transition-colors">
             {/* Hero Section */}
-            <section className="relative h-[400px] w-full flex items-center justify-center bg-[#1F2937] text-white overflow-hidden">
+            <section className="relative h-[400px] w-full flex items-center justify-center bg-[#1F2937] dark:bg-slate-950 text-white overflow-hidden">
                 <div className="absolute inset-0 bg-black/60 z-10"></div>
                 <div className="absolute inset-0 z-0">
-                    {/* Placeholder: substituir pela foto da Daiane quando enviada */}
                     <div className="w-full h-full bg-gradient-to-r from-slate-900 to-slate-800"></div>
                 </div>
                 <div className="container mx-auto px-6 relative z-20 text-center">
@@ -59,32 +58,32 @@ export default function FisioterapiaForensePage() {
 
                         {/* Descrição */}
                         <AnimatedSection>
-                            <h2 className="text-3xl font-bold text-[#1F2937] mb-6 flex items-center gap-3">
-                                <Scale className="w-8 h-8 text-[#5B21B6]" />
+                            <h2 className="text-3xl font-bold text-[#1F2937] dark:text-white mb-6 flex items-center gap-3">
+                                <Scale className="w-8 h-8 text-[#5B21B6] dark:text-purple-400" />
                                 O que é Fisioterapia Forense?
                             </h2>
-                            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
                                 A Fisioterapia Forense é a área em que o fisioterapeuta aplica seus conhecimentos
                                 técnicos e científicos em questões legais, atuando com jurisconsultoria ou
                                 assistência técnica, em nível judicial ou administrativo.
                             </p>
 
-                            <h3 className="text-2xl font-semibold text-[#1F2937] mb-4">Nossa Atuação</h3>
+                            <h3 className="text-2xl font-semibold text-[#1F2937] dark:text-white mb-4">Nossa Atuação</h3>
                             <ul className="space-y-3 mb-8">
                                 {atuacao.map((item) => (
                                     <li key={item.titulo} className="flex items-start gap-3">
                                         <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                                        <span className="text-gray-700">
-                                            <strong>{item.titulo}:</strong> {item.descricao}
+                                        <span className="text-gray-700 dark:text-gray-300">
+                                            <strong className="text-gray-900 dark:text-white">{item.titulo}:</strong> {item.descricao}
                                         </span>
                                     </li>
                                 ))}
                             </ul>
 
-                            <h3 className="text-xl font-semibold text-[#1F2937] mb-3">Áreas de Atuação</h3>
+                            <h3 className="text-xl font-semibold text-[#1F2937] dark:text-white mb-3">Áreas de Atuação</h3>
                             <div className="flex flex-wrap gap-2 mb-8">
                                 {areasAtuacao.map((area) => (
-                                    <span key={area} className="px-4 py-2 bg-purple-50 text-[#5B21B6] rounded-full text-sm font-semibold border border-purple-100">
+                                    <span key={area} className="px-4 py-2 bg-purple-50 dark:bg-purple-950/60 text-[#5B21B6] dark:text-purple-300 rounded-full text-sm font-semibold border border-purple-100 dark:border-purple-800">
                                         {area}
                                     </span>
                                 ))}
@@ -93,16 +92,16 @@ export default function FisioterapiaForensePage() {
 
                         {/* Serviços */}
                         <AnimatedSection delay={0.2}>
-                            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                                    <FileText className="w-6 h-6 text-[#5B21B6]" />
+                            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-700 p-8 transition-colors">
+                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                                    <FileText className="w-6 h-6 text-[#5B21B6] dark:text-purple-400" />
                                     Serviços
                                 </h3>
                                 <ul className="space-y-3">
                                     {servicos.map((servico, idx) => (
                                         <li key={idx} className="flex items-start gap-3">
                                             <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                            <span className="text-gray-700">{servico}</span>
+                                            <span className="text-gray-700 dark:text-gray-300">{servico}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -111,7 +110,7 @@ export default function FisioterapiaForensePage() {
                                         href="https://wa.me/5551999031186?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Fisioterapia%20Forense%2E"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center bg-[#5B21B6] text-white px-8 py-3 rounded-md font-bold hover:bg-opacity-90 transition-transform hover:translate-y-[-2px]"
+                                        className="inline-flex items-center bg-[#5B21B6] hover:bg-purple-700 text-white px-8 py-3 rounded-md font-bold transition-all shadow-md"
                                     >
                                         <FileText className="w-5 h-5 mr-2" />
                                         Solicitar Consultoria
@@ -124,4 +123,4 @@ export default function FisioterapiaForensePage() {
             </section>
         </main>
     );
-}
+}
