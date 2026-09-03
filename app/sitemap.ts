@@ -15,5 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${baseUrl}/servicos/acupuntura`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
         { url: `${baseUrl}/servicos/massoterapia`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
         { url: `${baseUrl}/servicos/terapias-holisticas`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+        { url: `${baseUrl}/servicos/fisioterapia-forense`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+        { url: `${baseUrl}/servicos/nutricao`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     ];
 }

@@ -1,6 +1,6 @@
 // Arquivo: app/servicos/page.tsx
 import ServiceCard from '@/components/ServiceCard';
-import { HeartPulse, Activity, Dna, Waves, Leaf } from 'lucide-react'; // Importamos todos os ícones que vamos usar
+import { HeartPulse, Activity, Dna, Waves, Leaf, UtensilsCrossed, Scale } from 'lucide-react';
 
 // Lista COMPLETA de serviços.
 // É a "fonte da verdade" para esta página.
@@ -35,6 +35,18 @@ const allServices = [
     description: "Cuidado integral que une corpo, mente e espírito para uma saúde plena.",
     href: "/servicos/terapias-holisticas",
   },
+  {
+    Icon: UtensilsCrossed,
+    title: "Nutrição",
+    description: "Nutrição clínica e esportiva para uma vida mais saudável e equilibrada.",
+    href: "/servicos/nutricao",
+  },
+  {
+    Icon: Scale,
+    title: "Fisioterapia Forense",
+    description: "Perícia judicial, jurisconsultoria e assistência técnica.",
+    href: "/servicos/fisioterapia-forense",
+  },
   // Adicione mais serviços aqui se for preciso
 ];
 
@@ -63,7 +75,7 @@ export default function ServicosPage() {
 
             {/* Usamos .map() para criar um card para cada serviço */}
             {allServices.map((service) => (
-              <ServiceCard 
+              <ServiceCard
                 key={service.title}
                 Icon={service.Icon}
                 title={service.title}

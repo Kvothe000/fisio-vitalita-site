@@ -91,15 +91,31 @@ export const teamData: TeamMember[] = [
         courses: []
     },
     {
-        name: "Carol",
+        name: "Caroline dos Reis Leivas",
         role: "Nutricionista",
         image: "/team/foto-carol.jpeg",
+        bio: "29 anos, vegetariana e corredora amadora. Une o cuidado com a alimentação ao entendimento real de quem pratica atividade física e de quem busca uma relação mais leve com a comida.",
         education: [
-            "Currículo em atualização..."
+            "Graduação em Nutrição | 2016 - 2020 | Faculdade UniRitter",
+            "Pós-Graduação em Nutrição Estética e Funcional | 2023 - 2024 | Centro Universitário Uninter",
+            "Pós-Graduação em Nutrição no Esporte e no Exercício | 2024 - 2025 | Centro Universitário Uninter"
         ],
         experience: [
-            "Equipe FisioVitalitá"
+            "Nutricionista na Clínica Pasqualotti | 2020 - 2021",
+            "Nutricionista clínica autônoma | 2021 - 2024",
+            "Nutricionista clínica e esportiva | 2025 - até o momento"
         ],
-        courses: []
+        courses: [
+            "Elaboração de cardápios e dietas nas diferentes modalidades esportivas | IPGS",
+            "Nutrição esportiva, vegetarianismo, veganismo e plant-based: como prescrever? | Bee Coworking",
+            "Nutrição esportiva: anamnese e fidelização | Bee Coworking",
+            "Conduta nutricional do paciente vegetariano | Nutrissoma"
+        ],
+        specializations: [
+            "Nutrição Clínica",
+            "Nutrição Esportiva",
+            "Nutrição Estética e Funcional",
+            "Vegetarianismo e Plant-based"
+        ]
     }
 ];

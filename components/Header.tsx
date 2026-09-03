@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation'; // Hook para pegar a URL atual
-import { Menu, X, HeartPulse, Activity, Dna, Waves, Leaf, Phone, Scale } from 'lucide-react';
+import { Menu, X, HeartPulse, Activity, Dna, Waves, Leaf, Phone, Scale, UtensilsCrossed } from 'lucide-react';
 import { siteInfo } from '@/config/site-info';
 
 
@@ -16,6 +16,7 @@ const servicesLinks = [
   { title: "Massoterapia", href: "/servicos/massoterapia", Icon: Waves },
   { title: "Terapias Holísticas", href: "/servicos/terapias-holisticas", Icon: Leaf },
   { title: "Fisioterapia Forense", href: "/servicos/fisioterapia-forense", Icon: Scale },
+  { title: "Nutrição", href: "/servicos/nutricao", Icon: UtensilsCrossed },
 ];
 
 export default function Header() {

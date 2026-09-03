@@ -1,6 +1,6 @@
-import { HeartPulse, Activity, Dna, Brain } from 'lucide-react';
+// Arquivo: components/BentoGridServices.tsx (v2 — 7 serviços)
+import { HeartPulse, Activity, Dna, Waves, Leaf, Scale, UtensilsCrossed } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 export default function BentoGridServices() {
     return (
@@ -14,9 +14,7 @@ export default function BentoGridServices() {
                         Cuidado especializado para sua saúde.
                     </p>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
-
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {/* Card Grande (Fisioterapia) */}
                     <Link href="/servicos/fisioterapia" className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-white p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between cursor-pointer">
                         <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -35,8 +33,7 @@ export default function BentoGridServices() {
                             Saiba mais <span className="ml-2">→</span>
                         </div>
                     </Link>
-
-                    {/* Card Médio (Pilates) - AJUSTADO PARA 1x1 */}
+                    {/* Card (Pilates) */}
                     <Link href="/servicos/pilates" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-[#5B21B6] p-6 shadow-md hover:shadow-xl transition-all text-white flex flex-col justify-between cursor-pointer">
                         <div className="absolute -bottom-4 -right-4 opacity-20">
                             <Activity className="w-24 h-24" />
@@ -46,14 +43,13 @@ export default function BentoGridServices() {
                                 <Activity className="w-5 h-5 text-white" />
                             </div>
                             <h3 className="text-lg font-bold mb-1">Pilates Clínico</h3>
-                            <p className="text-purple-100 text-sm">Powerhouse e postura.</p>
+                            <p className="text-purple-100 text-sm">Fortalecimento e postura.</p>
                         </div>
                         <div className="mt-4 inline-flex items-center text-white text-sm font-semibold group-hover:translate-x-1 transition-transform">
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
-
-                    {/* Card Pequeno (Acupuntura) */}
+                    {/* Card (Acupuntura) */}
                     <Link href="/servicos/acupuntura" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-white p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 flex flex-col justify-between cursor-pointer">
                         <div>
                             <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
@@ -66,12 +62,24 @@ export default function BentoGridServices() {
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
-
-                    {/* Card Pequeno (Holístico) */}
+                    {/* Card (Nutrição) */}
+                    <Link href="/servicos/nutricao" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-white p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 flex flex-col justify-between cursor-pointer">
+                        <div>
+                            <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center mb-4">
+                                <UtensilsCrossed className="w-5 h-5 text-rose-600" />
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-900 mb-1">Nutrição</h3>
+                            <p className="text-gray-500 text-sm">Clínica e esportiva.</p>
+                        </div>
+                        <div className="mt-4 inline-flex items-center text-rose-600 text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                            Saiba mais <span className="ml-1">→</span>
+                        </div>
+                    </Link>
+                    {/* Card (Terapias Holísticas) */}
                     <Link href="/servicos/terapias-holisticas" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-white p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 flex flex-col justify-between cursor-pointer">
                         <div>
                             <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                                <Brain className="w-5 h-5 text-blue-600" />
+                                <Leaf className="w-5 h-5 text-blue-600" />
                             </div>
                             <h3 className="text-lg font-bold text-gray-900 mb-1">Terapias</h3>
                             <p className="text-gray-500 text-sm">Reiki, Barras e Terapia Floral.</p>
@@ -80,21 +88,32 @@ export default function BentoGridServices() {
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
-
-                    {/* Card Pequeno (Forense - NOVO) */}
-                    <Link href="/servicos/fisioterapia-forense" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-gray-900 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 text-white flex flex-col justify-between cursor-pointer">
+                    {/* Card (Massoterapia) */}
+                    <Link href="/servicos/massoterapia" className="md:col-span-2 relative group overflow-hidden rounded-3xl bg-white p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 flex flex-col justify-between cursor-pointer">
+                        <div>
+                            <div className="w-10 h-10 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
+                                <Waves className="w-5 h-5 text-sky-600" />
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-900 mb-1">Massoterapia</h3>
+                            <p className="text-gray-500 text-sm">Relaxamento, terapêutica e drenagem linfática.</p>
+                        </div>
+                        <div className="mt-4 inline-flex items-center text-sky-600 text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                            Saiba mais <span className="ml-1">→</span>
+                        </div>
+                    </Link>
+                    {/* Card (Fisioterapia Forense) */}
+                    <Link href="/servicos/fisioterapia-forense" className="md:col-span-2 relative group overflow-hidden rounded-3xl bg-gray-900 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 text-white flex flex-col justify-between cursor-pointer">
                         <div>
                             <div className="w-10 h-10 bg-gray-700 rounded-xl flex items-center justify-center mb-4">
-                                <Brain className="w-5 h-5 text-gray-300" />
+                                <Scale className="w-5 h-5 text-gray-300" />
                             </div>
                             <h3 className="text-lg font-bold mb-1">Fisioterapia Forense</h3>
-                            <p className="text-gray-400 text-sm">Perícia Judicial.</p>
+                            <p className="text-gray-400 text-sm">Perícia Judicial e Assistência Técnica.</p>
                         </div>
                         <div className="mt-4 inline-flex items-center text-gray-300 text-sm font-semibold group-hover:translate-x-1 transition-transform">
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
-
                 </div>
             </div>
         </section>
