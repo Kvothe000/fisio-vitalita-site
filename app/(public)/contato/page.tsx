@@ -1,6 +1,7 @@
 // Arquivo: app/contato/page.tsx
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteInfo } from '@/config/site-info';
+import ContactForm from '@/components/ContactForm';
 
 export default function ContatoPage() {
   return (
@@ -60,11 +61,9 @@ export default function ContatoPage() {
                     CEP: {siteInfo.address.zip}
                   </p>
                   <a
-                    href="https://maps.app.goo.gl/uXj9Xxxxxxx" // Placeholder ideal, mas o iframe abaixo resolve
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#5B21B6] font-semibold hover:text-[#4c1d95] hover:underline"
-                  >
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteInfo.address.fullAddress)}`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="text-[#5B21B6] font-semibold hover:text-[#4c1d95] hover:underline">
                     Ver no mapa
                   </a>
                 </div>
@@ -95,37 +94,7 @@ export default function ContatoPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Envie uma mensagem</h3>
               <p className="text-gray-500 mb-8">Preencha o formulário abaixo e entraremos em contato em breve.</p>
 
-              <form action="#" method="POST" className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Nome Completo</label>
-                  <input type="text" name="name" id="name" required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400"
-                    placeholder="Seu nome"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">Telefone / WhatsApp</label>
-                  <input type="tel" name="phone" id="phone" required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400"
-                    placeholder="(XX) XXXXX-XXXX"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Mensagem</label>
-                  <textarea name="message" id="message" rows={4} required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400 resize-none"
-                    placeholder="Gostaria de agendar uma avaliação..."
-                  ></textarea>
-                </div>
-
-                <button type="submit"
-                  className="w-full bg-[#5B21B6] text-white font-bold py-4 rounded-xl hover:bg-[#4c1d95] transform hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl"
-                >
-                  Enviar Mensagem
-                </button>
-              </form>
+              <ContactForm />
             </div>
 
           </div>
@@ -136,7 +105,7 @@ export default function ContatoPage() {
       <section className="h-96 w-full relative bg-gray-200">
         <iframe
           title="Localização FisioVitalitá"
-          src="https://maps.google.com/maps?q=Av.+Juca+Batista+662,+Porto+Alegre+-+RS&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Av.+Juca+Batista+652,+Porto Alegre+-+RS&t=&z=16&ie=UTF8&iwloc=&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0 }}

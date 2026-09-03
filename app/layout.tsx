@@ -1,19 +1,21 @@
+// Arquivo: app/layout.tsx
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
+import { siteInfo } from '@/config/site-info';
 import './globals.css';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
-  description: 'Clínica especializada em Fisioterapia, Pilates, Acupuntura, Massoterapia e Terapias Holísticas em Porto Alegre. Recupere seu bem-estar com a Dra. Daiane Borges.',
-  metadataBase: new URL('https://fisio-vitalita.vercel.app'), // URL base para resolver imagens sociais
-  keywords: ['Fisioterapia', 'Pilates', 'Acupuntura', 'Massoterapia', 'Porto Alegre', 'Zona Sul', 'Dra. Daiane Borges', 'FisioVitalitá'],
+  description: 'Clínica especializada em Fisioterapia, Pilates, Acupuntura, Massoterapia, Nutrição e Terapias Holísticas em Porto Alegre. Recupere seu bem-estar com a Dra. Daiane Borges.',
+  metadataBase: new URL(siteInfo.siteUrl),
+  keywords: ['Fisioterapia', 'Pilates', 'Acupuntura', 'Massoterapia', 'Nutrição', 'Terapias Holísticas', 'Porto Alegre', 'Zona Sul', 'Dra. Daiane Borges', 'FisioVitalitá'],
   openGraph: {
     title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
-    description: 'Buscando Fisioterapia ou Pilates em Porto Alegre? Conheça a FisioVitalitá. Atendimento personalizado e humanizado.',
-    url: 'https://fisioVitalitá.com.br',
-    siteName: 'FisioVitalitá',
+    description: 'Buscando Fisioterapia, Pilates ou Nutrição em Porto Alegre? Conheça a FisioVitalitá. Atendimento personalizado e humanizado.',
+    url: siteInfo.siteUrl,
+    siteName: siteInfo.name,
     images: [
       {
         url: '/gallery/fachada.jpg',
@@ -24,6 +26,12 @@ export const metadata: Metadata = {
     ],
     locale: 'pt_BR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
+    description: 'Clínica especializada em Fisioterapia, Pilates, Acupuntura, Massoterapia, Nutrição e Terapias Holísticas em Porto Alegre.',
+    images: ['/gallery/fachada.jpg'],
   },
   robots: {
     index: true,
