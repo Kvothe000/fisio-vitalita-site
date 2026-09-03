@@ -1,6 +1,6 @@
 // Arquivo: app/servicos/layout.tsx (Com as melhorias)
 import Link from 'next/link';
-import { HeartPulse, Activity, Dna, Waves, Leaf, Scale } from 'lucide-react';
+import { HeartPulse, Activity, Dna, Waves, Leaf, Scale, UtensilsCrossed } from 'lucide-react';
 
 const allServices = [
   {
@@ -32,6 +32,11 @@ const allServices = [
     Icon: Scale,
     title: "Fisioterapia Forense",
     href: "/servicos/fisioterapia-forense",
+  },
+  {
+    Icon: UtensilsCrossed,
+    title: "Nutrição",
+    href: "/servicos/nutricao",
   },
 ];
 
