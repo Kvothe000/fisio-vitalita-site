@@ -45,12 +45,12 @@ export default function NutricaoPage() {
             </div>
 
             {/* Quem vai te atender */}
-            <div className="mt-10 bg-purple-50 rounded-2xl p-8 border border-purple-100">
-                <h2 className="text-2xl font-bold text-brand-secondary mb-6">Quem vai te atender</h2>
+            <div className="mt-10 bg-purple-50 dark:bg-slate-800/80 rounded-2xl p-8 border border-purple-100 dark:border-slate-700 transition-colors">
+                <h2 className="text-2xl font-bold text-brand-secondary dark:text-white mb-6">Quem vai te atender</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">Caroline dos Reis Leivas</h3>
-                        <p className="text-gray-600 mb-4">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Caroline dos Reis Leivas</h3>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4">
                             Nutricionista clínica e esportiva, vegetariana e corredora amadora.
                             Une o cuidado com a alimentação ao entendimento real de quem pratica
                             atividade física e de quem busca uma relação mais leve com a comida.
@@ -60,7 +60,7 @@ export default function NutricaoPage() {
                                 href="https://wa.me/5551991074292"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center bg-[#5B21B6] text-white px-5 py-2.5 rounded-md font-semibold hover:bg-opacity-90 transition-colors"
+                                className="inline-flex items-center bg-[#5B21B6] hover:bg-purple-700 text-white px-5 py-2.5 rounded-md font-semibold transition-colors shadow-sm"
                             >
                                 <MessageCircle className="w-4 h-4 mr-2" />
                                 WhatsApp da nutricionista
@@ -69,7 +69,7 @@ export default function NutricaoPage() {
                                 href="https://instagram.com/nutricarolleivas"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center border border-[#5B21B6] text-[#5B21B6] px-5 py-2.5 rounded-md font-semibold hover:bg-purple-50 transition-colors"
+                                className="inline-flex items-center border border-[#5B21B6] text-[#5B21B6] dark:text-purple-300 dark:border-purple-400 px-5 py-2.5 rounded-md font-semibold hover:bg-purple-50 dark:hover:bg-slate-700 transition-colors"
                             >
                                 <Instagram className="w-4 h-4 mr-2" />
                                 @nutricarolleivas
@@ -78,30 +78,30 @@ export default function NutricaoPage() {
                     </div>
                     <div className="space-y-6">
                         <div>
-                            <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                                <GraduationCap className="w-5 h-5 text-[#5B21B6]" /> Formação
+                            <h3 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                                <GraduationCap className="w-5 h-5 text-[#5B21B6] dark:text-purple-400" /> Formação
                             </h3>
-                            <ul className="space-y-1 text-gray-600 text-base">
+                            <ul className="space-y-1 text-gray-600 dark:text-gray-300 text-base">
                                 <li>Graduação em Nutrição — UniRitter (2016–2020)</li>
                                 <li>Pós em Nutrição Estética e Funcional — UNINTER (2023–2024)</li>
                                 <li>Pós em Nutrição no Esporte e no Exercício — UNINTER (2024–2025)</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                                <Briefcase className="w-5 h-5 text-[#5B21B6]" /> Experiência
+                            <h3 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                                <Briefcase className="w-5 h-5 text-[#5B21B6] dark:text-purple-400" /> Experiência
                             </h3>
-                            <ul className="space-y-1 text-gray-600 text-base">
+                            <ul className="space-y-1 text-gray-600 dark:text-gray-300 text-base">
                                 <li>Nutricionista na Clínica Pasqualotti (2020–2021)</li>
                                 <li>Atendimento clínico autônomo (2021–2024)</li>
                                 <li>Nutrição clínica e esportiva (2025–atual)</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                                <Award className="w-5 h-5 text-[#5B21B6]" /> Cursos e especializações
+                            <h3 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                                <Award className="w-5 h-5 text-[#5B21B6] dark:text-purple-400" /> Cursos e especializações
                             </h3>
-                            <ul className="space-y-1 text-gray-600 text-base">
+                            <ul className="space-y-1 text-gray-600 dark:text-gray-300 text-base">
                                 <li>Elaboração de cardápios e dietas nas diferentes modalidades esportivas — IPGS</li>
                                 <li>Nutrição esportiva — Bee Coworking</li>
                                 <li>Vegetarianismo, veganismo e plant-based: como prescrever? — Bee Coworking</li>
@@ -115,15 +115,16 @@ export default function NutricaoPage() {
 
             {/* Áreas de atuação */}
             <div className="mt-10">
-                <h2 className="text-2xl font-bold text-brand-secondary mb-4">Áreas de Atuação</h2>
+                <h2 className="text-2xl font-bold text-brand-secondary dark:text-white mb-4">Áreas de Atuação</h2>
                 <div className="flex flex-wrap gap-2">
                     {["Nutrição Clínica", "Nutrição Esportiva", "Nutrição Estética e Funcional", "Vegetarianismo e Plant-based"].map((area) => (
-                        <span key={area} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold">
+                        <span key={area} className="px-4 py-2 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 rounded-full text-sm font-semibold border border-transparent dark:border-slate-600">
                             {area}
                         </span>
                     ))}
                 </div>
             </div>
+
 
             <div className="mt-8">
                 <FAQ items={nutricaoFAQ} title="Dúvidas sobre Nutrição" />

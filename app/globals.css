@@ -42,7 +42,7 @@
   color: #f1f5f9 !important;
 }
 
-/* Fundo padrão para cards brancos no modo escuro */
+/* Fundo padrão para cards e blocos no modo escuro */
 .dark .bg-white {
   background-color: #1e293b !important;
   color: #f1f5f9 !important;
@@ -52,10 +52,23 @@
   background-color: #0f172a !important;
 }
 
+.dark .bg-purple-50 {
+  background-color: rgba(30, 41, 59, 0.85) !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
 .dark .border-gray-100,
-.dark .border-gray-200 {
+.dark .border-gray-200,
+.dark .border-purple-100 {
   border-color: #334155 !important;
 }
+
 
 
 

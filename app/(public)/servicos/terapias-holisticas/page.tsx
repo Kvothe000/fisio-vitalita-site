@@ -59,18 +59,19 @@ export default function TerapiasHolisticasPage() {
           qualquer acompanhamento médico ou terapêutico.
         </p>
 
-        <h2 className="text-2xl font-bold text-brand-secondary">Nossas Terapias</h2>
+        <h2 className="text-2xl font-bold text-brand-secondary dark:text-white">Nossas Terapias</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {terapiasOferecidas.map((terapia) => (
-            <div key={terapia.title} className="bg-purple-50 rounded-2xl p-6 border border-purple-100">
-              <div className="w-12 h-12 bg-[#5B21B6] rounded-xl flex items-center justify-center mb-4">
+            <div key={terapia.title} className="bg-purple-50 dark:bg-slate-800/80 rounded-2xl p-6 border border-purple-100 dark:border-slate-700 transition-colors">
+              <div className="w-12 h-12 bg-[#5B21B6] dark:bg-purple-700 rounded-xl flex items-center justify-center mb-4 shadow-sm">
                 <terapia.Icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{terapia.title}</h3>
-              <p className="text-gray-600 text-base leading-relaxed">{terapia.description}</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{terapia.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">{terapia.description}</p>
             </div>
           ))}
         </div>
+
 
         <h2 className="text-2xl font-bold text-brand-secondary pt-4">Para Quem é Indicado?</h2>
         <p className="leading-relaxed">
