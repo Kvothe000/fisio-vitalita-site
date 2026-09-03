@@ -4,6 +4,7 @@ import { Outfit } from 'next/font/google';
 import { siteInfo } from '@/config/site-info';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
+import { ThemeProvider } from "next-themes";
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -40,15 +41,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={outfit.className}>{children}</body>
-      <Analytics />
+      <body className={outfit.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <Analytics />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

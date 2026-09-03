@@ -26,14 +26,14 @@ const differentials = [
 
 export default function DifferentialsSection() {
     return (
-        <AnimatedSection className="bg-gray-50 py-20">
+        <AnimatedSection className="bg-gray-50 dark:bg-slate-900/50 py-20 transition-colors">
             <div className="container mx-auto px-6">
                 {/* Título da Seção */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] dark:text-white">
                         Por que escolher a FisioVitalitá?
                     </h2>
-                    <p className="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
                         Nosso compromisso vai além do tratamento. Cuidamos de você de forma integral.
                     </p>
                 </div>
@@ -44,14 +44,14 @@ export default function DifferentialsSection() {
                         <div key={item.title} className="text-center px-4">
                             {/* Ícone */}
                             <div className="flex justify-center items-center mb-4">
-                                <div className="bg-[#5B21B6] p-4 rounded-full">
+                                <div className="bg-[#5B21B6] dark:bg-purple-700 p-4 rounded-full shadow-md">
                                     <item.Icon className="w-8 h-8 text-white" />
                                 </div>
                             </div>
                             {/* Título */}
-                            <h3 className="text-xl font-bold text-[#1F2937] mb-2">{item.title}</h3>
+                            <h3 className="text-xl font-bold text-[#1F2937] dark:text-white mb-2">{item.title}</h3>
                             {/* Descrição */}
-                            <p className="text-gray-600">{item.description}</p>
+                            <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                         </div>
                     ))}
                 </div>
@@ -59,3 +59,4 @@ export default function DifferentialsSection() {
         </AnimatedSection>
     );
 }
+

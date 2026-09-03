@@ -34,7 +34,7 @@ const homeFAQ = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors">
 
       {/* === Seção Hero v4 (Premium + Animations) === */}
       <section className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
@@ -102,13 +102,13 @@ export default function Home() {
       <PatientJourney />
 
       {/* === Seção Sobre Nós (Confiança) === */}
-      <AnimatedSection className="bg-white py-20">
+      <AnimatedSection className="bg-white dark:bg-slate-900 py-20 transition-colors">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               {/* Coluna da Imagem */}
               <div>
-                <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg">
+                <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg border border-transparent dark:border-slate-800">
                   <Image
                     src="/gallery/massagem-holisticas.jpg"
                     alt="Ambiente acolhedor da clínica FisioVitalitá"
@@ -120,18 +120,18 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] dark:text-white mb-4">
                 Bem-vindo à FisioVitalitá
               </h2>
-              <p className="text-gray-600 mb-4 text-lg text-justify">
+              <p className="text-gray-600 dark:text-gray-300 mb-4 text-lg text-justify">
                 Somos mais do que uma clínica de fisioterapia; somos um espaço dedicado ao seu bem-estar completo. Nossa missão é tratar a causa da dor, não apenas os sintomas, promovendo um equilíbrio duradouro entre corpo e mente.
               </p>
-              <p className="text-gray-600 mb-6 text-lg text-justify">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg text-justify">
                 Com uma equipe de profissionais qualificados e um ambiente acolhedor, estamos prontos para guiar você em sua jornada de recuperação e saúde.
               </p>
               <Link
                 href="/sobre"
-                className="bg-[#5B21B6] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition-colors"
+                className="inline-block bg-[#5B21B6] hover:bg-purple-700 text-white px-6 py-3 rounded-md text-lg font-medium transition-colors"
               >
                 Conheça Nossa História
               </Link>
@@ -141,35 +141,35 @@ export default function Home() {
       </AnimatedSection>
 
       {/* === Seção Contato Rápido === */}
-      <AnimatedSection className="bg-gray-50 py-20">
+      <AnimatedSection className="bg-gray-50 dark:bg-slate-900/50 py-20 transition-colors">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] dark:text-white">
               Entre em Contato
             </h2>
-            <p className="text-lg text-gray-600 mt-2">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
               Tire suas dúvidas ou agende sua avaliação. Estamos prontos para atender você.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] p-4 rounded-full">
+                <div className="bg-[#5B21B6] dark:bg-purple-700 p-4 rounded-full shrink-0">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#1F2937]">Telefone / WhatsApp</h3>
-                  <p className="text-gray-600 text-lg">{siteInfo.contact.phone}</p>
-                  <a href={`https://wa.me/${siteInfo.contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="text-[#5B21B6] font-medium hover:underline">Iniciar conversa</a>
+                  <h3 className="text-xl font-semibold text-[#1F2937] dark:text-white">Telefone / WhatsApp</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-lg">{siteInfo.contact.phone}</p>
+                  <a href={`https://wa.me/${siteInfo.contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="text-[#5B21B6] dark:text-purple-400 font-medium hover:underline">Iniciar conversa</a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] p-4 rounded-full">
+                <div className="bg-[#5B21B6] dark:bg-purple-700 p-4 rounded-full shrink-0">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#1F2937]">Endereço</h3>
-                  <p className="text-gray-600 text-lg">
+                  <h3 className="text-xl font-semibold text-[#1F2937] dark:text-white">Endereço</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-lg">
                     {siteInfo.address.street}, {siteInfo.address.number} - {siteInfo.address.neighborhood},<br />
                     {siteInfo.address.city} - {siteInfo.address.state}, {siteInfo.address.zip}
                   </p>
@@ -177,40 +177,40 @@ export default function Home() {
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteInfo.address.fullAddress)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#5B21B6] font-medium hover:underline"
+                    className="text-[#5B21B6] dark:text-purple-400 font-medium hover:underline"
                   >
                     Ver no mapa
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <div className="bg-[#5B21B6] p-4 rounded-full">
+                <div className="bg-[#5B21B6] dark:bg-purple-700 p-4 rounded-full shrink-0">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#1F2937]">E-mail</h3>
-                  <p className="text-gray-600 text-lg">{siteInfo.contact.email}</p>
-                  <a href={`mailto:${siteInfo.contact.email}`} className="text-[#5B21B6] font-medium hover:underline">Enviar e-mail</a>
+                  <h3 className="text-xl font-semibold text-[#1F2937] dark:text-white">E-mail</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-lg">{siteInfo.contact.email}</p>
+                  <a href={`mailto:${siteInfo.contact.email}`} className="text-[#5B21B6] dark:text-purple-400 font-medium hover:underline">Enviar e-mail</a>
                 </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-[#1F2937] mb-6">Envie uma mensagem</h3>
+            <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg border border-gray-100 dark:border-slate-700 transition-colors">
+              <h3 className="text-2xl font-bold text-[#1F2937] dark:text-white mb-6">Envie uma mensagem</h3>
               <form action="#" method="POST" className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nome Completo</label>
-                  <input type="text" name="name" id="name" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]" placeholder="Seu nome" />
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Nome Completo</label>
+                  <input type="text" name="name" id="name" required className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]" placeholder="Seu nome" />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Telefone / WhatsApp</label>
-                  <input type="tel" name="phone" id="phone" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]" placeholder="(XX) XXXXX-XXXX" />
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Telefone / WhatsApp</label>
+                  <input type="tel" name="phone" id="phone" required className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]" placeholder="(XX) XXXXX-XXXX" />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensagem</label>
-                  <textarea name="message" id="message" rows={4} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]" placeholder="Gostaria de saber mais sobre..."></textarea>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensagem</label>
+                  <textarea name="message" id="message" rows={4} required className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-[#5B21B6] focus:border-[#5B21B6]" placeholder="Gostaria de saber mais sobre..."></textarea>
                 </div>
                 <div>
-                  <button type="submit" className="w-full bg-[#5B21B6] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-opacity-90 transition-colors">Enviar Mensagem</button>
+                  <button type="submit" className="w-full bg-[#5B21B6] hover:bg-purple-700 text-white px-6 py-3 rounded-md text-lg font-medium transition-colors">Enviar Mensagem</button>
                 </div>
               </form>
             </div>
@@ -219,13 +219,13 @@ export default function Home() {
       </AnimatedSection>
 
       {/* === Seção: Testemunhos === */}
-      <AnimatedSection className="bg-white py-20">
+      <AnimatedSection className="bg-white dark:bg-slate-900 py-20 transition-colors">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] dark:text-white">
               O que nossos pacientes dizem
             </h2>
-            <p className="text-lg text-gray-600 mt-2">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
               Histórias reais de recuperação e bem-estar.
             </p>
           </div>
@@ -240,6 +240,7 @@ export default function Home() {
       {/* === Seção: Diferenciais === */}
       <DifferentialsSection />
 
-    </main >
+    </main>
   );
 }
+

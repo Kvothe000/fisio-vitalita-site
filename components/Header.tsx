@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation'; // Hook para pegar a URL atual
 import { Menu, X, HeartPulse, Activity, Dna, Waves, Leaf, Phone, Scale, UtensilsCrossed } from 'lucide-react';
 import { siteInfo } from '@/config/site-info';
+import ThemeToggle from '@/components/ThemeToggle';
 
 
 // Lista de links de serviço para o dropdown e menu mobile
@@ -24,10 +25,10 @@ export default function Header() {
   const pathname = usePathname(); // Pega o caminho atual da URL (ex: "/sobre", "/servicos/pilates")
 
   return (
-    <header className="w-full bg-white shadow-md sticky top-0 z-50">
+    <header className="w-full bg-white dark:bg-slate-900 border-b border-transparent dark:border-slate-800 shadow-md sticky top-0 z-50 transition-colors">
 
       {/* === Top Bar === */}
-      <div className="bg-[#1F2937] text-gray-300 py-2 px-6 text-sm">
+      <div className="bg-[#1F2937] dark:bg-slate-950 text-gray-300 py-2 px-6 text-sm transition-colors">
         <div className="container mx-auto flex justify-between items-center">
           <a href={`tel:${siteInfo.contact.waPhone}`} className="flex items-center space-x-1 hover:text-white transition-colors">
             <Phone className="w-4 h-4" />
@@ -42,16 +43,16 @@ export default function Header() {
 
       {/* --- Menu Principal --- */}
       <nav className="container mx-auto flex justify-between items-center px-6 py-4">
-        <Link href="/" className="text-2xl font-bold text-[#5B21B6]">
+        <Link href="/" className="text-2xl font-bold text-[#5B21B6] dark:text-purple-400">
           FisioVitalitá
         </Link>
 
         {/* === MENU DESKTOP (hidden md:flex) === */}
-        <ul className="hidden md:flex space-x-6 items-center text-gray-700">
+        <ul className="hidden md:flex space-x-6 items-center text-gray-700 dark:text-gray-200">
           <li>
             <Link
               href="/sobre"
-              className={`hover:text-[#5B21B6] transition-colors ${pathname === '/sobre' ? 'text-[#5B21B6] font-semibold' : ''
+              className={`hover:text-[#5B21B6] dark:hover:text-purple-400 transition-colors ${pathname === '/sobre' ? 'text-[#5B21B6] dark:text-purple-400 font-semibold' : ''
                 }`}
             >
               Sobre
@@ -59,24 +60,23 @@ export default function Header() {
           </li>
           {/* Dropdown de Serviços */}
           <li className="relative group">
-            <span className={`hover:text-[#5B21B6] transition-colors cursor-default flex items-center ${
+            <span className={`hover:text-[#5B21B6] dark:hover:text-purple-400 transition-colors cursor-default flex items-center ${
               // Destaca se a URL atual COMEÇAR com /servicos
-              pathname.startsWith('/servicos') ? 'text-[#5B21B6] font-semibold' : ''
+              pathname.startsWith('/servicos') ? 'text-[#5B21B6] dark:text-purple-400 font-semibold' : ''
               }`}>
               Serviços
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </span>
             {/* Menu Dropdown */}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white shadow-xl rounded-lg mt-2
-                          border border-gray-100 p-2
+            <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white dark:bg-slate-800 shadow-xl rounded-lg mt-2
+                          border border-gray-100 dark:border-slate-700 p-2
                           opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300
-                          transform scale-95 group-hover:scale-100 z-50"> {/* Adicionado z-50 */}
+                          transform scale-95 group-hover:scale-100 z-50">
               {servicesLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  // Adiciona destaque no dropdown também
-                  className={`text-gray-700 transition-colors flex items-center space-x-3 p-3 rounded-md font-medium ${pathname === link.href ? 'bg-purple-50 text-[#5B21B6]' : 'hover:bg-gray-100 hover:text-[#5B21B6]'
+                  className={`text-gray-700 dark:text-gray-200 transition-colors flex items-center space-x-3 p-3 rounded-md font-medium ${pathname === link.href ? 'bg-purple-50 dark:bg-purple-900/40 text-[#5B21B6] dark:text-purple-300' : 'hover:bg-gray-100 dark:hover:bg-slate-700/60 hover:text-[#5B21B6] dark:hover:text-purple-300'
                     }`}
                 >
                   <link.Icon className="w-5 h-5" />
@@ -89,7 +89,7 @@ export default function Header() {
           <li>
             <Link
               href="/equipe"
-              className={`hover:text-[#5B21B6] transition-colors ${pathname === '/equipe' ? 'text-[#5B21B6] font-semibold' : ''
+              className={`hover:text-[#5B21B6] dark:hover:text-purple-400 transition-colors ${pathname === '/equipe' ? 'text-[#5B21B6] dark:text-purple-400 font-semibold' : ''
                 }`}
             >
               Equipe
@@ -98,7 +98,7 @@ export default function Header() {
           <li>
             <Link
               href="/estrutura"
-              className={`hover:text-[#5B21B6] transition-colors ${pathname === '/estrutura' ? 'text-[#5B21B6] font-semibold' : ''
+              className={`hover:text-[#5B21B6] dark:hover:text-purple-400 transition-colors ${pathname === '/estrutura' ? 'text-[#5B21B6] dark:text-purple-400 font-semibold' : ''
                 }`}
             >
               Estrutura
@@ -107,18 +107,21 @@ export default function Header() {
           <li>
             <Link
               href="/contato"
-              className={`hover:text-[#5B21B6] transition-colors ${pathname === '/contato' ? 'text-[#5B21B6] font-semibold' : ''
+              className={`hover:text-[#5B21B6] dark:hover:text-purple-400 transition-colors ${pathname === '/contato' ? 'text-[#5B21B6] dark:text-purple-400 font-semibold' : ''
                 }`}
             >
               Contato
             </Link>
           </li>
           <li>
+            <ThemeToggle />
+          </li>
+          <li>
             <a
               href="https://wa.me/5551999031186?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20FisioVitalit%C3%A1%21"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#5B21B6] text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors flex items-center gap-2"
+              className="bg-[#5B21B6] hover:bg-purple-700 text-white px-4 py-2 rounded-md transition-colors flex items-center gap-2 shadow-sm"
             >
               <Phone className="w-4 h-4" />
               <span>Agendar</span>
@@ -127,8 +130,13 @@ export default function Header() {
         </ul>
 
         {/* === BOTÃO DO MENU MOBILE (md:hidden) === */}
-        <div className="md:hidden">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            className="text-gray-700 dark:text-gray-200 p-1"
+          >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />
             ) : (
@@ -140,13 +148,13 @@ export default function Header() {
 
       {/* === MENU OVERLAY (MOBILE) === */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-white shadow-xl transition-all duration-300 ease-in-out border-t border-gray-100
-                    ${isMobileMenuOpen ? 'opacity-100 visible max-h-[calc(100vh-80px)] overflow-y-auto' : 'opacity-0 invisible max-h-0 overflow-hidden'}`} // Ajuste de altura e overflow
+        className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 shadow-xl transition-all duration-300 ease-in-out border-t border-gray-100 dark:border-slate-800
+                    ${isMobileMenuOpen ? 'opacity-100 visible max-h-[calc(100vh-80px)] overflow-y-auto' : 'opacity-0 invisible max-h-0 overflow-hidden'}`}
       >
         {/* Botão de Fechar Adicionado */}
-        <div className="flex justify-end p-4 pb-0"> {/* Removido padding bottom */}
+        <div className="flex justify-end p-4 pb-0">
           <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Fechar menu">
-            <X className="w-6 h-6 text-gray-700" />
+            <X className="w-6 h-6 text-gray-700 dark:text-gray-300" />
           </button>
         </div>
 
@@ -155,7 +163,7 @@ export default function Header() {
             <Link
               href="/sobre"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`block p-3 rounded-md font-medium transition-colors ${pathname === '/sobre' ? 'bg-purple-50 text-[#5B21B6]' : 'hover:bg-gray-100'
+              className={`block p-3 rounded-md font-medium transition-colors ${pathname === '/sobre' ? 'bg-purple-50 dark:bg-purple-900/40 text-[#5B21B6] dark:text-purple-300' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800'
                 }`}
             >
               Sobre
@@ -165,22 +173,20 @@ export default function Header() {
             <Link
               href="/servicos"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`block p-3 rounded-md font-medium transition-colors ${
-                // Destaca se for /servicos OU qualquer subpágina
-                pathname.startsWith('/servicos') ? 'bg-purple-50 text-[#5B21B6]' : 'hover:bg-gray-100'
+              className={`block p-3 rounded-md font-medium transition-colors ${pathname.startsWith('/servicos') ? 'bg-purple-50 dark:bg-purple-900/40 text-[#5B21B6] dark:text-purple-300' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800'
                 }`}
             >
               Serviços
             </Link>
           </li>
           {/* Links de Serviço Indentados */}
-          <li className="pl-4 border-l-2 border-gray-200 ml-1 space-y-1">
+          <li className="pl-4 border-l-2 border-gray-200 dark:border-slate-700 ml-1 space-y-1">
             {servicesLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-gray-700 transition-colors flex items-center space-x-3 p-2 rounded-md ${pathname === link.href ? 'bg-purple-50 text-[#5B21B6] font-semibold' : 'hover:bg-gray-50 hover:text-[#5B21B6]'
+                className={`transition-colors flex items-center space-x-3 p-2 rounded-md ${pathname === link.href ? 'bg-purple-50 dark:bg-purple-900/40 text-[#5B21B6] dark:text-purple-300 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-[#5B21B6] dark:hover:text-purple-300'
                   }`}
               >
                 <link.Icon className="w-5 h-5 opacity-80" />
@@ -192,7 +198,7 @@ export default function Header() {
             <Link
               href="/equipe"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`block p-3 rounded-md font-medium transition-colors ${pathname === '/equipe' ? 'bg-purple-50 text-[#5B21B6]' : 'hover:bg-gray-100'
+              className={`block p-3 rounded-md font-medium transition-colors ${pathname === '/equipe' ? 'bg-purple-50 dark:bg-purple-900/40 text-[#5B21B6] dark:text-purple-300' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800'
                 }`}
             >
               Equipe
@@ -202,7 +208,7 @@ export default function Header() {
             <Link
               href="/estrutura"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`block p-3 rounded-md font-medium transition-colors ${pathname === '/estrutura' ? 'bg-purple-50 text-[#5B21B6]' : 'hover:bg-gray-100'
+              className={`block p-3 rounded-md font-medium transition-colors ${pathname === '/estrutura' ? 'bg-purple-50 dark:bg-purple-900/40 text-[#5B21B6] dark:text-purple-300' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800'
                 }`}
             >
               Estrutura
@@ -212,20 +218,19 @@ export default function Header() {
             <Link
               href="/contato"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`block p-3 rounded-md font-medium transition-colors ${pathname === '/contato' ? 'bg-purple-50 text-[#5B21B6]' : 'hover:bg-gray-100'
+              className={`block p-3 rounded-md font-medium transition-colors ${pathname === '/contato' ? 'bg-purple-50 dark:bg-purple-900/40 text-[#5B21B6] dark:text-purple-300' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800'
                 }`}
             >
               Contato
             </Link>
           </li>
           <li className="pt-4">
-            {/* === Link Modificado para WhatsApp === */}
             <a
               href="https://wa.me/5551999031186?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20FisioVitalit%C3%A1%21"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="bg-[#5B21B6] text-white px-4 py-3 rounded-md hover:bg-opacity-90 transition-colors block text-center font-medium"
+              className="bg-[#5B21B6] hover:bg-purple-700 text-white px-4 py-3 rounded-md transition-colors block text-center font-medium shadow-sm"
             >
               Agendar no WhatsApp
             </a>
@@ -234,4 +239,4 @@ export default function Header() {
       </div>
     </header>
   );
-}
+}

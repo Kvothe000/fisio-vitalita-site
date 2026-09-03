@@ -82,8 +82,8 @@ export default function ContactForm() {
 
     return (
         <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Envie uma mensagem</h3>
-            <p className="text-gray-500 mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Envie uma mensagem</h3>
+            <p className="text-gray-500 dark:text-gray-400 mb-8">
                 Preencha o formulário e escolha como prefere ser contactado.
             </p>
 
@@ -97,8 +97,8 @@ export default function ContactForm() {
                         aria-checked={canal === id}
                         onClick={() => setCanal(id)}
                         className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${canal === id
-                                ? "border-[#5B21B6] bg-purple-50 text-[#5B21B6]"
-                                : "border-gray-200 bg-white text-gray-500 hover:border-gray-300"
+                                ? "border-[#5B21B6] bg-purple-50 dark:bg-purple-950/40 text-[#5B21B6] dark:text-purple-300"
+                                : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-slate-600"
                             }`}
                     >
                         <Icon className="w-6 h-6" />
@@ -109,26 +109,26 @@ export default function ContactForm() {
 
             <form onSubmit={handleSubmit} className="space-y-6" noValidate={false}>
                 <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Nome Completo *
                     </label>
                     <input
                         type="text" name="name" id="name" required value={nome}
                         onChange={(e) => setNome(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 dark:text-white focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500"
                         placeholder="Seu nome"
                     />
                 </div>
 
                 {viaWhatsApp && (
                     <div>
-                        <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                        <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                             Telefone / WhatsApp *
                         </label>
                         <input
                             type="tel" name="phone" id="phone" required value={telefone}
                             onChange={(e) => setTelefone(e.target.value)}
-                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 dark:text-white focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500"
                             placeholder="(XX) XXXXX-XXXX"
                         />
                     </div>
@@ -136,32 +136,32 @@ export default function ContactForm() {
 
                 {viaEmail && (
                     <div>
-                        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                             Seu E-mail *
                         </label>
                         <input
                             type="email" name="email" id="email" required value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 dark:text-white focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500"
                             placeholder="voce@email.com"
                         />
                     </div>
                 )}
 
                 <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Mensagem *
                     </label>
                     <textarea
                         name="message" id="message" rows={4} required value={mensagem}
                         onChange={(e) => setMensagem(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400 resize-none"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 dark:text-white focus:border-[#5B21B6] focus:ring-2 focus:ring-[#5B21B6] focus:ring-opacity-20 outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500 resize-none"
                         placeholder="Gostaria de agendar uma avaliação..."
                     ></textarea>
                 </div>
 
                 {sucesso && (
-                    <p className="flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 rounded-xl px-4 py-3 text-sm">
+                    <p className="flex items-center gap-2 text-green-700 bg-green-50 dark:bg-green-900/30 dark:text-green-300 border border-green-200 dark:border-green-800 rounded-xl px-4 py-3 text-sm">
                         <CheckCircle2 className="w-5 h-5" /> Mensagem enviada por e-mail! Em breve retornaremos.
                     </p>
                 )}

@@ -52,16 +52,16 @@ const allServices = [
 
 export default function ServicosPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors">
 
       {/* === Seção Hero da Página "Serviços" === */}
-      <section className="bg-white py-20 text-center">
+      <section className="bg-white dark:bg-slate-900 py-20 text-center transition-colors">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-secondary">
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-secondary dark:text-white">
             Nossos Serviços
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-            Oferecemos uma abordagem completa e integrada para cuidar da sua saúde e bem-estar. Conheça nossas especialidades.
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+            Cuidado integral e personalizado para sua saúde, reabilitação e qualidade de vida.
           </p>
         </div>
       </section>

@@ -28,15 +28,16 @@ export default function StickyMobileCTA() {
                     initial={{ y: 100 }}
                     animate={{ y: 0 }}
                     exit={{ y: 100 }}
-                    className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 p-3 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden"
+                    className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 p-3 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden transition-colors"
                 >
                     <a
                         href="tel:5551999031186"
-                        className="flex-1 flex items-center justify-center gap-2 bg-gray-100 text-gray-800 py-3 rounded-lg font-semibold active:bg-gray-200 transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-gray-100 py-3 rounded-lg font-semibold active:bg-gray-200 dark:active:bg-slate-700 transition-colors border border-transparent dark:border-slate-700"
                     >
                         <Phone className="w-5 h-5" />
                         Ligar
                     </a>
+
                     <a
                         href="https://wa.me/5551999031186"
                         target="_blank"

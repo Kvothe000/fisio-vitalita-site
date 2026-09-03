@@ -62,16 +62,16 @@ export default function TestimonialCarousel() {
                 >
                     {testimonials.map((testimonial, index) => (
                         <div key={index} className="w-full flex-shrink-0 px-4">
-                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center mx-auto h-full flex flex-col justify-center">
+                            <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-slate-700 text-center mx-auto h-full flex flex-col justify-center transition-colors">
                                 <div className="flex justify-center mb-6">
-                                    <div className="bg-purple-100 p-3 rounded-full">
-                                        <Quote className="w-8 h-8 text-[#5B21B6]" />
+                                    <div className="bg-purple-100 dark:bg-purple-950/60 p-3 rounded-full">
+                                        <Quote className="w-8 h-8 text-[#5B21B6] dark:text-purple-400" />
                                     </div>
                                 </div>
-                                <p className="text-xl text-gray-700 italic mb-6">"{testimonial.quote}"</p>
+                                <p className="text-xl text-gray-700 dark:text-gray-200 italic mb-6">"{testimonial.quote}"</p>
                                 <div>
-                                    <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
-                                    <p className="text-purple-600 text-sm font-medium">{testimonial.role}</p>
+                                    <h4 className="font-bold text-gray-900 dark:text-white text-lg">{testimonial.name}</h4>
+                                    <p className="text-purple-600 dark:text-purple-400 text-sm font-medium">{testimonial.role}</p>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@ export default function TestimonialCarousel() {
             {/* Botões de Navegação */}
             <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-white rounded-full shadow-md text-gray-600 hover:text-[#5B21B6] hover:bg-gray-50 transition-colors focus:outline-none"
+                className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-white dark:bg-slate-800 rounded-full shadow-md text-gray-600 dark:text-gray-300 hover:text-[#5B21B6] dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors focus:outline-none border border-transparent dark:border-slate-700"
                 aria-label="Anterior"
             >
                 <ChevronLeft className="w-8 h-8" />
@@ -90,11 +90,12 @@ export default function TestimonialCarousel() {
 
             <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-white rounded-full shadow-md text-gray-600 hover:text-[#5B21B6] hover:bg-gray-50 transition-colors focus:outline-none"
+                className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-white dark:bg-slate-800 rounded-full shadow-md text-gray-600 dark:text-gray-300 hover:text-[#5B21B6] dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors focus:outline-none border border-transparent dark:border-slate-700"
                 aria-label="Próximo"
             >
                 <ChevronRight className="w-8 h-8" />
             </button>
+
 
             {/* Indicadores (Dots) */}
             <div className="flex justify-center space-x-2 mt-8">

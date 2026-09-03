@@ -20,15 +20,15 @@ export default function EstruturaPage() {
   const [selectedImage, setSelectedImage] = useState<null | typeof galleryImages[0]>(null);
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors">
 
       {/* === Seção Hero === */}
-      <section className="bg-white py-20 text-center">
+      <section className="bg-white dark:bg-slate-900 py-20 text-center transition-colors">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-secondary">
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-secondary dark:text-white">
             Nossa Estrutura
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
             Um ambiente pensado para seu conforto, recuperação e bem-estar.
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function EstruturaPage() {
             {galleryImages.map((image, index) => (
               <div
                 key={image.src}
-                className={`relative group rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 ${image.span}`}
+                className={`relative group rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 border border-transparent dark:border-slate-800 ${image.span}`}
                 onClick={() => setSelectedImage(image)}
               >
                 <Image
@@ -68,31 +68,39 @@ export default function EstruturaPage() {
       {/* === Lightbox Modal === */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-all animate-fade-in"
           onClick={() => setSelectedImage(null)}
         >
-          <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-50 bg-black/50 p-2 rounded-full"
-            onClick={() => setSelectedImage(null)}
-          >
-            <X className="w-8 h-8" />
-          </button>
-
           <div
-            className="relative w-full max-w-5xl aspect-video rounded-lg overflow-hidden shadow-2xl"
+            className="relative max-w-4xl w-full max-h-[85vh] h-[600px] bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col border border-transparent dark:border-slate-700"
             onClick={(e) => e.stopPropagation()} // Impede que o clique na imagem feche o modal
           >
-            <Image
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              fill
-              className="object-contain"
-              quality={100}
-            />
+            {/* Header do Modal com Nome da Imagem e Botão Fechar */}
+            <div className="flex justify-between items-center p-4 border-b border-gray-100 dark:border-slate-700">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-white">
+                {selectedImage.alt}
+              </h3>
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="p-1 rounded-full text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+                aria-label="Fechar visualização"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Imagem Ampliada */}
+            <div className="relative flex-1 w-full bg-black/5">
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+              />
+            </div>
           </div>
-          <p className="absolute bottom-8 text-white text-lg font-medium bg-black/50 px-6 py-2 rounded-full">
-            {selectedImage.alt}
-          </p>
         </div>
       )}
     </main>

@@ -4,6 +4,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import AccessibilityToolbar from '@/components/AccessibilityToolbar';
 import JsonLd from '@/components/JsonLd';
 import StickyMobileCTA from '@/components/StickyMobileCTA';
+import VLibrasWidget from '@/components/VLibrasWidget';
 
 export default function PublicLayout({
     children,
@@ -18,6 +19,7 @@ export default function PublicLayout({
             <WhatsAppButton />
             <AccessibilityToolbar />
             <StickyMobileCTA />
+            <VLibrasWidget />
             <Footer />
         </>
     );
