@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next';
+import { siteInfo } from '@/config/site-info';
 
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/private/',
+            disallow: '/admin/', // área administrativa fora dos buscadores
         },
-        sitemap: 'https://fisioVitalitá.com.br/sitemap.xml',
+        sitemap: `${siteInfo.siteUrl}/sitemap.xml`,
     };
 }

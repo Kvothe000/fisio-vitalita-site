@@ -80,17 +80,9 @@ export default function Footer() {
 
           {/* Coluna 4: Horários */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Horário de Funcionamento</h3>
-            <div className="space-y-1 text-sm">
-              {/* --- SUA TAREFA: CONFIRME OS HORÁRIOS --- */}
-              <p>Segunda a Sexta:</p>
-              <p className="opacity-80">08:00 - 19:00</p>
-              <p>Sábado:</p>
-              <p className="opacity-80">09:00 - 13:00 (Agendamentos)</p>
-              <p>Domingo:</p>
-              <p className="opacity-80">Fechado</p>
-              {/* ----------------------------------------- */}
-            </div>
+            {/* Atendimento conforme agendamento */}
+            <h3 className="text-lg font-semibold text-white mb-4">Atendimento</h3>
+            <p className="opacity-80">Conforme agendamento</p>
           </div>
 
         </div> {/* Fim do grid principal */}

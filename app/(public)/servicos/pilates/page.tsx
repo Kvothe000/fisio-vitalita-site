@@ -7,7 +7,7 @@ const pilatesFAQ = [
   { question: "O Pilates serve para quem tem dor nas costas?", answer: "Sim! O Pilates é excelente para o tratamento de dores na coluna, pois fortalece a musculatura profunda (core) que sustenta as vértebras, além de melhorar a postura e a flexibilidade." },
   { question: "Quantas vezes por semana devo praticar?", answer: "Para resultados consistentes e reabilitação, recomendamos de 2 a 3 vezes por semana. No entanto, mesmo com 1 vez por semana já é possível sentir benefícios na consciência corporal." },
   { question: "É Pilates Solo ou com Aparelhos?", answer: "Na FisioVitalitá trabalhamos com o Studio completo (Cadillac, Reformer, Chair) e também exercícios de solo e acessórios, adaptando a aula para sua necessidade específica." },
-  { question: "Preciso de avaliação médica antes?", answer: "Embora não seja obrigatório, é recomendado trazer seus exames caso tenha alguma lesão específica. Nossa equipe fará uma avaliação funcional completa no seu primeiro dia." },
+  { question: "Preciso de avaliação médica antes?", answer: "Não é necessária avaliação médica prévia para iniciar o Pilates. Nossa equipe fará uma avaliação funcional completa no seu primeiro dia. No entanto, é recomendado trazer seus exames caso tenha alguma lesão específica, e se necessário encaminhamos para avaliação médica complementar." }
 ];
 
 export default function PilatesPage() {
@@ -28,7 +28,7 @@ export default function PilatesPage() {
         Pilates
       </h1>
       <p className="text-xl text-gray-600 mb-8">
-        Fortalecimento do core, melhora da postura e aumento da flexibilidade.
+        Fortalecimento muscular, melhora da mobilidade, flexibilidade e postura.
       </p>
 
       <div className="space-y-6 text-gray-700 text-lg">

@@ -11,6 +11,7 @@ import PatientJourney from '@/components/PatientJourney';
 import DifferentialsSection from '@/components/DifferentialsSection';
 import BentoGridServices from '@/components/BentoGridServices';
 import FAQ from '@/components/FAQ';
+import { siteInfo } from '@/config/site-info';
 
 const homeFAQ = [
   {
@@ -27,7 +28,7 @@ const homeFAQ = [
   },
   {
     question: "A clínica possui estacionamento?",
-    answer: "Sim, estamos localizados na Av. Juca Batista, 662, com facilidade de acesso e estacionamento para seu conforto."
+    answer: "Sim, estamos localizados na Av. Juca Batista, 652, com facilidade de acesso e estacionamento para seu conforto."
   },
 ];
 
@@ -62,7 +63,7 @@ export default function Home() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-100 mb-10 drop-shadow-md border-l-4 border-purple-500 pl-6 max-w-2xl font-light">
-                Cuidado especializado para sua saúde. Fisioterapia, Pilates, Acupuntura e Terapias Holísticas em um ambiente pensado para sua recuperação total.
+                Cuidado especializado para sua saúde. Fisioterapia, Pilates, Acupuntura, Massoterapia, Nutrição e Terapias Holísticas em um ambiente pensado para sua recuperação total.
                 <span className="block mt-2 font-medium text-purple-200">Recupere seu bem-estar com a equipe de profissionais da saúde da FisioVitalitá.</span>
               </p>
 
@@ -158,8 +159,8 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">Telefone / WhatsApp</h3>
-                  <p className="text-gray-600 text-lg">(51) 9990 31186</p>
-                  <a href="https://wa.me/5551999031186" target="_blank" rel="noopener noreferrer" className="text-[#5B21B6] font-medium hover:underline">Iniciar conversa</a>
+                  <p className="text-gray-600 text-lg">{siteInfo.contact.phone}</p>
+                  <a href={`https://wa.me/${siteInfo.contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="text-[#5B21B6] font-medium hover:underline">Iniciar conversa</a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -169,9 +170,17 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">Endereço</h3>
                   <p className="text-gray-600 text-lg">
-                    Av. Juca Batista, 662 - Ipanema,<br /> Porto Alegre - RS, 91770-000
+                    {siteInfo.address.street}, {siteInfo.address.number} - {siteInfo.address.neighborhood},<br />
+                    {siteInfo.address.city} - {siteInfo.address.state}, {siteInfo.address.zip}
                   </p>
-                  <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.848805364883!2d-51.2294156848846!3d-30.041170981884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197906a454179b%3A0x80c53e8e7330d4b1!2sAv.%20Get%C3%BAlio%20Vargas%2C%201151%20-%20Menino%20Deus%2C%20Porto%20Alegre%20-%20RS%2C%2090150-003!5e0!3m2!1spt-BR!2sbr!4v16788860000002" target="_blank" rel="noopener noreferrer" className="text-[#5B21B6] font-medium hover:underline">Ver no mapa</a>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteInfo.address.fullAddress)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#5B21B6] font-medium hover:underline"
+                  >
+                    Ver no mapa
+                  </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -180,8 +189,8 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#1F2937]">E-mail</h3>
-                  <p className="text-gray-600 text-lg">[daiane.borges@email.com]</p>
-                  <a href="mailto:[daiane.borges@email.com]" className="text-[#5B21B6] font-medium hover:underline">Enviar e-mail</a>
+                  <p className="text-gray-600 text-lg">{siteInfo.contact.email}</p>
+                  <a href={`mailto:${siteInfo.contact.email}`} className="text-[#5B21B6] font-medium hover:underline">Enviar e-mail</a>
                 </div>
               </div>
             </div>

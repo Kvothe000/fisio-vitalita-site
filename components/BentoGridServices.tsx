@@ -28,7 +28,7 @@ export default function BentoGridServices() {
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-2">Fisioterapia Completa</h3>
                             <p className="text-gray-500 text-lg leading-relaxed">
-                                Recuperação de lesões, alívio de dor aguda e crônica. Atuamos com reabilitação pulmonar, cardíaca e dermato-funcional.
+                                Recuperação de lesões, alívio de dores agudas e crônicas, melhora da funcionalidade.
                             </p>
                         </div>
                         <div className="mt-8 inline-flex items-center text-emerald-600 font-semibold group-hover:translate-x-2 transition-transform">
@@ -74,7 +74,7 @@ export default function BentoGridServices() {
                                 <Brain className="w-5 h-5 text-blue-600" />
                             </div>
                             <h3 className="text-lg font-bold text-gray-900 mb-1">Terapias</h3>
-                            <p className="text-gray-500 text-sm">Reiki e Massoterapia.</p>
+                            <p className="text-gray-500 text-sm">Reiki, Barras e Terapia Floral.</p>
                         </div>
                         <div className="mt-4 inline-flex items-center text-blue-600 text-sm font-semibold group-hover:translate-x-1 transition-transform">
                             Saiba mais <span className="ml-1">→</span>

@@ -49,7 +49,7 @@ export default function FisioterapiaPage() {
         Fisioterapia
       </h1>
       <p className="text-xl text-gray-600 mb-8">
-        Recuperação de lesões, alívio de dor crônica e reabilitação funcional.
+        Fisioterapia completa: recuperação de lesões, alívio de dores agudas e crônicas, melhora da funcionalidade. Atuamos com fisioterapia traumato-ortopédica, respiratória, neurológica, entre outras.
       </p>
 
       {/* Conteúdo do Serviço */}
@@ -58,9 +58,6 @@ export default function FisioterapiaPage() {
         <p className="leading-relaxed">
           A Fisioterapia é uma área da ciência da saúde dedicada ao estudo, diagnóstico, prevenção e tratamento de disfunções do movimento humano.
           Ela abrange a reabilitação de diversas partes do corpo, órgãos e sistemas, com foco na recuperação da função e do movimento, usando uma variedade de recursos e abordagens físicas, mecânicas e tecnológicas para promover a saúde e o bem-estar dos pacientes.
-        </p>
-        <p className="leading-relaxed">
-          Atuamos também na reabilitação pulmonar, cardíaca, dermato-funcional e linfática.
         </p>
 
         <h2 className="text-2xl font-bold text-brand-secondary">Para quem é indicado?</h2>

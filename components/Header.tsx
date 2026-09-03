@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'; // Hook para pegar a URL atual
 import { Menu, X, HeartPulse, Activity, Dna, Waves, Leaf, Phone, Scale } from 'lucide-react';
 import { siteInfo } from '@/config/site-info';
 
+
 // Lista de links de serviço para o dropdown e menu mobile
 const servicesLinks = [
   { title: "Fisioterapia", href: "/servicos/fisioterapia", Icon: HeartPulse },
@@ -32,7 +33,7 @@ export default function Header() {
             <span>{siteInfo.contact.phone}</span>
           </a>
           <span className="hidden sm:block">
-            Seg - Sex: 08:00 - 19:00 | Sáb: 09:00 - 13:00
+            Atendimento conforme agendamento
           </span>
         </div>
       </div>

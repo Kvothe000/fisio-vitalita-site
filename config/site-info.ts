@@ -1,11 +1,12 @@
 export const siteInfo = {
   name: "FisioVitalitá",
+  siteUrl: "https://fisiovitalita.com.br", // <-- domínio final
   owner: "Daiane da Silva Borges",
   crefito: "123456-F", // Placeholder, add real one if available later
   address: {
     street: "Av. Juca Batista",
     number: "652",
-    neighborhood: "Ipanema", // Inferring neighborhood based on previous context or common knowledge of this address in Porto Alegre is safer to omit if unsure, but user had it in footer previously as Ipanema
+    neighborhood: "Ipanema",
     city: "Porto Alegre",
     state: "RS",
     zip: "91770-000",
@@ -13,7 +14,7 @@ export const siteInfo = {
   },
   contact: {
     phone: "(51) 999031186",
-    waPhone: "5551999031186", // clean format for WA links
+    waPhone: "5551999031186",
     email: "daianeborges@hotmail.com"
   },
   social: {
