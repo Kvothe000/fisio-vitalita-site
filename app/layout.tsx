@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import { siteInfo } from '@/config/site-info';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 const outfit = Outfit({ subsets: ['latin'] });
@@ -47,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={outfit.className}>{children}</body>
+      <Analytics />
     </html>
   );
 }
