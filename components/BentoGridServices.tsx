@@ -1,4 +1,4 @@
-// Arquivo: components/BentoGridServices.tsx (v2 — 7 serviços)
+// Arquivo: components/BentoGridServices.tsx (v3 — cards padronizados: brancos + ícone colorido)
 import { HeartPulse, Activity, Dna, Waves, Leaf, Scale, UtensilsCrossed } from 'lucide-react';
 import Link from 'next/link';
 
@@ -15,7 +15,7 @@ export default function BentoGridServices() {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    {/* Card Grande (Fisioterapia) */}
+                    {/* Card Grande (Fisioterapia) — herói da seção */}
                     <Link href="/servicos/fisioterapia" className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-white dark:bg-slate-800 p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-slate-700 flex flex-col justify-between cursor-pointer">
                         <div className="absolute top-0 right-0 p-8 opacity-10 dark:opacity-5 group-hover:opacity-20 transition-opacity">
                             <HeartPulse className="w-48 h-48 text-emerald-500" />
@@ -33,22 +33,21 @@ export default function BentoGridServices() {
                             Saiba mais <span className="ml-2">→</span>
                         </div>
                     </Link>
-                    {/* Card (Pilates) */}
-                    <Link href="/servicos/pilates" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-[#5B21B6] dark:bg-purple-900 p-6 shadow-md hover:shadow-xl transition-all text-white flex flex-col justify-between cursor-pointer">
-                        <div className="absolute -bottom-4 -right-4 opacity-20">
-                            <Activity className="w-24 h-24" />
-                        </div>
+
+                    {/* Card (Pilates) — agora branco com identidade roxa */}
+                    <Link href="/servicos/pilates" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-white dark:bg-slate-800 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-slate-700 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
-                                <Activity className="w-5 h-5 text-white" />
+                            <div className="w-10 h-10 bg-purple-100 dark:bg-purple-950/60 rounded-xl flex items-center justify-center mb-4">
+                                <Activity className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                             </div>
-                            <h3 className="text-lg font-bold mb-1">Pilates Clínico</h3>
-                            <p className="text-purple-100 text-sm">Fortalecimento e postura.</p>
+                            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Pilates Clínico</h3>
+                            <p className="text-gray-500 dark:text-gray-300 text-sm">Fortalecimento e postura.</p>
                         </div>
-                        <div className="mt-4 inline-flex items-center text-white text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                        <div className="mt-4 inline-flex items-center text-purple-600 dark:text-purple-400 text-sm font-semibold group-hover:translate-x-1 transition-transform">
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
+
                     {/* Card (Acupuntura) */}
                     <Link href="/servicos/acupuntura" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-white dark:bg-slate-800 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-slate-700 flex flex-col justify-between cursor-pointer">
                         <div>
@@ -62,6 +61,7 @@ export default function BentoGridServices() {
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
+
                     {/* Card (Nutrição) */}
                     <Link href="/servicos/nutricao" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-white dark:bg-slate-800 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-slate-700 flex flex-col justify-between cursor-pointer">
                         <div>
@@ -75,6 +75,7 @@ export default function BentoGridServices() {
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
+
                     {/* Card (Terapias Holísticas) */}
                     <Link href="/servicos/terapias-holisticas" className="md:col-span-1 relative group overflow-hidden rounded-3xl bg-white dark:bg-slate-800 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-slate-700 flex flex-col justify-between cursor-pointer">
                         <div>
@@ -88,6 +89,7 @@ export default function BentoGridServices() {
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
+
                     {/* Card (Massoterapia) */}
                     <Link href="/servicos/massoterapia" className="md:col-span-2 relative group overflow-hidden rounded-3xl bg-white dark:bg-slate-800 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-slate-700 flex flex-col justify-between cursor-pointer">
                         <div>
@@ -101,16 +103,17 @@ export default function BentoGridServices() {
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
-                    {/* Card (Fisioterapia Forense) */}
-                    <Link href="/servicos/fisioterapia-forense" className="md:col-span-2 relative group overflow-hidden rounded-3xl bg-gray-900 dark:bg-slate-950 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-slate-700 text-white flex flex-col justify-between cursor-pointer">
+
+                    {/* Card (Fisioterapia Forense) — agora branco, grafite só no ícone */}
+                    <Link href="/servicos/fisioterapia-forense" className="md:col-span-2 relative group overflow-hidden rounded-3xl bg-white dark:bg-slate-800 p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-slate-700 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div className="w-10 h-10 bg-gray-700 dark:bg-slate-800 rounded-xl flex items-center justify-center mb-4">
-                                <Scale className="w-5 h-5 text-gray-300 dark:text-gray-400" />
+                            <div className="w-10 h-10 bg-gray-100 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-4">
+                                <Scale className="w-5 h-5 text-gray-600 dark:text-gray-300" />
                             </div>
-                            <h3 className="text-lg font-bold mb-1">Fisioterapia Forense</h3>
-                            <p className="text-gray-400 dark:text-gray-300 text-sm">Perícia Judicial e Assistência Técnica.</p>
+                            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Fisioterapia Forense</h3>
+                            <p className="text-gray-500 dark:text-gray-300 text-sm">Perícia Judicial e Assistência Técnica.</p>
                         </div>
-                        <div className="mt-4 inline-flex items-center text-gray-300 dark:text-gray-400 text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                        <div className="mt-4 inline-flex items-center text-gray-600 dark:text-gray-300 text-sm font-semibold group-hover:translate-x-1 transition-transform">
                             Saiba mais <span className="ml-1">→</span>
                         </div>
                     </Link>
