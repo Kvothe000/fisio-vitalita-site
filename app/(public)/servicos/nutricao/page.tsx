@@ -18,7 +18,7 @@ export default function NutricaoPage() {
             <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
                 {/* Placeholder: substituir pela foto real (Caroline ou ambiente) quando a tia enviar */}
                 <Image
-                    src="/gallery/foto-nutricao.jpg"
+                    src="/gallery/foto-nutricao.webp"
                     alt="Atendimento de Nutrição na FisioVitalitá"
                     fill
                     className="object-cover object-center"

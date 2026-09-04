@@ -47,7 +47,7 @@ export default function SobrePage() {
           <div>
             <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg border border-transparent dark:border-slate-800">
               <Image
-                src="/gallery/fisioterapia-pilates.jpg"
+                src="/gallery/fisioterapia-pilates.webp"
                 alt="Sala de equipamentos da FisioVitalitá"
                 fill
                 className="object-cover object-center"
@@ -131,4 +131,4 @@ export default function SobrePage() {
 
     </main>
   );
-}
+}

@@ -5,15 +5,15 @@ import { useState } from 'react';
 import { X } from 'lucide-react';
 
 const galleryImages = [
-  { src: "/gallery/fachada.jpg", alt: "Fachada da FisioVitalitá", span: "col-span-1 md:col-span-2 row-span-2" },
-  { src: "/gallery/foto-frente-estabelecimento.jpeg", alt: "Frente do Estabelecimento", span: "col-span-1 md:col-span-1" },
-  { src: "/gallery/foto-estrutura.jpeg", alt: "Estrutura Interna", span: "col-span-1 md:col-span-1" },
-  { src: "/gallery/foto-pilates2.jpeg", alt: "Estúdio de Pilates", span: "col-span-1 md:col-span-2" },
-  { src: "/gallery/fisioterapia-pilates.jpg", alt: "Fisioterapia e Pilates", span: "col-span-1 md:col-span-2 row-span-2" },
-  { src: "/gallery/foto-acumpultura.jpeg", alt: "Sala de Acupuntura", span: "col-span-1 md:col-span-1" },
-  { src: "/gallery/massagem-holisticas.jpg", alt: "Sala de Terapias Holísticas", span: "col-span-1 md:col-span-1" },
-  { src: "/gallery/foto-massagem.jpeg", alt: "Sala de Massoterapia", span: "col-span-1 md:col-span-2" },
-  { src: "/gallery/exercicio-alongamento.jpeg", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2" },
+  { src: "/gallery/fachada.webp", alt: "Fachada da FisioVitalitá", span: "col-span-1 md:col-span-2 row-span-2" },
+  { src: "/gallery/foto-frente-estabelecimento.webp", alt: "Frente do Estabelecimento", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-estrutura.webp", alt: "Estrutura Interna", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-pilates2.webp", alt: "Estúdio de Pilates", span: "col-span-1 md:col-span-2" },
+  { src: "/gallery/fisioterapia-pilates.webp", alt: "Fisioterapia e Pilates", span: "col-span-1 md:col-span-2 row-span-2" },
+  { src: "/gallery/foto-acumpultura.webp", alt: "Sala de Acupuntura", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/massagem-holisticas.webp", alt: "Sala de Terapias Holísticas", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-massagem.webp", alt: "Sala de Massoterapia", span: "col-span-1 md:col-span-2" },
+  { src: "/gallery/exercicio-alongamento.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2" },
 ];
 
 export default function EstruturaPage() {

@@ -16,7 +16,7 @@ export default function MassoterapiaPage() {
 
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
-          src="/gallery/foto-massagem.jpeg"
+          src="/gallery/foto-massagem.webp"
           alt="Sessão de Massoterapia na FisioVitalitá"
           fill
 

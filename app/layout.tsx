@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: siteInfo.name,
     images: [
       {
-        url: '/gallery/fachada.jpg',
+        url: '/gallery/fachada.webp',
         width: 1200,
         height: 630,
         alt: 'Fachada FisioVitalitá',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
     description: 'Clínica especializada em Fisioterapia, Pilates, Acupuntura, Massoterapia, Nutrição e Terapias Holísticas em Porto Alegre.',
-    images: ['/gallery/fachada.jpg'],
+    images: ['/gallery/fachada.webp'],
   },
   robots: {
     index: true,

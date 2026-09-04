@@ -15,10 +15,13 @@ export const teamData: TeamMember[] = [
         name: "Daiane da Silva Borges",
         role: "Proprietária | Fisioterapeuta",
         crefito: "123456-F",
-        image: "/team/foto-daiane.jpeg",
-        bio: "Profissional dedicada com mais de 15 anos de experiência em fisioterapia e reabilitação.",
+        image: "/team/foto-daiane.webp",
+        bio: "Profissional dedicada com mais de 20 anos de experiência em fisioterapia e reabilitação.",
         education: [
-            "Fisioterapia - PUCRS (2006)"
+            "Fisioterapia - PUCRS (2006)",
+            "Especialização em Traumato-ortopedia clinica - CBES (2009)",
+            "Especialização em Acupuntura - ABACO/CBA (2011)",
+            "Especialização em Fisioterapia do trabalho - CBES (2009)"
         ],
         experience: [
             "Proprietária da FisioVitalitá (Desde 2009)",
@@ -32,16 +35,17 @@ export const teamData: TeamMember[] = [
             "Especialização em Fisioterapia do Trabalho"
         ],
         courses: [
-            "Perícia Judicial e Assistência Técnica",
-            "Fisioterapia Forense",
-            "Formação completa em Pilates"
+            "Pericia Judicial do Trabalho - IBRAFA (2008)",
+            "Capacitação em Fisioterapia Forense - CZP (2025)",
+            "Formação em Pilates de Solo e Aparelhos - Phisycalmind",
+            "Institute e Instituto Tereza Camaraão/RJ (2004)"
         ]
     },
     {
         name: "Sinara Corrêa Becker",
         role: "Fisioterapeuta",
         crefito: "5-38055-F",
-        image: "/team/foto-sinara.jpeg",
+        image: "/team/foto-sinara.webp",
         education: [
             "Fisioterapia - ULBRA/Canoas (08/2001)"
         ],
@@ -61,7 +65,7 @@ export const teamData: TeamMember[] = [
     {
         name: "Bruna Viegas Araujo",
         role: "Massoterapeuta e Terapeuta Holística",
-        image: "/team/bruna.png",
+        image: "/team/bruna.webp",
         education: [
             "Técnico em Estética - Escola Factum (2014 - 2016)",
             "Curso de Massoterapia - Escola Bel'art (2014)"
@@ -81,19 +85,24 @@ export const teamData: TeamMember[] = [
     {
         name: "Sandra",
         role: "Fisioterapeuta",
-        image: "/team/sandra.png",
+        crefito: "122242-F",
+        image: "/team/sandra.webp",
         education: [
-            "Informações em atualização..."
+            "Fisioterapeuta formada pela PUC-RS 2004",
+            "Especialização em traumato Ortopedia pela universidade Gama filho 2011"
         ],
         experience: [
-            "Equipe FisioVitalitá"
+            "Fisioterapeuta na Fisiovitalita desde 2018",
+            "Fisioterapeuta no Hospital São Lucas da PUC-RS de 2005 a 2030, passando pelas áreas de terapia intensiva, internão pós cirúrgica e clínica. Membro do grupo de controle de infecção e do COM ( centro de obesidade mórbida)"
         ],
-        courses: []
+        courses: [
+            "Pilates contemporâneo pelo instituto Voll 2021"
+        ]
     },
     {
         name: "Caroline dos Reis Leivas",
         role: "Nutricionista",
-        image: "/team/foto-carol.jpeg",
+        image: "/team/foto-carol.webp",
         bio: "29 anos, vegetariana e corredora amadora. Une o cuidado com a alimentação ao entendimento real de quem pratica atividade física e de quem busca uma relação mais leve com a comida.",
         education: [
             "Graduação em Nutrição | 2016 - 2020 | Faculdade UniRitter",

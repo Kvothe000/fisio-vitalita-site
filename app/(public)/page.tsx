@@ -42,7 +42,7 @@ export default function Home() {
         {/* Parallax Background (Simulated with scale) */}
         <div className="absolute inset-0 z-0 select-none">
           <Image
-            src="/gallery/foto-equipe-frente-do-estabelecimento.jpeg"
+            src="/gallery/foto-equipe-frente-do-estabelecimento.webp"
             alt="Equipe FisioVitalitá"
             fill
             className="object-cover object-center animate-slow-zoom"
@@ -110,7 +110,7 @@ export default function Home() {
               <div>
                 <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg border border-transparent dark:border-slate-800">
                   <Image
-                    src="/gallery/massagem-holisticas.jpg"
+                    src="/gallery/massagem-holisticas.webp"
                     alt="Ambiente acolhedor da clínica FisioVitalitá"
                     fill
                     className="object-cover object-center"

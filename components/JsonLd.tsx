@@ -5,7 +5,7 @@ export default function JsonLd() {
         "@context": "https://schema.org",
         "@type": "Physician", // Ou 'MedicalClinic' ou 'HealthAndBeautyBusiness'
         "name": siteInfo.name,
-        "image": "https://www.fisiovitalita.com.br/logo.png", // Placeholder, idealmente deve ser a URL real
+        "image": "https://www.fisiovitalita.com.br/logo.webp", // Placeholder, idealmente deve ser a URL real
         "@id": "https://www.fisiovitalita.com.br",
         "url": "https://www.fisiovitalita.com.br",
         "telephone": siteInfo.contact.phone,

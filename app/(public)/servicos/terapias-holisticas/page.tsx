@@ -35,7 +35,7 @@ export default function TerapiasHolisticasPage() {
     <article>
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
-          src="/gallery/massagem-holisticas.jpg"
+          src="/gallery/massagem-holisticas.webp"
           alt="Sala de Terapias Holísticas da FisioVitalitá"
           fill
           className="object-cover object-center"

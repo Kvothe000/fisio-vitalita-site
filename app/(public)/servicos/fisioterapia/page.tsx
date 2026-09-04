@@ -31,7 +31,7 @@ export default function FisioterapiaPage() {
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
           // Use o 'src' correto para cada página
-          src="/gallery/foto-fisioterapia-lazer.jpeg"
+          src="/gallery/foto-fisioterapia-lazer.webp"
           alt="Atendimento de Fisioterapia na FisioVitalitá"
 
           fill // "fill" faz a imagem preencher o 'div' pai

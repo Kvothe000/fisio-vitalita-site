@@ -16,7 +16,7 @@ export default function AcupunturaPage() {
 
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
-          src="/gallery/foto-acumpultura.jpeg"
+          src="/gallery/foto-acumpultura.webp"
           alt="Sessão de Acupuntura na FisioVitalitá"
           fill
           style={{ objectFit: 'cover' }}
