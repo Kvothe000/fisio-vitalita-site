@@ -93,7 +93,7 @@ export const teamData: TeamMember[] = [
         ],
         experience: [
             "Fisioterapeuta na Fisiovitalita desde 2018",
-            "Fisioterapeuta no Hospital São Lucas da PUC-RS de 2005 a 2030, passando pelas áreas de terapia intensiva, internão pós cirúrgica e clínica. Membro do grupo de controle de infecção e do COM ( centro de obesidade mórbida)"
+            "Fisioterapeuta no Hospital São Lucas da PUC-RS de 2005 a 2020, passando pelas áreas de terapia intensiva, internão pós cirúrgica e clínica. Membro do grupo de controle de infecção e do COM ( centro de obesidade mórbida)"
         ],
         courses: [
             "Pilates contemporâneo pelo instituto Voll 2021"

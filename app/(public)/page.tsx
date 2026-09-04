@@ -42,7 +42,7 @@ export default function Home() {
         {/* Parallax Background (Simulated with scale) */}
         <div className="absolute inset-0 z-0 select-none">
           <Image
-            src="/gallery/foto-equipe-frente-do-estabelecimento.webp"
+            src="/gallery/fachada.webp"
             alt="Atendimento de Fisioterapia na FisioVitalitá"
             width={1600}
             height={900}
