@@ -28,19 +28,13 @@ export default function FisioterapiaPage() {
     Ele tem uma altura fixa ('h-80' = 320px)
     Ele tem 'overflow-hidden' para "cortar" o que sobrar da imagem.
 */}
-      <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
+      <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
-          // Use o 'src' correto para cada página
           src="/gallery/foto-fisioterapia-lazer.webp"
           alt="Atendimento de Fisioterapia na FisioVitalitá"
-
-          fill // "fill" faz a imagem preencher o 'div' pai
-
-          // "cover" é a mágica: ele cobre a área, mantém o aspect ratio,
-          // e NUNCA estica a imagem. Ele "corta" as sobras.
-          style={{ objectFit: 'cover' }}
-
-          priority // Carrega esta imagem principal mais rápido
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
+          priority
           sizes="(max-width: 768px) 100vw, 75vw"
         />
       </div>
