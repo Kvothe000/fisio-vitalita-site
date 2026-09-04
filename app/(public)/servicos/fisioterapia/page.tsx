@@ -28,16 +28,15 @@ export default function FisioterapiaPage() {
     Ele tem uma altura fixa ('h-80' = 320px)
     Ele tem 'overflow-hidden' para "cortar" o que sobrar da imagem.
 */}
-      <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg mb-8">
-        <Image
-          src="/gallery/foto-fisioterapia-lazer.webp"
-          alt="Atendimento de Fisioterapia na FisioVitalitá"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
-          priority
-          sizes="(max-width: 768px) 100vw, 75vw"
-        />
-      </div>
+      <Image
+        src="/gallery/foto-fisioterapia-lazer.webp"
+        alt="Atendimento de Fisioterapia na FisioVitalitá"
+        width={1600}
+        height={900}
+        className="w-full h-auto rounded-lg shadow-lg mb-8"
+        priority
+        sizes="(max-width: 768px) 100vw, 75vw"
+      />
 
       <h1 className="text-4xl font-bold text-brand-secondary mb-4">
         Fisioterapia
