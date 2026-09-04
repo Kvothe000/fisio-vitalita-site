@@ -20,8 +20,9 @@ export default function NutricaoPage() {
                 <Image
                     src="/gallery/foto-nutricao.webp"
                     alt="Atendimento de Nutrição na FisioVitalitá"
-                    fill
-                    className="object-cover object-center"
+                    width={1600}
+                    height={900}
+                    className="w-full h-auto rounded-lg shadow-lg mb-8"
                     priority
                     sizes="(max-width: 768px) 100vw, 75vw"
                 />

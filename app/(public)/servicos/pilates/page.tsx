@@ -16,9 +16,10 @@ export default function PilatesPage() {
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
           src="/gallery/foto-pilates2.webp"
-          alt="Aula de Pilates na FisioVitalitá"
-          fill
-          style={{ objectFit: 'cover' }}
+          alt="Atendimento de Fisioterapia na FisioVitalitá"
+          width={1600}
+          height={900}
+          className="w-full h-auto rounded-lg shadow-lg mb-8"
           priority
           sizes="(max-width: 768px) 100vw, 75vw"
         />

@@ -17,15 +17,10 @@ export default function MassoterapiaPage() {
       <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg mb-8">
         <Image
           src="/gallery/foto-massagem.webp"
-          alt="Sessão de Massoterapia na FisioVitalitá"
-          fill
-
-          // === A MUDANÇA ESTÁ AQUI ===
-          // Removemos 'style={{ objectFit: 'cover' }}' e usamos classes
-          // 'object-cover' = (Não esticar)
-          // 'object-center' = (Focar o corte no centro da imagem)
-          className="object-cover object-center"
-
+          alt="Atendimento de Fisioterapia na FisioVitalitá"
+          width={1600}
+          height={900}
+          className="w-full h-auto rounded-lg shadow-lg mb-8"
           priority
           sizes="(max-width: 768px) 100vw, 75vw"
         />

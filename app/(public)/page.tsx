@@ -43,10 +43,12 @@ export default function Home() {
         <div className="absolute inset-0 z-0 select-none">
           <Image
             src="/gallery/foto-equipe-frente-do-estabelecimento.webp"
-            alt="Equipe FisioVitalitá"
-            fill
-            className="object-cover object-center animate-slow-zoom"
+            alt="Atendimento de Fisioterapia na FisioVitalitá"
+            width={1600}
+            height={900}
+            className="w-full h-auto rounded-lg shadow-lg mb-8"
             priority
+            sizes="(max-width: 768px) 100vw, 75vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         </div>
