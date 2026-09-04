@@ -38,7 +38,7 @@ export default function Home() {
 
       {/* === Seção Hero v4 (Premium + Animations) === */}
       <section className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Imagem de fundo — SEM sombra, SEM cantos arredondados, SEM margem */}
+        {/* Imagem de fundo — sem sombra */}
         <Image
           src="/gallery/foto-equipe-frente-do-estabelecimento.webp"
           alt="Atendimento de Fisioterapia na FisioVitalitá"
@@ -49,10 +49,10 @@ export default function Home() {
           sizes="(max-width: 768px) 100vw, 75vw"
         />
 
-        {/* Overlay de legibilidade — mantido para o texto continuar visível sobre a foto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        {/* Overlay radial — escurece o centro (texto), mantém a imagem visível */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.75),rgba(0,0,0,0.25)_60%,transparent)]"></div>
 
-        {/* Content with Framer Motion via AnimatedSection (Reusing component for consistency) */}
+        {/* Conteúdo */}
         <div className="container mx-auto px-6 relative z-10 text-white">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg tracking-tight">
@@ -78,7 +78,6 @@ export default function Home() {
                   Agendar por WhatsApp
                   <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </span>
-                {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </a>
 

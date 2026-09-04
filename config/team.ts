@@ -65,7 +65,7 @@ export const teamData: TeamMember[] = [
     {
         name: "Bruna Viegas Araujo",
         role: "Massoterapeuta e Terapeuta Holística",
-        image: "/team/bruna.webp",
+        image: "/team/foto-bruna.webp",
         education: [
             "Técnico em Estética - Escola Factum (2014 - 2016)",
             "Curso de Massoterapia - Escola Bel'art (2014)"
@@ -86,7 +86,7 @@ export const teamData: TeamMember[] = [
         name: "Sandra",
         role: "Fisioterapeuta",
         crefito: "122242-F",
-        image: "/team/sandra.webp",
+        image: "/team/foto-sandra.webp",
         education: [
             "Fisioterapeuta formada pela PUC-RS 2004",
             "Especialização em traumato Ortopedia pela universidade Gama filho 2011"
