@@ -34,7 +34,7 @@ export default function TerapiasHolisticasPage() {
   return (
     <article>
       <Image
-        src="/gallery/massagem-holisticas.webp"
+        src="/gallery/foto-massagem2.webp"
         alt="Atendimento de Fisioterapia na FisioVitalitá"
         width={1600}
         height={900}

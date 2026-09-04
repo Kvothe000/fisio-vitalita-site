@@ -14,7 +14,7 @@ export default function PilatesPage() {
   return (
     <article>
       <Image
-        src="/gallery/foto-pilates2.webp"
+        src="/gallery/foto-pilates.webp"
         alt="Atendimento de Fisioterapia na FisioVitalitá"
         width={1600}
         height={900}
