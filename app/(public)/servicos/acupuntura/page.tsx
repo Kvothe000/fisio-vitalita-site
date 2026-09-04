@@ -13,9 +13,8 @@ const acupunturaFAQ = [
 export default function AcupunturaPage() {
   return (
     <article>
-
       <Image
-        src="/gallery/foto-acumpultura.webp"
+        src="/gallery/foto-acumputura2.webp"
         alt="Sessão de Acupuntura na FisioVitalitá"
         width={1600}
         height={900}
@@ -23,7 +22,6 @@ export default function AcupunturaPage() {
         priority
         sizes="(max-width: 768px) 100vw, 75vw"
       />
-
 
       <h1 className="text-4xl font-bold text-brand-secondary mb-4">
         Acupuntura

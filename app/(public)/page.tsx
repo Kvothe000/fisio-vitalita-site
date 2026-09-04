@@ -40,18 +40,16 @@ export default function Home() {
       <section className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
 
         {/* Parallax Background (Simulated with scale) */}
-        <div className="absolute inset-0 z-0 select-none">
-          <Image
-            src="/gallery/foto-equipe-frente-do-estabelecimento.webp"
-            alt="Atendimento de Fisioterapia na FisioVitalitá"
-            width={1600}
-            height={900}
-            className="w-full h-auto rounded-lg shadow-lg mb-8"
-            priority
-            sizes="(max-width: 768px) 100vw, 75vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-        </div>
+        <Image
+          src="/gallery/foto-equipe-frente-do-estabelecimento.webp"
+          alt="Atendimento de Fisioterapia na FisioVitalitá"
+          width={1600}
+          height={900}
+          className="w-full h-auto rounded-lg shadow-lg mb-8"
+          priority
+          sizes="(max-width: 768px) 100vw, 75vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
 
         {/* Content with Framer Motion via AnimatedSection (Reusing component for consistency) */}
         <div className="container mx-auto px-6 relative z-10 text-white">
