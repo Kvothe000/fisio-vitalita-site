@@ -53,44 +53,42 @@ export default function Home() {
 
         {/* Content with Framer Motion via AnimatedSection (Reusing component for consistency) */}
         <div className="container mx-auto px-6 relative z-10 text-white">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg tracking-tight">
-                Sua Saúde em <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-white drop-shadow-md">
-                  Equilíbrio
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg tracking-tight">
+              Sua Saúde em <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-white drop-shadow-md">
+                Equilíbrio
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-100 mb-10 drop-shadow-md border-l-4 border-purple-500 pl-6 max-w-2xl font-light">
+              Cuidado especializado para sua saúde. Fisioterapia, Pilates, Acupuntura, Massoterapia, Nutrição e Terapias Holísticas em um ambiente pensado para sua recuperação total.
+              <span className="block mt-2 font-medium text-purple-200">Recupere seu bem-estar com a equipe de profissionais da saúde da FisioVitalitá.</span>
+            </p>
+
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <a
+                href="https://wa.me/5551999031186?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20FisioVitalit%C3%A1%21"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-[#5B21B6] text-white px-10 py-5 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(91,33,182,0.5)] hover:shadow-[0_0_30px_rgba(91,33,182,0.8)] flex items-center justify-center overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center">
+                  Agendar por WhatsApp
+                  <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </span>
-              </h1>
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </a>
 
-              <p className="text-lg md:text-xl text-gray-100 mb-10 drop-shadow-md border-l-4 border-purple-500 pl-6 max-w-2xl font-light">
-                Cuidado especializado para sua saúde. Fisioterapia, Pilates, Acupuntura, Massoterapia, Nutrição e Terapias Holísticas em um ambiente pensado para sua recuperação total.
-                <span className="block mt-2 font-medium text-purple-200">Recupere seu bem-estar com a equipe de profissionais da saúde da FisioVitalitá.</span>
-              </p>
-
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <a
-                  href="https://wa.me/5551999031186?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20FisioVitalit%C3%A1%21"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative bg-[#5B21B6] text-white px-10 py-5 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(91,33,182,0.5)] hover:shadow-[0_0_30px_rgba(91,33,182,0.8)] flex items-center justify-center overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center">
-                    Agendar por WhatsApp
-                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </a>
-
-                <Link
-                  href="/servicos"
-                  className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-5 rounded-full text-lg font-medium hover:bg-white/20 transition-all flex items-center justify-center hover:border-white/50"
-                >
-                  Nossos Serviços
-                </Link>
-              </div>
+              <Link
+                href="/servicos"
+                className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-5 rounded-full text-lg font-medium hover:bg-white/20 transition-all flex items-center justify-center hover:border-white/50"
+              >
+                Nossos Serviços
+              </Link>
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
       {/* === Fim da Seção Hero v4 === */}
