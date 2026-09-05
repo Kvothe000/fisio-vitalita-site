@@ -112,7 +112,7 @@ export default function Home() {
               <div>
                 <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg border border-transparent dark:border-slate-800">
                   <Image
-                    src="/gallery/massagem-holisticas.webp"
+                    src="/gallery/foto-frente-estabelecimento.webp"
                     alt="Ambiente acolhedor da clínica FisioVitalitá"
                     fill
                     className="object-cover object-center"

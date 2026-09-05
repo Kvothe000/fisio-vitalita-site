@@ -16,7 +16,7 @@ export default function NutricaoPage() {
     return (
         <article>
             <Image
-                src="/gallery/fachada.webp"
+                src="/gallery/foto-nutricao.webp"
                 alt="Atendimento de Nutrição na FisioVitalitá"
                 width={1600}
                 height={900}
