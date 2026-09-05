@@ -14,13 +14,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteInfo.siteUrl),
   keywords: ['Fisioterapia', 'Pilates', 'Acupuntura', 'Massoterapia', 'Nutrição', 'Terapias Holísticas', 'Porto Alegre', 'Zona Sul', 'Dra. Daiane Borges', 'FisioVitalitá'],
   openGraph: {
-    title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
-    description: 'Buscando Fisioterapia, Pilates ou Nutrição em Porto Alegre? Conheça a FisioVitalitá. Atendimento personalizado e humanizado.',
+    title: 'FisioVitalitá',
+    description: 'Fisioterapia, Pilates, Acupuntura, Massoterapia, Nutrição e Terapias Holísticas.',
     url: siteInfo.siteUrl,
-    siteName: siteInfo.name,
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'FisioVitalitá' }],
+    siteName: 'FisioVitalitá',
     locale: 'pt_BR',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',          // ← caminho do novo arquivo
+        width: 1200,
+        height: 630,
+        alt: 'FisioVitalitá',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
