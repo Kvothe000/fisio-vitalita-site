@@ -10,7 +10,7 @@ const fisioterapiaFAQ = [
   },
   {
     question: "Preciso de encaminhamento médico?",
-    answer: "Não é obrigatório, mas se tiver exames ou encaminhamento, traga no primeiro dia. Nossa avaliação é completa para traçar o melhor plano de tratamento."
+    answer: "Não é necessária avaliação médica prévia para iniciar o Pilates. Nossa equipe fará uma avaliação funcional completa no seu primeiro dia. No entanto, é recomendado trazer seus exames caso tenha alguma lesão específica, e se necessário encaminhamos para avaliação médica complementar."
   },
   {
     question: "Quantas consultas são necessárias?",

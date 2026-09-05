@@ -11,9 +11,20 @@ const galleryImages = [
   { src: "/gallery/foto-pilates2.webp", alt: "Estúdio de Pilates", span: "col-span-1 md:col-span-2" },
   { src: "/gallery/fisioterapia-pilates.webp", alt: "Fisioterapia e Pilates", span: "col-span-1 md:col-span-2 row-span-2" },
   { src: "/gallery/foto-acumpultura.webp", alt: "Sala de Acupuntura", span: "col-span-1 md:col-span-1" },
-  { src: "/gallery/massagem-holisticas.webp", alt: "Sala de Terapias Holísticas", span: "col-span-1 md:col-span-1" },
-  { src: "/gallery/foto-massagem.webp", alt: "Sala de Massoterapia", span: "col-span-1 md:col-span-2" },
+  { src: "/gallery/foto-massagem.webp", alt: "Sala de Massoterapia", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-pilates4.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2" },
+  { src: "/gallery/foto-pilates3.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2 row-span-2" },
+  { src: "/gallery/foto-massagem2.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-acumputura3.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-1" },
   { src: "/gallery/exercicio-alongamento.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2" },
+  { src: "/gallery/exercicio-pilates-idosa.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2 row-span-2" },
+  { src: "/gallery/foto-massagem-liberacao.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-massoterapia.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-fisioterapia-lazer2.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2" },
+  { src: "/gallery/foto-equipe.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2 row-span-2" },
+  { src: "/gallery/foto-massoterapia2.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-daiane-sandra-conversando.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-1" },
+  { src: "/gallery/foto-pilates5.webp", alt: "Espaço para Exercícios", span: "col-span-1 md:col-span-2" },
 ];
 
 export default function EstruturaPage() {
