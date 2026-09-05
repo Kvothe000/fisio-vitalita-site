@@ -18,14 +18,7 @@ export const metadata: Metadata = {
     description: 'Buscando Fisioterapia, Pilates ou Nutrição em Porto Alegre? Conheça a FisioVitalitá. Atendimento personalizado e humanizado.',
     url: siteInfo.siteUrl,
     siteName: siteInfo.name,
-    images: [
-      {
-        url: '/gallery/fachada.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Fachada FisioVitalitá',
-      },
-    ],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'FisioVitalitá' }],
     locale: 'pt_BR',
     type: 'website',
   },
@@ -33,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FisioVitalitá - Sua Saúde em Equilíbrio',
     description: 'Clínica especializada em Fisioterapia, Pilates, Acupuntura, Massoterapia, Nutrição e Terapias Holísticas em Porto Alegre.',
-    images: ['/gallery/fachada.webp'],
+    images: ['/gallery/og-image.png'],
   },
   robots: {
     index: true,
