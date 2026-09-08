@@ -14,7 +14,7 @@ export const teamData: TeamMember[] = [
     {
         name: "Daiane da Silva Borges",
         role: "Proprietária | Fisioterapeuta",
-        crefito: "123456-F",
+        crefito: "5-84007-F",
         image: "/team/foto-daiane.webp",
         bio: "Profissional dedicada com mais de 20 anos de experiência em fisioterapia e reabilitação.",
         education: [
@@ -85,7 +85,7 @@ export const teamData: TeamMember[] = [
     {
         name: "Sandra",
         role: "Fisioterapeuta",
-        crefito: "122242-F",
+        crefito: "5-122242-F",
         image: "/team/foto-sandra.webp",
         education: [
             "Fisioterapeuta formada pela PUC-RS 2004",
