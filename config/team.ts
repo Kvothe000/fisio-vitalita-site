@@ -83,7 +83,7 @@ export const teamData: TeamMember[] = [
         ]
     },
     {
-        name: "Sandra",
+        name: "Sandra Reis de Barcellos",
         role: "Fisioterapeuta",
         crefito: "5-122242-F",
         image: "/team/foto-sandra.webp",
